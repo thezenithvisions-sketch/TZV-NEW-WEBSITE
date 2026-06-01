@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Zenith Visions - Architecture Firm</title>
+<meta name="description" content="The Zenith Visions is an architecture firm fusing engineering prowess with artistic originality to craft spaces you can't help but be moved by.">
+<link rel="icon" href="https://framerusercontent.com/images/wPRDM7Nvophq3hABcrAHjVhyZtw.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://framerusercontent.com" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ Navigation ============ -->
+<nav class="nav" id="nav">
+  <div class="nav-bar">
+    <a href="#" class="nav-logo" aria-label="The Zenith Visions home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 26 26" fill="none"><path d="M4 21V11L13 4L22 11V21H16V15H10V21H4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="logo-text">The Zenith Visions</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <div class="nav-dropdown">
+      <a href="services.html">Services <span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></a>
+      <div class="nav-dropdown-menu" role="menu">
+        <a href="services.html" class="menu-all"><span class="menu-num">&#9679;</span>View all services</a>
+        <a href="service-architectural-design.html"><span class="menu-num">01</span>Architectural Design</a>
+        <a href="service-interior-design.html"><span class="menu-num">02</span>Interior Design</a>
+        <a href="service-urban-planning.html"><span class="menu-num">03</span>Urban Planning</a>
+        <a href="service-landscaping-design.html"><span class="menu-num">04</span>Landscaping Design</a>
+        <a href="service-construction-management.html"><span class="menu-num">05</span>Construction Management</a>
+        <a href="service-building-renovation.html"><span class="menu-num">06</span>Building Renovation</a>
+        <a href="service-lighting-design.html"><span class="menu-num">07</span>Lighting Design</a>
+        <a href="service-feasibility-studies.html"><span class="menu-num">08</span>Feasibility Studies</a>
+        <a href="service-building-code.html"><span class="menu-num">09</span>Building Code Compliance</a>
+        <a href="service-3d-visualization.html"><span class="menu-num">10</span>3D Visualization</a>
+      </div>
+    </div>
+    <a href="projects.html">Projects</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="blogs.html">Blogs</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-cta">
+    <a class="btn" href="#contact">
+      <span class="btn-label">Get in Touch</span>
+      <span class="btn-arrow"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="hero-ticker" aria-hidden="true">
+    <div class="hero-wordmark" id="heroWordmark"><span class="wordmark-track"><span class="wordmark-item">The Zenith Visions</span><span class="wordmark-sep" aria-hidden="true">&bull;</span><span class="wordmark-item">The Zenith Visions</span><span class="wordmark-sep" aria-hidden="true">&bull;</span></span></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-row">
+      <h1 class="reveal-words reveal-mask">A global BIM partner delivering precise, coordinated, and construction-ready model faster, more reliable, and cost-effective, with zero compromise on quality.</h1>
+      <div class="hero-cta-block reveal reveal-delay-3">
+        <p>We've built our reputation by taking even the boldest visions and making them achievable realities.</p>
+        <a class="btn" href="#contact">
+          <span class="btn-label">View Pricing Plan</span>
+          <span class="btn-arrow"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image reveal-image">
+      <div class="bg">
+        <img src="https://framerusercontent.com/images/wls2jnSU5nNUIgCWgJsLSDZRW0.jpg?scale-down-to=2048" alt="Hero">
+      </div>
+      <div class="hero-stats reveal-stagger">
+        <div class="stat-card">
+          <div class="num">150+</div>
+          <div class="label">Clients Served</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">210+</div>
+          <div class="label">Successful Projects</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">09</div>
+          <div class="label">Prestigious Awards</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">18+</div>
+          <div class="label">Years of Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ About / Value Quote ============ -->
+<section class="section-about" id="about">
+  <div class="values-container">
+
+    <div class="value-quote h1" id="valueQuoteAbout">
+      <!-- Words injected by JS for blur-in stagger -->
+      "WE BUILD WHAT CAPTIVATES &ndash; FUSING ENGINEERING PROWESS WITH ARTISTIC ORIGINALITY TO CRAFT SPACES YOU CAN'T HELP BUT BE MOVED BY"
+    </div>
+
+    <div class="about-flex">
+      <div class="about-sketch reveal">
+        <img src="https://framerusercontent.com/images/qWZHPVDGiPJec0ONuwgRlVM7VE.png" alt="Architectural sketch">
+      </div>
+      <div class="about-content">
+        <div class="reveal">
+          <span class="eyebrow">About Us</span>
+          <h2 style="margin-top:10px">Why we are special?</h2>
+        </div>
+        <p class="about-overview reveal reveal-delay-1">Welcome to The Zenith Visions, a hub of architectural innovation and design brilliance. At The Zenith Visions, we transcend the boundaries of conventional architecture, weaving a narrative where each project is a testament to our commitment to excellence.</p>
+        <div class="benefits reveal-stagger">
+          <div class="benefit">
+            <div class="benefit-row">
+              <span class="benefit-icon"><svg viewBox="0 0 18 18" fill="none"><path d="M9 1L11.5 6.5L17.5 7.3L13.2 11.5L14.2 17.5L9 14.5L3.8 17.5L4.8 11.5L0.5 7.3L6.5 6.5L9 1Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span>
+              <h3 class="benefit-title">Award-Winning Designs</h3>
+              <span class="benefit-toggle" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </div>
+            <div class="benefit-answer"><p>Our work has been recognized across residential, commercial and sustainability categories &mdash; nine industry honors and counting for designs that push what architecture can be.</p></div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-row">
+              <span class="benefit-icon"><svg viewBox="0 0 18 18" fill="none"><path d="M3 9L7 13L15 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <h3 class="benefit-title">Flawless Project Execution</h3>
+              <span class="benefit-toggle" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </div>
+            <div class="benefit-answer"><p>Meticulous planning, milestone reviews and on-the-ground craft mean every project lands on time, on budget and exactly as envisioned.</p></div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-row">
+              <span class="benefit-icon"><svg viewBox="0 0 18 18" fill="none"><path d="M9 2C5 6 5 10 9 14C13 10 13 6 9 2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5 17H13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+              <h3 class="benefit-title">Industry Leading Sustainability</h3>
+              <span class="benefit-toggle" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </div>
+            <div class="benefit-answer"><p>LEED Platinum buildings and net-zero programs are part of our standard practice &mdash; green building isn't a feature for us, it's the default.</p></div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-row">
+              <span class="benefit-icon"><svg viewBox="0 0 18 18" fill="none"><circle cx="6" cy="6" r="2.5" stroke="currentColor" stroke-width="1.4"/><circle cx="13" cy="11" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M2 16C2 13.8 4 12 6 12M16 16C16 13.8 14 12 13 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+              <h3 class="benefit-title">Personalized Collaborative Process</h3>
+              <span class="benefit-toggle" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </div>
+            <div class="benefit-answer"><p>We treat every project as a partnership. Discovery workshops, shared design platforms and milestone reviews keep you in the room at every phase.</p></div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-row">
+              <span class="benefit-icon"><svg viewBox="0 0 18 18" fill="none"><path d="M9 2L2 6V12L9 16L16 12V6L9 2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 9V16M9 9L16 6M9 9L2 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+              <h3 class="benefit-title">Technical Master Craftsmanship</h3>
+              <span class="benefit-toggle" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </div>
+            <div class="benefit-answer"><p>Engineering rigor meets artisanal detail. Decades of build experience translate the most ambitious sketches into structures that last.</p></div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-row">
+              <span class="benefit-icon"><svg viewBox="0 0 18 18" fill="none"><path d="M3 14L9 4L15 14H3Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span>
+              <h3 class="benefit-title">Invested in Your Success</h3>
+              <span class="benefit-toggle" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </div>
+            <div class="benefit-answer"><p>We measure our success by yours. From first sketch to ribbon-cutting we're aligned with the outcome you actually want.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Showreel -->
+    <div class="showreel" id="showreel">
+      <video autoplay muted loop playsinline poster="https://framerusercontent.com/images/wls2jnSU5nNUIgCWgJsLSDZRW0.jpg?scale-down-to=2048">
+        <source src="https://framerusercontent.com/assets/M0FwjfJeQSMKhx8PhWBcafcGAoA.mp4" type="video/mp4">
+      </video>
+      <button class="play-btn" aria-label="Play showreel">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Showreel lightbox -->
+<div class="video-lightbox" id="lightbox">
+  <button class="close-btn" id="lightboxClose" aria-label="Close">&times;</button>
+  <video id="lightboxVideo" controls></video>
+</div>
+
+<!-- ============ Services ============ -->
+<section class="section section-services">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-header-row">
+        <div class="section-header-left reveal">
+          <span class="eyebrow">Our Services</span>
+          <h2>Dream. Design. Develop.<br>We make even bold dreams into finished products.</h2>
+        </div>
+        <div class="section-header-right reveal reveal-delay-1">
+          <p class="supporting">We make even the wildest architectural dreams into dramatic yet feasible finished products anyone would be proud of.</p>
+          <a class="btn" href="#">
+            <span class="btn-label">Explore Services</span>
+            <span class="btn-arrow"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+      <div class="divider"><div class="fill"></div></div>
+    </div>
+
+    <div class="services-grid reveal-stagger">
+      <a class="service-card" href="#"><div class="service-card-row"><h3>Architectural Design</h3><span class="service-arrow"><span class="service-card-bg"></span><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5V12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></a>
+      <a class="service-card" href="#"><div class="service-card-row"><h3>Interior Design</h3><span class="service-arrow"><span class="service-card-bg"></span><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5V12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></a>
+      <a class="service-card" href="#"><div class="service-card-row"><h3>Urban Planning</h3><span class="service-arrow"><span class="service-card-bg"></span><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5V12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></a>
+      <a class="service-card" href="#"><div class="service-card-row"><h3>Landscaping Design</h3><span class="service-arrow"><span class="service-card-bg"></span><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5V12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></a>
+      <a class="service-card" href="#"><div class="service-card-row"><h3>Building Renovation</h3><span class="service-arrow"><span class="service-card-bg"></span><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5V12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></a>
+      <a class="service-card" href="#"><div class="service-card-row"><h3>Lighting Design</h3><span class="service-arrow"><span class="service-card-bg"></span><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5V12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></a>
+      <a class="service-card" href="#"><div class="service-card-row"><h3>Feasibility Studies</h3><span class="service-arrow"><span class="service-card-bg"></span><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5V12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></a>
+      <a class="service-card" href="#"><div class="service-card-row"><h3>Building Code</h3><span class="service-arrow"><span class="service-card-bg"></span><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5V12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></a>
+      <a class="service-card" href="#"><div class="service-card-row"><h3>3D Visualization</h3><span class="service-arrow"><span class="service-card-bg"></span><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5V12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Projects ============ -->
+<section class="section section-projects" id="projects">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-header-row">
+        <div class="section-header-left reveal">
+          <span class="eyebrow">Projects</span>
+          <h2>The Proof is in<br>Our Portfolio</h2>
+        </div>
+        <div class="section-header-right reveal reveal-delay-1">
+          <p class="supporting">Browse a sampling of our favorite built incarnations of clients&rsquo; imaginative expectations and our innovative solutions.</p>
+          <a class="btn" href="projects.html">
+            <span class="btn-label">View All Projects</span>
+            <span class="btn-arrow"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+      <div class="divider"><div class="fill"></div></div>
+    </div>
+  </div>
+
+  <div class="projects-container">
+    <div class="projects-list reveal-stagger">
+
+      <a class="project-card reveal" href="#">
+        <div class="project-card-top">
+          <h3>Serenity Suites - Coastal Resort</h3>
+          <div class="project-card-tags">
+            <span class="tag">Hospitality</span>
+            <span class="tag">Architecture</span>
+          </div>
+        </div>
+        <div class="project-card-image-wrap">
+          <div class="project-card-image">
+            <img src="https://framerusercontent.com/images/IjLH9urJ0E2GpjfH5aEXEj24LhQ.jpg?scale-down-to=2048" alt="Serenity Suites">
+          </div>
+        </div>
+        <div class="project-card-bottom">
+          <div class="project-meta-group">
+            <div class="project-meta">
+              <span class="label">Year</span>
+              <span class="value">2023</span>
+            </div>
+            <div class="project-meta">
+              <span class="label">Location</span>
+              <span class="value">Pacific Shores, California, USA</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="#">
+        <div class="project-card-top">
+          <h3>Gastronome Haven</h3>
+          <div class="project-card-tags">
+            <span class="tag">Hospitality</span>
+            <span class="tag">Architecture &amp; Interior</span>
+          </div>
+        </div>
+        <div class="project-card-image-wrap">
+          <div class="project-card-image">
+            <img src="https://framerusercontent.com/images/IyRXmFf7Oogbpz3cI2Cx1swwiw0.jpg?scale-down-to=2048" alt="Gastronome Haven">
+          </div>
+        </div>
+        <div class="project-card-bottom">
+          <div class="project-meta-group">
+            <div class="project-meta">
+              <span class="label">Year</span>
+              <span class="value">2023</span>
+            </div>
+            <div class="project-meta">
+              <span class="label">Location</span>
+              <span class="value">Downtown Metropolis</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="#">
+        <div class="project-card-top">
+          <h3>Serene Haven Residences</h3>
+          <div class="project-card-tags">
+            <span class="tag">Residential</span>
+            <span class="tag">Architecture</span>
+          </div>
+        </div>
+        <div class="project-card-image-wrap">
+          <div class="project-card-image">
+            <img src="https://framerusercontent.com/images/5FXqnLXRsByI0LcvscZSAlbvkC8.jpg?scale-down-to=2048" alt="Serene Haven Residences">
+          </div>
+        </div>
+        <div class="project-card-bottom">
+          <div class="project-meta-group">
+            <div class="project-meta">
+              <span class="label">Year</span>
+              <span class="value">2022</span>
+            </div>
+            <div class="project-meta">
+              <span class="label">Location</span>
+              <span class="value">Napa Valley, California, USA</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ Value Quote (large dark band) ============ -->
+<section class="section-value-quote">
+  <div class="value-quote-bg">
+    <img src="https://framerusercontent.com/images/UrQqewjnRWVW1vMmm3dcpF3MF4.svg" alt="">
+  </div>
+  <div class="value-quote-sketch left reveal">
+    <img src="https://framerusercontent.com/images/XIWzGTbchPF3j20s47w5ViA4s3A.jpg?scale-down-to=1024" alt="">
+  </div>
+  <div class="value-quote-sketch right reveal reveal-delay-2">
+    <img src="https://framerusercontent.com/images/c3wyhJaN99DKATrD1tc1oU4u1l8.jpg?scale-down-to=1024" alt="">
+  </div>
+  <div class="value-quote-content">
+    <p class="reveal-words">"We build more than structures - we design customized experiences tuned to your aspirations."</p>
+  </div>
+</section>
+
+<!-- ============ Brands ============ -->
+<section class="section-brands">
+  <div class="brands-header">
+    <div class="section-header-row">
+      <div class="section-header-left reveal">
+        <span class="eyebrow light">Brand Collaborations</span>
+        <h2>Esteemed Clients over the Years</h2>
+      </div>
+      <div class="section-header-right reveal reveal-delay-1">
+        <p class="supporting">We're honored to have partnered with these reputable organizations on impactful architectural projects through the decades.</p>
+      </div>
+    </div>
+    <div class="divider light"><div class="fill"></div></div>
+  </div>
+
+  <div class="brands-row">
+    <div class="brands-grid reveal-stagger">
+      <div class="brand-cell"><img src="https://framerusercontent.com/images/YuN93JWcWdSzH0odGho5bcZyHOg.svg" alt="Brand 1"></div>
+      <div class="brand-cell"><img src="https://framerusercontent.com/images/qgI0hIf34aPuuJedXqVNVWx1gI.svg" alt="Brand 2"></div>
+      <div class="brand-cell"><img src="https://framerusercontent.com/images/UMc0FS6gAmdnCQcyNR18Rf9IZus.svg" alt="Brand 3"></div>
+      <div class="brand-cell"><img src="https://framerusercontent.com/images/HtNOvy5spiFjxciDATmaZhCH9U.svg" alt="Brand 4"></div>
+      <div class="brand-cell"><img src="https://framerusercontent.com/images/ODBXEmKEOwlEN62SmqJ6KAeyM.svg" alt="Brand 5"></div>
+      <div class="brand-cell"><img src="https://framerusercontent.com/images/or0Wlg5UKFRZGfVPFnLR5bath6I.svg" alt="Brand 6"></div>
+    </div>
+
+    <div class="brand-testimonial-track">
+      <div class="brand-testimonial-list" id="brandTestimonialList">
+        <div class="brand-testimonial">
+          <img src="https://framerusercontent.com/images/qgI0hIf34aPuuJedXqVNVWx1gI.svg" alt="">
+          <p class="quote">The team exceeded our expectations at every turn. They skillfully translated our vision into an awe-inspiring home our family will cherish for decades."</p>
+          <p class="author">-JOHNY, CEO</p>
+        </div>
+        <div class="brand-testimonial">
+          <img src="https://framerusercontent.com/images/UMc0FS6gAmdnCQcyNR18Rf9IZus.svg" alt="">
+          <p class="quote">The Zenith Visions' commitment to preserving the historical integrity of Heritage Haven exceeded our expectations. Their expertise, attention to detail, and passion for architectural heritage made this restoration a true success.</p>
+          <p class="author">-JOHNY, CEO</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Gallery ============ -->
+<section class="section-gallery" id="gallery">
+  <div class="gallery-bottom-gradient"></div>
+  <div class="gallery-overlay-cta">
+    <a class="btn btn-light" href="#">
+      <span class="btn-label">View our stunning gallery</span>
+      <span class="btn-arrow"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+  </div>
+  <div class="gallery-container">
+    <div class="gallery-column">
+      <div class="gallery-item"><img src="https://framerusercontent.com/images/CF3upq88N8a3nkssGgl1anceOQ.jpg?scale-down-to=1024" alt=""><span class="caption">This is a caption</span></div>
+      <div class="gallery-item"><img src="https://framerusercontent.com/images/uCiniOyAsvog4Qxs8ZPiEHAdSg.jpg?scale-down-to=1024" alt=""><span class="caption">This is a caption</span></div>
+      <div class="gallery-item"><img src="https://framerusercontent.com/images/r0lEYWOD4InIVR8JeK6gjQtztE.jpg?scale-down-to=1024" alt=""><span class="caption">This is a caption</span></div>
+    </div>
+    <div class="gallery-column center">
+      <div class="gallery-item"><img src="https://framerusercontent.com/images/k3RG8WTNJJOObViGGqX4GsVskU.jpg?scale-down-to=1024" alt=""><span class="caption">This is a caption</span></div>
+      <div class="gallery-item"><img src="https://framerusercontent.com/images/H2DJuheJeSaU8OkpAFnGF3350P8.jpg?scale-down-to=1024" alt=""><span class="caption">This is a caption</span></div>
+      <div class="gallery-item"><img src="https://framerusercontent.com/images/aAdRVwjJ2oAllzQClV4s0gcqiY.jpg?scale-down-to=1024" alt=""><span class="caption">This is a caption</span></div>
+      <div class="gallery-item"><img src="https://framerusercontent.com/images/F53Yxh4yk3dXeAEFYsm2pA2TrAY.jpg?scale-down-to=1024" alt=""><span class="caption">This is a caption</span></div>
+    </div>
+    <div class="gallery-column right">
+      <div class="gallery-item"><img src="https://framerusercontent.com/images/7sGOyxkRn43X3SaI2aJgPGU5Adw.jpg?scale-down-to=1024" alt=""><span class="caption">This is a caption</span></div>
+      <div class="gallery-item"><img src="https://framerusercontent.com/images/osPZFJMjYQzx2KPMvjqTFl505c0.jpg?scale-down-to=1024" alt=""><span class="caption">This is a caption</span></div>
+      <div class="gallery-item"><img src="https://framerusercontent.com/images/GCy1SOnfeOv9JiDwsFWkaBoQ.jpg?scale-down-to=2048" alt=""><span class="caption">This is a caption</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Testimonial carousel ============ -->
+<section class="section section-testimonial">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-header-row">
+        <div class="section-header-left reveal">
+          <span class="eyebrow">Reviews</span>
+          <h2>See what our clients have to say about partnering with us on custom architectural projects</h2>
+        </div>
+        <div class="section-header-right reveal reveal-delay-1">
+          <p class="supporting">We let our meticulously crafted work speak for itself, but also value our clients&rsquo; candid experiences collaborating with us.</p>
+          <a class="btn" href="#contact">
+            <span class="btn-label">Be a happy client</span>
+            <span class="btn-arrow"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+      <div class="divider"><div class="fill"></div></div>
+    </div>
+  </div>
+
+  <div class="testimonial-carousel-wrap reveal">
+    <div class="testimonial-track" id="testimonialTrack">
+
+      <article class="testimonial-card">
+        <div class="testimonial-card-top">
+          <div class="testimonial-avatar"><img src="https://framerusercontent.com/images/9bLhdPCA3a3qqCq6G56xApFVgw.jpg?scale-down-to=512" alt=""></div>
+          <h3>The team exceeded our expectations at every turn&hellip;</h3>
+        </div>
+        <div class="testimonial-body">
+          <p>The team exceeded our expectations at every turn. They skillfully translated our vision into an awe-inspiring home our family will cherish for decades."</p>
+          <p class="testimonial-author">-Johny, Homeowner</p>
+        </div>
+        <div class="testimonial-card-bottom">
+          <div class="testimonial-card-bottom-img"><img src="https://framerusercontent.com/images/XIWzGTbchPF3j20s47w5ViA4s3A.jpg?scale-down-to=512" alt=""></div>
+        </div>
+        <div class="testimonial-meta-overlay">
+          <h4>Hillside Oasis Residence</h4>
+          <span class="loc">Malibu, California</span>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-card-top">
+          <div class="testimonial-avatar"><img src="https://framerusercontent.com/images/x33ze80qt7hAtBDu5VA1wwFw5qI.jpg?scale-down-to=512" alt=""></div>
+          <h3>This museum expansion is my new pride and joy&hellip;</h3>
+        </div>
+        <div class="testimonial-body">
+          <p>"I've never worked with architects who balanced creative ingenuity with the ability to pull off ambitious designs - until now. This museum expansion is my new pride and joy."</p>
+          <p class="testimonial-author">- Martin Hayes, Museum Director</p>
+        </div>
+        <div class="testimonial-card-bottom">
+          <div class="testimonial-card-bottom-img"><img src="https://framerusercontent.com/images/MXs4gu4Sr1Qr3Mi9Nv6rKCkiFM.jpg?scale-down-to=512" alt=""></div>
+        </div>
+        <div class="testimonial-meta-overlay">
+          <h4>Art Museum Expansion</h4>
+          <span class="loc">Chicago, Illinois</span>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-card-top">
+          <div class="testimonial-avatar"><img src="https://framerusercontent.com/images/dd62dYQNyyynWEmy6n61i7CltYc.jpg?scale-down-to=512" alt=""></div>
+          <h3>Our LEED Platinum office building now serves as a showcase&hellip;</h3>
+        </div>
+        <div class="testimonial-body">
+          <p>"We interviewed dozens of firms but their passion for imaginative sustainable spaces set them apart. Our LEED Platinum office building now serves as a showcase."</p>
+          <p class="testimonial-author">- Kevin Wu, CEO, CloudSmart</p>
+        </div>
+        <div class="testimonial-card-bottom">
+          <div class="testimonial-card-bottom-img"><img src="https://framerusercontent.com/images/X3SrBexhoQVfaSpIyKcNDVeckgg.jpg?scale-down-to=512" alt=""></div>
+        </div>
+        <div class="testimonial-meta-overlay">
+          <h4>CloudSmart Corporate</h4>
+          <span class="loc">Austin, Texas</span>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-card-top">
+          <div class="testimonial-avatar"><img src="https://framerusercontent.com/images/xR1YTZcMU0J4Lo6OqdKo8QYQYnQ.jpg?scale-down-to=512" alt=""></div>
+          <h3>The team exceeded our expectations at every turn&hellip;</h3>
+        </div>
+        <div class="testimonial-body">
+          <p>"Beyond just creating visually stunning plans, they invested time to truly understand our aspirations. The personalized touches in our new headquarters feel like they designed it just for us."</p>
+          <p class="testimonial-author">- Julia Rivera, President, TerraBotanics</p>
+        </div>
+        <div class="testimonial-card-bottom">
+          <div class="testimonial-card-bottom-img"><img src="https://framerusercontent.com/images/2j5nQ1FFNgFKdce304edLjogeg.jpg?scale-down-to=512" alt=""></div>
+        </div>
+        <div class="testimonial-meta-overlay">
+          <h4>TerraBotanics Grand Botanical</h4>
+          <span class="loc">Portland, Oregon</span>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-card-top">
+          <div class="testimonial-avatar"><img src="https://framerusercontent.com/images/JrUpp0P1gsKndC5AIVCKMLeFEZY.jpg?scale-down-to=512" alt=""></div>
+          <h3>They made what seemed impossible into a signature element I use daily&hellip;</h3>
+        </div>
+        <div class="testimonial-body">
+          <p>"During concepting I joked about wanting a cantilevered rooftop yoga pavilion. They made what seemed impossible into a signature element I use daily."</p>
+          <p class="testimonial-author">- Miguel Cruz, Hotel Owner</p>
+        </div>
+        <div class="testimonial-card-bottom">
+          <div class="testimonial-card-bottom-img"><img src="https://framerusercontent.com/images/iQbRfe5SBQDYjdZbJrs1uhRXYA.jpg?scale-down-to=512" alt=""></div>
+        </div>
+        <div class="testimonial-meta-overlay">
+          <h4>Hillside Oasis Residence</h4>
+          <span class="loc">Malibu, California</span>
+        </div>
+      </article>
+
+    </div>
+    <div class="testimonial-controls">
+      <button id="prevTestimonial" aria-label="Previous">
+        <img src="https://framerusercontent.com/images/6tTbkXggWgQCAJ4DO2QEdXXmgM.svg" alt="Previous">
+      </button>
+      <button id="nextTestimonial" aria-label="Next">
+        <img src="https://framerusercontent.com/images/11KSGbIZoRSg4pjdnUoif6MKHI.svg" alt="Next">
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Blogs ============ -->
+<section class="section section-blogs" id="blogs">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-header-row">
+        <div class="section-header-left reveal">
+          <span class="eyebrow">Blogs and Insights</span>
+          <h2>Insights, thoughts, trends &amp; tips</h2>
+        </div>
+        <div class="section-header-right reveal reveal-delay-1">
+          <p class="supporting">Stay on the pulse of the latest architecture trends and thinking via our collection of insights.</p>
+          <a class="btn" href="blogs.html">
+            <span class="btn-label">Read all blogs</span>
+            <span class="btn-arrow"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+      <div class="divider"><div class="fill"></div></div>
+    </div>
+  </div>
+
+  <div class="blogs-grid reveal-stagger">
+    <a class="blog-card" href="#">
+      <div class="blog-image-wrap"><img src="https://framerusercontent.com/images/Jm14NVS1DWCTSNRjQLkBTLtEKok.jpg?scale-down-to=1024" alt=""></div>
+      <div class="blog-content">
+        <div class="meta">
+          <span class="blog-category">Design Insight</span>
+          <h3 class="blog-title">The Social Impact of Architectural Innovation</h3>
+        </div>
+        <div class="blog-footer">
+          <span class="author">
+            <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="6" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M3 14C3 11 5 9 8 9C11 9 13 11 13 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            Ryan Milford
+          </span>
+          <span class="date">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="10" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M2 7H14M6 2V5M10 2V5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            January 19, 2024
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <a class="blog-card" href="#">
+      <div class="blog-image-wrap"><img src="https://framerusercontent.com/images/MDtFSJaF3MhabVjn223xx2IMk.jpg?scale-down-to=1024" alt=""></div>
+      <div class="blog-content">
+        <div class="meta">
+          <span class="blog-category">Design Inspirations</span>
+          <h3 class="blog-title">Transforming Spaces with Timeless Design</h3>
+        </div>
+        <div class="blog-footer">
+          <span class="author">
+            <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="6" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M3 14C3 11 5 9 8 9C11 9 13 11 13 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            James Miller
+          </span>
+          <span class="date">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="10" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M2 7H14M6 2V5M10 2V5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            January 18, 2024
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <a class="blog-card" href="#">
+      <div class="blog-image-wrap"><img src="https://framerusercontent.com/images/v1ltoVHr1qjuj63noI3YsrEqSNg.jpg?scale-down-to=1024" alt=""></div>
+      <div class="blog-content">
+        <div class="meta">
+          <span class="blog-category">Interior Design Insights</span>
+          <h3 class="blog-title">The Impact of Interior Design on Well-being</h3>
+        </div>
+        <div class="blog-footer">
+          <span class="author">
+            <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="6" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M3 14C3 11 5 9 8 9C11 9 13 11 13 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            James Miller
+          </span>
+          <span class="date">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="10" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M2 7H14M6 2V5M10 2V5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            December 5, 2023
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section section-faq">
+  <div class="faq-container">
+    <div class="faq-heading-block reveal">
+      <span class="eyebrow">Frequently Asked Questions (FAQs)</span>
+      <h2>Everything you may need to know</h2>
+      <p>All insights into our expertise provided in easily digestible nuggets. No question too big or small &mdash; ask away!</p>
+      <a class="btn" href="#contact" style="align-self:flex-start">
+        <span class="btn-label">More Questions?</span>
+        <span class="btn-arrow"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+    <div class="faq-list reveal" id="faqList">
+      <div class="faq-item open">
+        <div class="faq-row">
+          <h3>What architectural design services do you offer?</h3>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="faq-answer"><p>We offer a full range of architectural design services including residential, commercial, landscape, sustainability consulting, interior design, 3D rendering, and construction planning.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-row">
+          <h3>What types of projects have you completed in the past?</h3>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="faq-answer"><p>From boutique residences to landmark commercial buildings, our portfolio spans hospitality, residential, mixed-use, civic, and historic restoration projects.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-row">
+          <h3>What is your architectural design process step-by-step?</h3>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="faq-answer"><p>Our process moves through discovery, concept design, schematic development, design development, construction documents, and construction administration.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-row">
+          <h3>How long does a typical custom home design project take from start to finish?</h3>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="faq-answer"><p>Most custom homes take 12&ndash;18 months from initial design through completed construction, depending on scope and site complexity.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-row">
+          <h3>Do you offer virtual 3D walkthroughs or renderings of design concepts?</h3>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="faq-answer"><p>Yes &mdash; every project includes photorealistic renderings and interactive 3D walkthroughs so you can experience the design before construction.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-row">
+          <h3>What makes your firm's design style and approach unique?</h3>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="faq-answer"><p>We blend engineering rigor with artistic originality, focusing on context-driven, sustainable designs tailored to each client's vision.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-row">
+          <h3>Do you have expertise working with green building techniques and sustainability goals?</h3>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="faq-answer"><p>Absolutely &mdash; our team includes LEED accredited professionals and we've delivered multiple LEED Platinum and Net Zero certified buildings.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-row">
+          <h3>Are you able to work within specific budget limitations for a project?</h3>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="faq-answer"><p>Yes &mdash; we work transparently with your budget from day one and provide value-engineered alternatives where appropriate.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-row">
+          <h3>How do you involve clients throughout the design process?</h3>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="faq-answer"><p>Through regular collaborative workshops, milestone reviews, and shared design platforms so you stay informed at every phase.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-row">
+          <h3>How can I customize my building project if I have a very specific vision in mind?</h3>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="faq-answer"><p>Bring us your sketches, mood boards, references &mdash; anything. Our discovery sessions exist to translate your specific vision into a buildable design.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-row">
+          <h3>Do you handle securing permits and overseeing construction yourself?</h3>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="faq-answer"><p>Yes &mdash; we manage permitting, contractor coordination, and construction administration through to project closeout.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-row">
+          <h3>How much does it cost to hire you for architectural design services?</h3>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="faq-answer"><p>Our fees vary by project scope and complexity. We offer transparent fee structures &mdash; reach out for a tailored estimate.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-row">
+          <h3>Have you won any industry awards or recognition for your work?</h3>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="faq-answer"><p>Our work has been honored with 9 prestigious design awards across residential, commercial, and sustainability categories.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="footer" id="contact">
+  <div class="footer-bg">
+    <img src="https://framerusercontent.com/images/3MXzXUyPwMnOfqv8vvWLea0.png" alt="">
+  </div>
+
+  <div class="footer-ticker-wrap">
+    <div class="footer-ticker">
+      <div class="footer-ticker-item"><span>Let's talk</span><span class="dot"></span><span>Ask a question</span><span class="dot"></span><span>Get in touch</span><span class="dot"></span></div>
+      <div class="footer-ticker-item" aria-hidden="true"><span>Let's talk</span><span class="dot"></span><span>Ask a question</span><span class="dot"></span><span>Get in touch</span><span class="dot"></span></div>
+    </div>
+  </div>
+
+  <div class="footer-contact">
+    <div class="footer-contact-row">
+      <div class="footer-contact-left">
+        <div class="footer-contact-item">
+          <div class="label-row">
+            <svg viewBox="0 0 17 18" fill="none"><path d="M3 4C3 3 4 2 5 2H6.5C7 2 7.5 2.5 7.5 3L8 5C8 5.3 7.8 5.6 7.5 5.8L6.5 6.5C7 8 9 10 10.5 10.5L11.2 9.5C11.4 9.2 11.7 9 12 9L14 9.5C14.5 9.5 15 10 15 10.5V12C15 13 14 14 13 14C7.5 14 3 9.5 3 4Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            <span>Phone</span>
+          </div>
+          <p><a href="tel:2175550134">(217) 555-0134</a></p>
+        </div>
+        <div class="footer-contact-item">
+          <div class="label-row">
+            <svg viewBox="0 0 17 18" fill="none"><path d="M8.5 16C12 12 14 9 14 7C14 4 11.5 1.5 8.5 1.5C5.5 1.5 3 4 3 7C3 9 5 12 8.5 16Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="8.5" cy="7" r="2" stroke="currentColor" stroke-width="1.4"/></svg>
+            <span>Visit Us</span>
+          </div>
+          <p>Acme Architecture 123 Main St Springfield, IL 62701</p>
+          <a href="#" class="see-map">See on Map <svg viewBox="0 0 11 14" width="11" height="14" fill="none"><path d="M2 2L8 7L2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="footer-contact-item">
+          <div class="label-row">
+            <svg viewBox="0 0 17 18" fill="none"><rect x="2" y="4" width="13" height="10" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M2 5L8.5 10L15 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <span>Email</span>
+          </div>
+          <p><a href="mailto:contact@acmearchitecture.com">contact@acmearchitecture.com</a></p>
+        </div>
+      </div>
+
+      <div class="footer-form-wrap">
+        <div class="footer-form-header">
+          <h3>Get a free quote</h3>
+          <p>We're excited to connect with you! Fill out the form below, and let's embark on the journey of turning your vision into a reality.</p>
+        </div>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks! We\\'ll be in touch.');">
+          <div class="form-row">
+            <label>Name<input type="text" name="name" placeholder="Jane Smith" required></label>
+            <label>Phone<input type="tel" name="phone" placeholder="(123) 456-7890"></label>
+          </div>
+          <label>Email<input type="email" name="email" placeholder="jane@example.com" required></label>
+          <label>Project Type
+            <select name="type" required>
+              <option value="" disabled selected>Select&hellip;</option>
+              <option>Residential</option><option>Commercial</option><option>Office</option>
+              <option>Retail</option><option>Hospitality</option><option>Other</option>
+            </select>
+          </label>
+          <div class="form-row">
+            <label>Location<input type="text" name="location" placeholder="City, State"></label>
+            <label>Budget<input type="text" name="budget" placeholder="Enter your budget"></label>
+            <label>Project Size (SQFT)<input type="text" name="size" placeholder="e.g., 1500"></label>
+          </div>
+          <div class="form-row">
+            <label>Preferred Start Date<input type="date" name="start"></label>
+            <label>Desired Completion Date<input type="date" name="end"></label>
+          </div>
+          <label>Message<textarea name="message" placeholder="Write your message here"></textarea></label>
+          <button type="submit">Request Free Estimate</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-divider-wrap">
+      <div class="footer-divider"><div class="fill"></div></div>
+    </div>
+
+    <div class="footer-columns reveal-stagger">
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <div class="links">
+          <a href="#">Home</a><a href="about.html">About</a><a href="#">Services</a><a href="#projects">Projects</a>
+          <a href="gallery.html">Gallery</a><a href="#blogs">Blog</a><a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <div class="links">
+          <a href="#">Architectural Design</a><a href="#">Interior Design</a><a href="#">Urban Planning</a>
+          <a href="#">Landscaping Design</a><a href="#">Construction Management</a><a href="#">Building Renovation</a>
+          <a href="#">Lighting Design</a><a href="#">Feasibility Studies</a><a href="#">Building Code Compliance</a>
+          <a href="#">3D Visualization</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Projects</h4>
+        <div class="links">
+          <a href="#">All</a><a href="#">Hospitality</a><a href="#">Residential</a>
+          <a href="#">Private Residence</a><a href="#">Commercial</a><a href="#">Historic</a>
+        </div>
+      </div>
+      <div class="footer-col template-legal">
+        <div>
+          <h4>Template</h4>
+          <div class="links"><a href="#">Styleguide</a><a href="#">404</a></div>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <div class="links"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-newsletter">
+      <h4>Subscribe to our newsletter</h4>
+      <form onsubmit="event.preventDefault(); alert('Subscribed!');">
+        <input type="email" placeholder="name@email.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-social-block">
+    <h3>Follow us on:</h3>
+    <div class="social-icons">
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><path d="M14 21V13H16.5L17 10H14V8C14 7.5 14.5 7 15 7H17V4H15C13 4 11 5.5 11 8V10H9V13H11V21H14Z" fill="currentColor"/></svg></span><span>Facebook</span></a>
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><rect x="6" y="6" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.6"/><circle cx="13" cy="13" r="3.5" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="9" r="0.8" fill="currentColor"/></svg></span><span>Instagram</span></a>
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><rect x="6" y="6" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M10 11V17M10 9V9M14 17V13C14 11.5 15.5 11 16.5 12C17 12.5 17 13.5 17 14V17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span>Linkedin</span></a>
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><rect x="5" y="8" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M11 11L15 13L11 15V11Z" fill="currentColor"/></svg></span><span>Youtube</span></a>
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><path d="M6 6L20 20M20 6L6 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>X (Twitter)</span></a>
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><path d="M13 6V17C13 18.5 11.5 20 10 20C8.5 20 7 18.5 7 17C7 15.5 8.5 14 10 14M13 6V11C15 11 17 9.5 17 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Tiktok</span></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <a href="#">&copy; Template by RealMehedi</a>
+    <a href="#">Cloned home page</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# Local Claude Code settings (machine-specific permissions/paths)
+.claude/settings.local.json
+
+# Reference artifact: scraped copy of the original Framer template (not part of the site)
+_live.html
+
+# OS / editor cruft
+Thumbs.db
+.DS_Store

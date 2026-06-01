@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery &mdash; The Zenith Visions</title>
+<meta name="description" content="A scrollable visual archive from The Zenith Visions &mdash; finished buildings, in-progress sites, details we love, and the moments we caught between meetings.">
+<link rel="icon" href="https://framerusercontent.com/images/wPRDM7Nvophq3hABcrAHjVhyZtw.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://framerusercontent.com" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-gallery">
+
+<!-- ============ Navigation ============ -->
+<nav class="nav" id="nav">
+  <div class="nav-bar">
+    <a href="index.html" class="nav-logo" aria-label="The Zenith Visions home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 26 26" fill="none"><path d="M4 21V11L13 4L22 11V21H16V15H10V21H4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="logo-text">The Zenith Visions</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <div class="nav-dropdown">
+      <a href="services.html">Services <span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></a>
+      <div class="nav-dropdown-menu" role="menu">
+        <a href="services.html" class="menu-all"><span class="menu-num">&#9679;</span>View all services</a>
+        <a href="service-architectural-design.html"><span class="menu-num">01</span>Architectural Design</a>
+        <a href="service-interior-design.html"><span class="menu-num">02</span>Interior Design</a>
+        <a href="service-urban-planning.html"><span class="menu-num">03</span>Urban Planning</a>
+        <a href="service-landscaping-design.html"><span class="menu-num">04</span>Landscaping Design</a>
+        <a href="service-construction-management.html"><span class="menu-num">05</span>Construction Management</a>
+        <a href="service-building-renovation.html"><span class="menu-num">06</span>Building Renovation</a>
+        <a href="service-lighting-design.html"><span class="menu-num">07</span>Lighting Design</a>
+        <a href="service-feasibility-studies.html"><span class="menu-num">08</span>Feasibility Studies</a>
+        <a href="service-building-code.html"><span class="menu-num">09</span>Building Code Compliance</a>
+        <a href="service-3d-visualization.html"><span class="menu-num">10</span>3D Visualization</a>
+      </div>
+    </div>
+    <a href="projects.html">Projects</a>
+    <a href="gallery.html" class="active">Gallery</a>
+    <a href="blogs.html">Blogs</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-cta">
+    <a class="btn" href="contact.html">
+      <span class="btn-label">Get Template</span>
+      <span class="btn-arrow"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ============ Gallery Hero ============ -->
+<section class="gallery-hero">
+  <div class="gallery-hero-inner">
+    <span class="eyebrow">Gallery</span>
+    <h1 class="reveal-words reveal-mask">Our Gallery</h1>
+    <p class="gallery-hero-sub reveal reveal-delay-3">A colorful showcase of the magic we&rsquo;ve crafted over the years. Join us on this journey through our built works, in-progress sites, and the small details we love most.</p>
+  </div>
+</section>
+
+<!-- ============ Gallery Grid ============ -->
+<section class="gallery-grid-section">
+  <div class="gallery-page-grid reveal-stagger" id="galleryGrid">
+
+    <button class="gallery-page-item" data-category="exteriors" data-span="wide" data-full="https://framerusercontent.com/images/IjLH9urJ0E2GpjfH5aEXEj24LhQ.jpg?scale-down-to=2048" data-caption="Serenity Suites &mdash; coastal villas at dusk">
+      <img src="https://framerusercontent.com/images/IjLH9urJ0E2GpjfH5aEXEj24LhQ.jpg?scale-down-to=1024" alt="Serenity Suites coastal villas at dusk" loading="lazy">
+      <span class="caption">Serenity Suites &mdash; coastal villas at dusk</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="interiors" data-full="https://framerusercontent.com/images/IyRXmFf7Oogbpz3cI2Cx1swwiw0.jpg?scale-down-to=2048" data-caption="Gastronome Haven &mdash; restored warehouse dining room">
+      <img src="https://framerusercontent.com/images/IyRXmFf7Oogbpz3cI2Cx1swwiw0.jpg?scale-down-to=1024" alt="Gastronome Haven restored warehouse dining room" loading="lazy">
+      <span class="caption">Gastronome Haven &mdash; restored warehouse dining room</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="exteriors" data-full="https://framerusercontent.com/images/5FXqnLXRsByI0LcvscZSAlbvkC8.jpg?scale-down-to=2048" data-caption="Serene Haven Residences &mdash; vineyard sanctuary">
+      <img src="https://framerusercontent.com/images/5FXqnLXRsByI0LcvscZSAlbvkC8.jpg?scale-down-to=1024" alt="Serene Haven Residences vineyard sanctuary" loading="lazy">
+      <span class="caption">Serene Haven Residences &mdash; vineyard sanctuary</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="details" data-span="tall" data-full="https://framerusercontent.com/images/CF3upq88N8a3nkssGgl1anceOQ.jpg?scale-down-to=2048" data-caption="Brass and oak joinery study">
+      <img src="https://framerusercontent.com/images/CF3upq88N8a3nkssGgl1anceOQ.jpg?scale-down-to=1024" alt="Brass and oak joinery study" loading="lazy">
+      <span class="caption">Brass and oak joinery study</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="moments" data-full="https://framerusercontent.com/images/uCiniOyAsvog4Qxs8ZPiEHAdSg.jpg?scale-down-to=2048" data-caption="Studio morning &mdash; light over the drafting table">
+      <img src="https://framerusercontent.com/images/uCiniOyAsvog4Qxs8ZPiEHAdSg.jpg?scale-down-to=1024" alt="Studio morning light over the drafting table" loading="lazy">
+      <span class="caption">Studio morning &mdash; light over the drafting table</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="exteriors" data-full="https://framerusercontent.com/images/r0lEYWOD4InIVR8JeK6gjQtztE.jpg?scale-down-to=2048" data-caption="Half Moon Bay Library &mdash; reading room curve">
+      <img src="https://framerusercontent.com/images/r0lEYWOD4InIVR8JeK6gjQtztE.jpg?scale-down-to=1024" alt="Half Moon Bay Library reading room curve" loading="lazy">
+      <span class="caption">Half Moon Bay Library &mdash; reading room curve</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="interiors" data-span="wide" data-full="https://framerusercontent.com/images/k3RG8WTNJJOObViGGqX4GsVskU.jpg?scale-down-to=2048" data-caption="Open kitchen &mdash; centerpiece in cast iron">
+      <img src="https://framerusercontent.com/images/k3RG8WTNJJOObViGGqX4GsVskU.jpg?scale-down-to=1024" alt="Open kitchen centerpiece in cast iron" loading="lazy">
+      <span class="caption">Open kitchen &mdash; centerpiece in cast iron</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="exteriors" data-full="https://framerusercontent.com/images/H2DJuheJeSaU8OkpAFnGF3350P8.jpg?scale-down-to=2048" data-caption="Skyloft Office Tower &mdash; timber crown">
+      <img src="https://framerusercontent.com/images/H2DJuheJeSaU8OkpAFnGF3350P8.jpg?scale-down-to=1024" alt="Skyloft Office Tower timber crown" loading="lazy">
+      <span class="caption">Skyloft Office Tower &mdash; timber crown</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="interiors" data-full="https://framerusercontent.com/images/aAdRVwjJ2oAllzQClV4s0gcqiY.jpg?scale-down-to=2048" data-caption="Twilight Loft Apartments &mdash; sawtooth roof light">
+      <img src="https://framerusercontent.com/images/aAdRVwjJ2oAllzQClV4s0gcqiY.jpg?scale-down-to=1024" alt="Twilight Loft Apartments sawtooth roof light" loading="lazy">
+      <span class="caption">Twilight Loft Apartments &mdash; sawtooth roof light</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="exteriors" data-span="tall" data-full="https://framerusercontent.com/images/F53Yxh4yk3dXeAEFYsm2pA2TrAY.jpg?scale-down-to=2048" data-caption="The Ember Pavilion &mdash; alpine timber and steel">
+      <img src="https://framerusercontent.com/images/F53Yxh4yk3dXeAEFYsm2pA2TrAY.jpg?scale-down-to=1024" alt="The Ember Pavilion alpine timber and steel" loading="lazy">
+      <span class="caption">The Ember Pavilion &mdash; alpine timber and steel</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="details" data-full="https://framerusercontent.com/images/7sGOyxkRn43X3SaI2aJgPGU5Adw.jpg?scale-down-to=2048" data-caption="Board-formed concrete &mdash; texture study">
+      <img src="https://framerusercontent.com/images/7sGOyxkRn43X3SaI2aJgPGU5Adw.jpg?scale-down-to=1024" alt="Board-formed concrete texture study" loading="lazy">
+      <span class="caption">Board-formed concrete &mdash; texture study</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="moments" data-full="https://framerusercontent.com/images/osPZFJMjYQzx2KPMvjqTFl505c0.jpg?scale-down-to=2048" data-caption="On site &mdash; pre-pour walkthrough">
+      <img src="https://framerusercontent.com/images/osPZFJMjYQzx2KPMvjqTFl505c0.jpg?scale-down-to=1024" alt="On site pre-pour walkthrough" loading="lazy">
+      <span class="caption">On site &mdash; pre-pour walkthrough</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="details" data-full="https://framerusercontent.com/images/GCy1SOnfeOv9JiDwsFWkaBoQ.jpg?scale-down-to=2048" data-caption="Stair detail &mdash; steel stringer and oak treads">
+      <img src="https://framerusercontent.com/images/GCy1SOnfeOv9JiDwsFWkaBoQ.jpg?scale-down-to=1024" alt="Stair detail steel stringer and oak treads" loading="lazy">
+      <span class="caption">Stair detail &mdash; steel stringer and oak treads</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="sketches" data-span="wide" data-full="https://framerusercontent.com/images/XIWzGTbchPF3j20s47w5ViA4s3A.jpg?scale-down-to=2048" data-caption="Heritage Haven &mdash; restoration elevation sketch">
+      <img src="https://framerusercontent.com/images/XIWzGTbchPF3j20s47w5ViA4s3A.jpg?scale-down-to=1024" alt="Heritage Haven restoration elevation sketch" loading="lazy">
+      <span class="caption">Heritage Haven &mdash; restoration elevation sketch</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="exteriors" data-full="https://framerusercontent.com/images/MXs4gu4Sr1Qr3Mi9Nv6rKCkiFM.jpg?scale-down-to=2048" data-caption="Art Museum Expansion &mdash; cantilevered glass volume">
+      <img src="https://framerusercontent.com/images/MXs4gu4Sr1Qr3Mi9Nv6rKCkiFM.jpg?scale-down-to=1024" alt="Art Museum Expansion cantilevered glass volume" loading="lazy">
+      <span class="caption">Art Museum Expansion &mdash; cantilevered glass volume</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="exteriors" data-full="https://framerusercontent.com/images/X3SrBexhoQVfaSpIyKcNDVeckgg.jpg?scale-down-to=2048" data-caption="CloudSmart Corporate HQ &mdash; daylight courtyard">
+      <img src="https://framerusercontent.com/images/X3SrBexhoQVfaSpIyKcNDVeckgg.jpg?scale-down-to=1024" alt="CloudSmart Corporate HQ daylight courtyard" loading="lazy">
+      <span class="caption">CloudSmart Corporate HQ &mdash; daylight courtyard</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="exteriors" data-span="tall" data-full="https://framerusercontent.com/images/2j5nQ1FFNgFKdce304edLjogeg.jpg?scale-down-to=2048" data-caption="TerraBotanics Grand Botanical &mdash; mass-timber arches">
+      <img src="https://framerusercontent.com/images/2j5nQ1FFNgFKdce304edLjogeg.jpg?scale-down-to=1024" alt="TerraBotanics Grand Botanical mass-timber arches" loading="lazy">
+      <span class="caption">TerraBotanics Grand Botanical &mdash; mass-timber arches</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="interiors" data-full="https://framerusercontent.com/images/iQbRfe5SBQDYjdZbJrs1uhRXYA.jpg?scale-down-to=2048" data-caption="Quiet lounge &mdash; hearth at the heart of the room">
+      <img src="https://framerusercontent.com/images/iQbRfe5SBQDYjdZbJrs1uhRXYA.jpg?scale-down-to=1024" alt="Quiet lounge hearth at the heart of the room" loading="lazy">
+      <span class="caption">Quiet lounge &mdash; hearth at the heart of the room</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="exteriors" data-full="https://framerusercontent.com/images/wls2jnSU5nNUIgCWgJsLSDZRW0.jpg?scale-down-to=2048" data-caption="Hillside Oasis Residence &mdash; cliffside cantilever">
+      <img src="https://framerusercontent.com/images/wls2jnSU5nNUIgCWgJsLSDZRW0.jpg?scale-down-to=1024" alt="Hillside Oasis Residence cliffside cantilever" loading="lazy">
+      <span class="caption">Hillside Oasis Residence &mdash; cliffside cantilever</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="details" data-full="https://framerusercontent.com/images/9bLhdPCA3a3qqCq6G56xApFVgw.jpg?scale-down-to=2048" data-caption="Rusted-steel cladding &mdash; weathered patina">
+      <img src="https://framerusercontent.com/images/9bLhdPCA3a3qqCq6G56xApFVgw.jpg?scale-down-to=1024" alt="Rusted-steel cladding weathered patina" loading="lazy">
+      <span class="caption">Rusted-steel cladding &mdash; weathered patina</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="moments" data-span="wide" data-full="https://framerusercontent.com/images/x33ze80qt7hAtBDu5VA1wwFw5qI.jpg?scale-down-to=2048" data-caption="Topping-out &mdash; the crew on the rooftop">
+      <img src="https://framerusercontent.com/images/x33ze80qt7hAtBDu5VA1wwFw5qI.jpg?scale-down-to=1024" alt="Topping-out the crew on the rooftop" loading="lazy">
+      <span class="caption">Topping-out &mdash; the crew on the rooftop</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="sketches" data-full="https://framerusercontent.com/images/dd62dYQNyyynWEmy6n61i7CltYc.jpg?scale-down-to=2048" data-caption="Early concept &mdash; site section in graphite">
+      <img src="https://framerusercontent.com/images/dd62dYQNyyynWEmy6n61i7CltYc.jpg?scale-down-to=1024" alt="Early concept site section in graphite" loading="lazy">
+      <span class="caption">Early concept &mdash; site section in graphite</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="interiors" data-full="https://framerusercontent.com/images/xR1YTZcMU0J4Lo6OqdKo8QYQYnQ.jpg?scale-down-to=2048" data-caption="Period plasterwork &mdash; restored ceiling cornice">
+      <img src="https://framerusercontent.com/images/xR1YTZcMU0J4Lo6OqdKo8QYQYnQ.jpg?scale-down-to=1024" alt="Period plasterwork restored ceiling cornice" loading="lazy">
+      <span class="caption">Period plasterwork &mdash; restored ceiling cornice</span>
+    </button>
+
+    <button class="gallery-page-item" data-category="moments" data-full="https://framerusercontent.com/images/JrUpp0P1gsKndC5AIVCKMLeFEZY.jpg?scale-down-to=2048" data-caption="Site visit &mdash; framing in golden hour">
+      <img src="https://framerusercontent.com/images/JrUpp0P1gsKndC5AIVCKMLeFEZY.jpg?scale-down-to=1024" alt="Site visit framing in golden hour" loading="lazy">
+      <span class="caption">Site visit &mdash; framing in golden hour</span>
+    </button>
+
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="gallery-cta-section">
+  <div class="gallery-cta-inner reveal">
+    <span class="eyebrow">Work with us</span>
+    <h2>See yourself here?</h2>
+    <p>Let&rsquo;s add your project to next year&rsquo;s gallery.</p>
+    <a class="btn" href="contact.html">
+      <span class="btn-label">Start a project</span>
+      <span class="btn-arrow"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ Lightbox ============ -->
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-label="Gallery image viewer">
+  <button class="lightbox-close" id="galleryLightboxClose" aria-label="Close">&times;</button>
+  <button class="lightbox-prev" id="galleryLightboxPrev" aria-label="Previous image">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <button class="lightbox-next" id="galleryLightboxNext" aria-label="Next image">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <figure class="lightbox-figure">
+    <img id="galleryLightboxImage" src="" alt="">
+    <figcaption id="galleryLightboxCaption"></figcaption>
+  </figure>
+  <span class="lightbox-counter" id="galleryLightboxCounter">1 / 24</span>
+</div>
+
+<!-- ============ Footer ============ -->
+<footer class="footer">
+  <div class="footer-bg">
+    <img src="https://framerusercontent.com/images/3MXzXUyPwMnOfqv8vvWLea0.png" alt="">
+  </div>
+
+  <div class="footer-ticker-wrap">
+    <div class="footer-ticker">
+      <div class="footer-ticker-item"><span>Let's talk</span><span class="dot"></span><span>Ask a question</span><span class="dot"></span><span>Get in touch</span><span class="dot"></span></div>
+      <div class="footer-ticker-item" aria-hidden="true"><span>Let's talk</span><span class="dot"></span><span>Ask a question</span><span class="dot"></span><span>Get in touch</span><span class="dot"></span></div>
+    </div>
+  </div>
+
+  <div class="footer-contact">
+    <div class="footer-divider-wrap">
+      <div class="footer-divider"><div class="fill"></div></div>
+    </div>
+
+    <div class="footer-columns reveal-stagger">
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <div class="links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="index.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blogs.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Typology</h4>
+        <div class="links">
+          <a href="projects.html">All projects</a>
+          <a href="projects.html">Hospitality</a>
+          <a href="projects.html">Residential</a>
+          <a href="projects.html">Private Residence</a>
+          <a href="projects.html">Commercial</a>
+          <a href="projects.html">Historic</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Topics</h4>
+        <div class="links">
+          <a href="blogs.html">All articles</a>
+          <a href="blogs.html">Design Insight</a>
+          <a href="blogs.html">Sustainability</a>
+          <a href="blogs.html">Interior</a>
+          <a href="blogs.html">Heritage</a>
+          <a href="blogs.html">Process</a>
+        </div>
+      </div>
+      <div class="footer-col template-legal">
+        <div>
+          <h4>Template</h4>
+          <div class="links"><a href="index.html">Styleguide</a><a href="index.html">404</a></div>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <div class="links"><a href="index.html">Privacy Policy</a><a href="index.html">Terms &amp; Conditions</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-newsletter">
+      <h4>Subscribe to our newsletter</h4>
+      <form onsubmit="event.preventDefault(); alert('Subscribed!');">
+        <input type="email" placeholder="name@email.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-social-block">
+    <h3>Follow us on:</h3>
+    <div class="social-icons">
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><path d="M14 21V13H16.5L17 10H14V8C14 7.5 14.5 7 15 7H17V4H15C13 4 11 5.5 11 8V10H9V13H11V21H14Z" fill="currentColor"/></svg></span><span>Facebook</span></a>
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><rect x="6" y="6" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.6"/><circle cx="13" cy="13" r="3.5" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="9" r="0.8" fill="currentColor"/></svg></span><span>Instagram</span></a>
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><rect x="6" y="6" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M10 11V17M10 9V9M14 17V13C14 11.5 15.5 11 16.5 12C17 12.5 17 13.5 17 14V17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span>Linkedin</span></a>
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><rect x="5" y="8" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M11 11L15 13L11 15V11Z" fill="currentColor"/></svg></span><span>Youtube</span></a>
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><path d="M6 6L20 20M20 6L6 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>X (Twitter)</span></a>
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><path d="M13 6V17C13 18.5 11.5 20 10 20C8.5 20 7 18.5 7 17C7 15.5 8.5 14 10 14M13 6V11C15 11 17 9.5 17 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Tiktok</span></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <a href="index.html">&copy; Template by RealMehedi</a>
+    <a href="projects.html">Selected works</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
