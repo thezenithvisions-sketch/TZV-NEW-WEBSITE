@@ -6808,7 +6808,7 @@ body.page-about {
 }
 }
 
-/* ====== BAND / WATERMARK additions from current about-page work ====== */
+/* ====== BAND / WATERMARK additions from current about-page work ======
    MISSION + VISION as two distinct full-width bands
    - .band--mission : dark bg, image LEFT, ghosted text watermark
    - .band--vision  : cream bg, image RIGHT, bright white watermark
@@ -7099,4 +7099,213 @@ body.page-about {
 .brands-testimonial-ticker .ticker-track > .ticker-group,
 .brands-testimonial-ticker .ticker-track > span {
   flex-shrink: 0;
+}
+
+/* ============================================================
+   Legal pages — Privacy Policy & Terms & Conditions
+   ============================================================ */
+.page-legal { background: var(--color-page); }
+.legal-hero {
+  padding: 130px 50px 46px;
+  text-align: center;
+}
+.legal-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.legal-hero h1 {
+  font-size: clamp(40px, 5vw, 70px);
+  max-width: 16ch;
+  text-wrap: balance;
+}
+.legal-hero-sub {
+  max-width: 640px;
+  font-size: 18px;
+  color: var(--color-text-muted);
+}
+.legal-meta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  justify-content: center;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--color-text-50);
+}
+.legal-section { padding: 16px 50px 110px; }
+.legal-wrap { max-width: 860px; margin: 0 auto; }
+.legal-intro {
+  font-size: 18px;
+  line-height: 1.65em;
+  color: var(--color-text-muted);
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--color-border);
+}
+.legal-block { padding: 30px 0; border-bottom: 1px solid var(--color-border); }
+.legal-block h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  text-transform: none;
+  margin-bottom: 14px;
+}
+.legal-num {
+  font-family: var(--font-eyebrow);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--color-text-50);
+}
+.legal-block p { color: var(--color-text-muted); line-height: 1.7em; margin-bottom: 12px; }
+.legal-block p:last-child { margin-bottom: 0; }
+.legal-block ul { margin: 0 0 12px; padding-left: 20px; color: var(--color-text-muted); line-height: 1.7em; }
+.legal-block li { margin-bottom: 8px; }
+.legal-block strong { color: var(--color-text); font-weight: 600; }
+.legal-contact {
+  margin-top: 40px;
+  padding: 34px 36px;
+  border-radius: 18px;
+  background: var(--color-dark);
+  color: var(--color-cream);
+}
+.legal-contact h2 {
+  color: var(--color-cream);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+}
+.legal-contact p { color: var(--color-cream-50); line-height: 1.7em; margin-bottom: 6px; }
+.legal-contact a { color: var(--color-cream); text-decoration: underline; text-underline-offset: 3px; }
+.legal-contact a:hover { opacity: 0.75; }
+@media (max-width: 809.98px) {
+  .legal-hero { padding: 100px 20px 36px; }
+  .legal-section { padding: 8px 20px 72px; }
+  .legal-contact { padding: 26px 22px; }
+}
+
+/* ============================================================
+   Software ticker — continuous horizontal scroll
+   Grey/desaturated by default; hover the strip to pause and colourize.
+   ============================================================ */
+.software-section { padding: 100px 0 90px; background: var(--color-page); overflow: hidden; }
+.software-section-inner { max-width: var(--max-wide); margin: 0 auto 40px; padding: 0 50px; }
+.software-track-wrap { position: relative; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%); }
+.software-track {
+  display: flex;
+  gap: 64px;
+  width: max-content;
+  align-items: center;
+  animation: software-marquee 55s linear infinite;
+  will-change: transform;
+}
+.software-track-wrap:hover .software-track { animation-play-state: paused; }
+.software-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(22px, 2.3vw, 32px);
+  letter-spacing: -0.015em;
+  color: rgba(48, 48, 48, 0.32);
+  filter: grayscale(1);
+  transition: color 0.45s var(--ease-out), filter 0.45s var(--ease-out), transform 0.45s var(--ease-out);
+  white-space: nowrap;
+  user-select: none;
+}
+.software-track-wrap:hover .software-item {
+  color: var(--color-dark);
+  filter: grayscale(0);
+}
+.software-track-wrap:hover .software-item:hover { transform: translateY(-2px); }
+.software-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+@keyframes software-marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+@media (max-width: 809.98px) {
+  .software-section { padding: 70px 0 60px; }
+  .software-section-inner { padding: 0 20px; margin-bottom: 28px; }
+  .software-track { gap: 40px; animation-duration: 40s; }
+  .software-item { font-size: 20px; }
+  .software-dot { width: 8px; height: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .software-track { animation: none; }
+  .software-item { color: var(--color-dark); filter: grayscale(0); }
+}
+
+/* ============================================================
+   FAQ accordion — pill list with chevron toggle
+   ============================================================ */
+.faq-section { padding: 110px 50px 100px; background: var(--color-page); }
+.faq-inner { max-width: 980px; margin: 0 auto; }
+.faq-inner .section-header { margin-bottom: 50px; }
+.faq-list { display: flex; flex-direction: column; gap: 14px; }
+.faq-item {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.faq-item:hover { border-color: rgba(20, 20, 20, 0.22); }
+.faq-item[open] { border-color: rgba(20, 20, 20, 0.3); box-shadow: 0 10px 24px rgba(20, 20, 20, 0.05); }
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--color-dark);
+  user-select: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translate(-2px, -2px);
+  margin-right: 6px;
+  transition: transform 0.35s var(--ease-out);
+  flex-shrink: 0;
+}
+.faq-item[open] summary::after { transform: rotate(-135deg) translate(-2px, -2px); }
+.faq-answer {
+  padding: 0 28px 24px;
+  color: var(--color-text-muted);
+  line-height: 1.65em;
+  font-size: 15px;
+  max-width: 720px;
+}
+@media (max-width: 809.98px) {
+  .faq-section { padding: 70px 20px 80px; }
+  .faq-inner .section-header { margin-bottom: 32px; }
+  .faq-item summary { padding: 18px 22px; font-size: 15px; gap: 12px; }
+  .faq-answer { padding: 0 22px 18px; font-size: 14px; }
 }

@@ -24,19 +24,6 @@
 .page-about [data-animate="word-stagger"] .word{ opacity:1 !important; transform:none !important; filter:none !important; }
 @media (prefers-reduced-motion: reduce){ .page-about [data-animate]{ animation:none; } }
 
-/* Neutralize the pinned horizontal "Our Story" -> normal horizontal scroll strip (no scroll hijack) */
-.page-about .story-pin-outer,
-.page-about .story-pin-inner,
-.page-about .story-pin-content{ height:auto !important; min-height:0 !important; position:static !important; overflow:visible !important; width:auto !important; max-width:100% !important; transform:none !important; }
-.page-about .story-track{
-  transform:none !important;
-  display:flex !important; flex-wrap:wrap !important; gap:20px;
-  width:auto !important; max-width:1180px; margin:16px auto 0; padding:0 50px;
-  overflow:visible !important;
-}
-.page-about .story-card{ flex:1 1 280px; max-width:360px; }
-.page-about .story-progress{ display:none !important; }
-@media (max-width:809.98px){ .page-about .story-track{ padding:0 20px; } }
 </style>
 </head>
 <body class="page-about">
@@ -128,11 +115,11 @@
     <p class="band-body" data-animate="fade-up">We make BIM effortless for the teams we serve, delivering precise, coordinated models and documentation that cut design uncertainty, speed up delivery and remove costly rework. Quality is the floor, not the ceiling.</p>
     <div class="mv-attribution">
       <div class="mv-portrait">
-        <img src="https://framerusercontent.com/images/6AvQLp70TTURVLZH4tuM41UF0Q.png" alt="Rich Wilson portrait">
+        <img src="https://framerusercontent.com/images/6AvQLp70TTURVLZH4tuM41UF0Q.png" alt="Abhijeet Verma portrait">
       </div>
       <div class="mv-attribution-meta">
-        <span class="mv-name">Rich Wilson</span>
-        <span class="mv-role">CEO, The Zenith Visions</span>
+        <span class="mv-name">Abhijeet Verma</span>
+        <span class="mv-role">Founder &amp; CEO, The Zenith Visions</span>
       </div>
     </div>
   </div>
@@ -152,86 +139,50 @@
   </div>
 </section>
 
-<!-- ============ 5. Brand Collaborations ============ -->
-<section class="brands-section" id="brands">
-  <div class="brands-section-inner">
+<!-- ============ 5. Software & Tools ticker ============ -->
+<section class="software-section" id="software">
+  <div class="software-section-inner">
     <div class="section-header">
       <div class="section-header-row">
         <div class="section-header-left" data-animate="fade-up">
-          <span class="eyebrow">Brand Collaborations</span>
-          <h2>Esteemed Clients over the Years</h2>
+          <span class="eyebrow">Software &amp; Technology</span>
+          <h2>Tools we work with</h2>
         </div>
         <div class="section-header-right" data-animate="fade-up" data-delay="120">
-          <p class="supporting">A short list of the firms whose projects and teams we have helped deliver.</p>
+          <p class="supporting">The platforms we use to deliver coordinated, construction-ready BIM. Hover the strip to pause it and bring the logos to life.</p>
         </div>
       </div>
       <div class="divider"><div class="fill"></div></div>
     </div>
-
-    <div class="brands-grid">
-      <div class="brand-cell" data-animate="fade-up" data-delay="0"><img src="https://framerusercontent.com/images/YuN93JWcWdSzH0odGho5bcZyHOg.svg" alt="Brand 1"></div>
-      <div class="brand-cell" data-animate="fade-up" data-delay="80"><img src="https://framerusercontent.com/images/qgI0hIf34aPuuJedXqVNVWx1gI.svg" alt="Brand 2"></div>
-      <div class="brand-cell" data-animate="fade-up" data-delay="160"><img src="https://framerusercontent.com/images/UMc0FS6gAmdnCQcyNR18Rf9IZus.svg" alt="Brand 3"></div>
-      <div class="brand-cell" data-animate="fade-up" data-delay="240"><img src="https://framerusercontent.com/images/HtNOvy5spiFjxciDATmaZhCH9U.svg" alt="Brand 4"></div>
-      <div class="brand-cell" data-animate="fade-up" data-delay="320"><img src="https://framerusercontent.com/images/ODBXEmKEOwlEN62SmqJ6KAeyM.svg" alt="Brand 5"></div>
-      <div class="brand-cell" data-animate="fade-up" data-delay="400"><img src="https://framerusercontent.com/images/or0Wlg5UKFRZGfVPFnLR5bath6I.svg" alt="Brand 6"></div>
-    </div>
-
-    <div class="brands-testimonial-ticker ticker" id="brandsTicker">
-      <div class="ticker-track">
-        <div class="ticker-group">
-          <div class="brand-quote-card">
-            <p class="quote">&ldquo;They turned a messy set of PDFs into a clean, coordinated Revit model faster than our in-house team could have.&rdquo;</p>
-            <p class="author">Johny, CEO</p>
-          </div>
-          <div class="brand-quote-card">
-            <p class="quote">&ldquo;Their scan-to-BIM work on our retrofit was accurate to the millimetre and saved us weeks of site survey.&rdquo;</p>
-            <p class="author">Johny, CEO</p>
-          </div>
-          <div class="brand-quote-card">
-            <p class="quote">&ldquo;We sent over a concept sketch and got back a construction-ready model we could build straight from.&rdquo;</p>
-          </div>
-        </div>
-        <div class="ticker-group">
-          <div class="brand-quote-card">
-            <p class="quote">&ldquo;They turned a messy set of PDFs into a clean, coordinated Revit model faster than our in-house team could have.&rdquo;</p>
-            <p class="author">Johny, CEO</p>
-          </div>
-          <div class="brand-quote-card">
-            <p class="quote">&ldquo;Their scan-to-BIM work on our retrofit was accurate to the millimetre and saved us weeks of site survey.&rdquo;</p>
-            <p class="author">Johny, CEO</p>
-          </div>
-          <div class="brand-quote-card">
-            <p class="quote">&ldquo;We sent over a concept sketch and got back a construction-ready model we could build straight from.&rdquo;</p>
-          </div>
-        </div>
-        <div class="ticker-group">
-          <div class="brand-quote-card">
-            <p class="quote">&ldquo;They turned a messy set of PDFs into a clean, coordinated Revit model faster than our in-house team could have.&rdquo;</p>
-            <p class="author">Johny, CEO</p>
-          </div>
-          <div class="brand-quote-card">
-            <p class="quote">&ldquo;Their scan-to-BIM work on our retrofit was accurate to the millimetre and saved us weeks of site survey.&rdquo;</p>
-            <p class="author">Johny, CEO</p>
-          </div>
-          <div class="brand-quote-card">
-            <p class="quote">&ldquo;We sent over a concept sketch and got back a construction-ready model we could build straight from.&rdquo;</p>
-          </div>
-        </div>
-        <div class="ticker-group">
-          <div class="brand-quote-card">
-            <p class="quote">&ldquo;They turned a messy set of PDFs into a clean, coordinated Revit model faster than our in-house team could have.&rdquo;</p>
-            <p class="author">Johny, CEO</p>
-          </div>
-          <div class="brand-quote-card">
-            <p class="quote">&ldquo;Their scan-to-BIM work on our retrofit was accurate to the millimetre and saved us weeks of site survey.&rdquo;</p>
-            <p class="author">Johny, CEO</p>
-          </div>
-          <div class="brand-quote-card">
-            <p class="quote">&ldquo;We sent over a concept sketch and got back a construction-ready model we could build straight from.&rdquo;</p>
-          </div>
-        </div>
-      </div>
+  </div>
+  <div class="software-track-wrap">
+    <div class="software-track">
+      <span class="software-item"><span class="software-dot"></span>Revit</span>
+      <span class="software-item"><span class="software-dot"></span>SketchUp</span>
+      <span class="software-item"><span class="software-dot"></span>AutoCAD</span>
+      <span class="software-item"><span class="software-dot"></span>ArchiCAD</span>
+      <span class="software-item"><span class="software-dot"></span>Vectorworks</span>
+      <span class="software-item"><span class="software-dot"></span>Lumion</span>
+      <span class="software-item"><span class="software-dot"></span>Navisworks</span>
+      <span class="software-item"><span class="software-dot"></span>Enscape</span>
+      <span class="software-item"><span class="software-dot"></span>ReCap</span>
+      <span class="software-item"><span class="software-dot"></span>Leica</span>
+      <span class="software-item"><span class="software-dot"></span>Matterport</span>
+      <span class="software-item"><span class="software-dot"></span>Cloud Compare</span>
+      <span class="software-item"><span class="software-dot"></span>Faro</span>
+      <span class="software-item" aria-hidden="true"><span class="software-dot"></span>Revit</span>
+      <span class="software-item" aria-hidden="true"><span class="software-dot"></span>SketchUp</span>
+      <span class="software-item" aria-hidden="true"><span class="software-dot"></span>AutoCAD</span>
+      <span class="software-item" aria-hidden="true"><span class="software-dot"></span>ArchiCAD</span>
+      <span class="software-item" aria-hidden="true"><span class="software-dot"></span>Vectorworks</span>
+      <span class="software-item" aria-hidden="true"><span class="software-dot"></span>Lumion</span>
+      <span class="software-item" aria-hidden="true"><span class="software-dot"></span>Navisworks</span>
+      <span class="software-item" aria-hidden="true"><span class="software-dot"></span>Enscape</span>
+      <span class="software-item" aria-hidden="true"><span class="software-dot"></span>ReCap</span>
+      <span class="software-item" aria-hidden="true"><span class="software-dot"></span>Leica</span>
+      <span class="software-item" aria-hidden="true"><span class="software-dot"></span>Matterport</span>
+      <span class="software-item" aria-hidden="true"><span class="software-dot"></span>Cloud Compare</span>
+      <span class="software-item" aria-hidden="true"><span class="software-dot"></span>Faro</span>
     </div>
   </div>
 </section>
@@ -452,7 +403,7 @@
 
       <article class="team-card" data-animate="fade-up" data-delay="0">
         <div class="team-card-image">
-          <img src="https://framerusercontent.com/images/gqHE87mIDqfi36eYNgLKrbcsfzw.jpg" alt="Rich Wilson">
+          <img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1773853849/ABHIJEET_qpubex.jpg" alt="Abhijeet Verma">
           <div class="team-socials">
             <a href="#" aria-label="Facebook"><svg viewBox="0 0 18 18" fill="none"><path d="M11 16V10H13L13.4 7.6H11V6.2C11 5.6 11.2 5.2 12 5.2H13.4V3C13.1 3 12.3 2.9 11.4 2.9C9.5 2.9 8.2 4.1 8.2 6V7.6H6V10H8.2V16H11Z" fill="currentColor"/></svg></a>
             <a href="#" aria-label="Twitter"><svg viewBox="0 0 18 18" fill="none"><path d="M3 3L8 9L3 15M15 3L10 9L15 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
@@ -461,15 +412,15 @@
           </div>
         </div>
         <div class="team-card-meta">
-          <h3>Rich Wilson</h3>
-          <span class="team-role">Founder &amp; BIM Director</span>
-          <p class="team-blurb">Leads the studio and holds the quality bar on every model we ship.</p>
+          <h3>Abhijeet Verma</h3>
+          <span class="team-role">Founder &amp; CEO</span>
+          <p class="team-blurb">Founder of The Zenith Visions, setting the company's vision, standards and direction.</p>
         </div>
       </article>
 
       <article class="team-card" data-animate="fade-up" data-delay="80">
         <div class="team-card-image">
-          <img src="https://framerusercontent.com/images/Zqf4kcPpQzMm8kT8LwkYvVThABI.jpg" alt="Daniel Lewis">
+          <img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1773853857/WhatsApp_Image_2026-03-18_at_8.31.56_PM_zqgxli.jpg" alt="Gaurav Kasera">
           <div class="team-socials">
             <a href="#" aria-label="Facebook"><svg viewBox="0 0 18 18" fill="none"><path d="M11 16V10H13L13.4 7.6H11V6.2C11 5.6 11.2 5.2 12 5.2H13.4V3C13.1 3 12.3 2.9 11.4 2.9C9.5 2.9 8.2 4.1 8.2 6V7.6H6V10H8.2V16H11Z" fill="currentColor"/></svg></a>
             <a href="#" aria-label="Twitter"><svg viewBox="0 0 18 18" fill="none"><path d="M3 3L8 9L3 15M15 3L10 9L15 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
@@ -478,15 +429,15 @@
           </div>
         </div>
         <div class="team-card-meta">
-          <h3>Daniel Lewis</h3>
-          <span class="team-role">Project Manager</span>
-          <p class="team-blurb">Keeps every project on scope, on standard and on schedule.</p>
+          <h3>Gaurav Kasera</h3>
+          <span class="team-role">Co-Founder</span>
+          <p class="team-blurb">Co-founder helping shape the firm's growth, delivery and partnerships.</p>
         </div>
       </article>
 
       <article class="team-card" data-animate="fade-up" data-delay="160">
         <div class="team-card-image">
-          <img src="https://framerusercontent.com/images/eMPpkErHCUR1MQ1fYr2QcoY5NX0.jpg" alt="Steven Garcia">
+          <img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1773853847/WhatsApp_Image_2026-03-18_at_8.30.36_PM_hmbxvy.jpg" alt="Janhvi Dudhat">
           <div class="team-socials">
             <a href="#" aria-label="Facebook"><svg viewBox="0 0 18 18" fill="none"><path d="M11 16V10H13L13.4 7.6H11V6.2C11 5.6 11.2 5.2 12 5.2H13.4V3C13.1 3 12.3 2.9 11.4 2.9C9.5 2.9 8.2 4.1 8.2 6V7.6H6V10H8.2V16H11Z" fill="currentColor"/></svg></a>
             <a href="#" aria-label="Twitter"><svg viewBox="0 0 18 18" fill="none"><path d="M3 3L8 9L3 15M15 3L10 9L15 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
@@ -495,15 +446,15 @@
           </div>
         </div>
         <div class="team-card-meta">
-          <h3>Steven Garcia</h3>
-          <span class="team-role">3D Visualization Lead</span>
-          <p class="team-blurb">Turns finished models into photoreal stills, walkthroughs and VR.</p>
+          <h3>Janhvi Dudhat</h3>
+          <span class="team-role">Co-Founder</span>
+          <p class="team-blurb">Co-founder focused on building lasting client relationships and quality delivery.</p>
         </div>
       </article>
 
       <article class="team-card" data-animate="fade-up" data-delay="240">
         <div class="team-card-image">
-          <img src="https://framerusercontent.com/images/d1M76uyassOwkYeDLmNdm5ApCcI.jpg" alt="Robert Davis">
+          <img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1773855634/PIKKU_pwddpa.jpg" alt="Abhishek Verma">
           <div class="team-socials">
             <a href="#" aria-label="Facebook"><svg viewBox="0 0 18 18" fill="none"><path d="M11 16V10H13L13.4 7.6H11V6.2C11 5.6 11.2 5.2 12 5.2H13.4V3C13.1 3 12.3 2.9 11.4 2.9C9.5 2.9 8.2 4.1 8.2 6V7.6H6V10H8.2V16H11Z" fill="currentColor"/></svg></a>
             <a href="#" aria-label="Twitter"><svg viewBox="0 0 18 18" fill="none"><path d="M3 3L8 9L3 15M15 3L10 9L15 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
@@ -512,15 +463,15 @@
           </div>
         </div>
         <div class="team-card-meta">
-          <h3>Robert Davis</h3>
-          <span class="team-role">BIM Coordination Lead</span>
-          <p class="team-blurb">Owns clash detection and keeps every discipline in sync.</p>
+          <h3>Abhishek Verma</h3>
+          <span class="team-role">Business Development Associate</span>
+          <p class="team-blurb">Connects new clients with the right BIM solutions for their projects.</p>
         </div>
       </article>
 
       <article class="team-card" data-animate="fade-up" data-delay="320">
         <div class="team-card-image">
-          <img src="https://framerusercontent.com/images/ERIQ08TOmyQS1GPesfMdmLVklzg.jpg" alt="James Lee">
+          <img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1773853875/Gemini_Generated_Image_wt90nzwt90nzwt90_qxiyx6.png" alt="Archana Vairagi">
           <div class="team-socials">
             <a href="#" aria-label="Facebook"><svg viewBox="0 0 18 18" fill="none"><path d="M11 16V10H13L13.4 7.6H11V6.2C11 5.6 11.2 5.2 12 5.2H13.4V3C13.1 3 12.3 2.9 11.4 2.9C9.5 2.9 8.2 4.1 8.2 6V7.6H6V10H8.2V16H11Z" fill="currentColor"/></svg></a>
             <a href="#" aria-label="Twitter"><svg viewBox="0 0 18 18" fill="none"><path d="M3 3L8 9L3 15M15 3L10 9L15 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
@@ -529,15 +480,15 @@
           </div>
         </div>
         <div class="team-card-meta">
-          <h3>James Lee</h3>
-          <span class="team-role">Senior Structural BIM Engineer</span>
-          <p class="team-blurb">Models concrete and steel structures that are ready for fabrication.</p>
+          <h3>Archana Vairagi</h3>
+          <span class="team-role">Business Development</span>
+          <p class="team-blurb">Drives outreach and supports clients from first enquiry to project kickoff.</p>
         </div>
       </article>
 
       <article class="team-card" data-animate="fade-up" data-delay="400">
         <div class="team-card-image">
-          <img src="https://framerusercontent.com/images/9bLhdPCA3a3qqCq6G56xApFVgw.jpg?scale-down-to=512" alt="Michael Brown">
+          <img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1773853863/WhatsApp_Image_2026-03-18_at_9.26.41_PM_immdjq.jpg" alt="Vishnu Chouhan">
           <div class="team-socials">
             <a href="#" aria-label="Facebook"><svg viewBox="0 0 18 18" fill="none"><path d="M11 16V10H13L13.4 7.6H11V6.2C11 5.6 11.2 5.2 12 5.2H13.4V3C13.1 3 12.3 2.9 11.4 2.9C9.5 2.9 8.2 4.1 8.2 6V7.6H6V10H8.2V16H11Z" fill="currentColor"/></svg></a>
             <a href="#" aria-label="Twitter"><svg viewBox="0 0 18 18" fill="none"><path d="M3 3L8 9L3 15M15 3L10 9L15 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
@@ -546,15 +497,15 @@
           </div>
         </div>
         <div class="team-card-meta">
-          <h3>Michael Brown</h3>
-          <span class="team-role">Architecture BIM Modeller</span>
-          <p class="team-blurb">Builds accurate, LOD-true architectural models in Revit and ArchiCAD.</p>
+          <h3>Vishnu Chouhan</h3>
+          <span class="team-role">BIM Manager</span>
+          <p class="team-blurb">Oversees BIM delivery, standards and coordination across every project.</p>
         </div>
       </article>
 
       <article class="team-card" data-animate="fade-up" data-delay="480">
         <div class="team-card-image">
-          <img src="https://framerusercontent.com/images/x33ze80qt7hAtBDu5VA1wwFw5qI.jpg?scale-down-to=512" alt="Christopher Martinez">
+          <img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1773853868/SHEETAL_DAWAR_nexfgh.png" alt="Sheetal Dawar">
           <div class="team-socials">
             <a href="#" aria-label="Facebook"><svg viewBox="0 0 18 18" fill="none"><path d="M11 16V10H13L13.4 7.6H11V6.2C11 5.6 11.2 5.2 12 5.2H13.4V3C13.1 3 12.3 2.9 11.4 2.9C9.5 2.9 8.2 4.1 8.2 6V7.6H6V10H8.2V16H11Z" fill="currentColor"/></svg></a>
             <a href="#" aria-label="Twitter"><svg viewBox="0 0 18 18" fill="none"><path d="M3 3L8 9L3 15M15 3L10 9L15 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
@@ -563,15 +514,15 @@
           </div>
         </div>
         <div class="team-card-meta">
-          <h3>Christopher Martinez</h3>
-          <span class="team-role">MEP BIM Modeller</span>
-          <p class="team-blurb">Coordinates HVAC, electrical and plumbing into clash-free models.</p>
+          <h3>Sheetal Dawar</h3>
+          <span class="team-role">Senior BIM Engineer</span>
+          <p class="team-blurb">Produces precise, data-rich models and mentors the engineering team.</p>
         </div>
       </article>
 
       <article class="team-card" data-animate="fade-up" data-delay="560">
         <div class="team-card-image">
-          <img src="https://framerusercontent.com/images/dd62dYQNyyynWEmy6n61i7CltYc.jpg?scale-down-to=512" alt="Mark Wilson">
+          <img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1773853871/BHARAT_MAHAJAN_vsccuk.png" alt="Bharat Mahajan">
           <div class="team-socials">
             <a href="#" aria-label="Facebook"><svg viewBox="0 0 18 18" fill="none"><path d="M11 16V10H13L13.4 7.6H11V6.2C11 5.6 11.2 5.2 12 5.2H13.4V3C13.1 3 12.3 2.9 11.4 2.9C9.5 2.9 8.2 4.1 8.2 6V7.6H6V10H8.2V16H11Z" fill="currentColor"/></svg></a>
             <a href="#" aria-label="Twitter"><svg viewBox="0 0 18 18" fill="none"><path d="M3 3L8 9L3 15M15 3L10 9L15 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
@@ -580,15 +531,15 @@
           </div>
         </div>
         <div class="team-card-meta">
-          <h3>Mark Wilson</h3>
-          <span class="team-role">Scan to BIM Specialist</span>
-          <p class="team-blurb">Converts point clouds into precise as-built models, up to LOD 500.</p>
+          <h3>Bharat Mahajan</h3>
+          <span class="team-role">BIM Engineer</span>
+          <p class="team-blurb">Builds accurate, coordinated models to client templates and standards.</p>
         </div>
       </article>
 
       <article class="team-card" data-animate="fade-up" data-delay="640">
         <div class="team-card-image">
-          <img src="https://framerusercontent.com/images/xR1YTZcMU0J4Lo6OqdKo8QYQYnQ.jpg?scale-down-to=512" alt="Joseph Nguyen">
+          <img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1773853876/AARTI_PANCHAL_mlne9h.png" alt="Aarti Panchal">
           <div class="team-socials">
             <a href="#" aria-label="Facebook"><svg viewBox="0 0 18 18" fill="none"><path d="M11 16V10H13L13.4 7.6H11V6.2C11 5.6 11.2 5.2 12 5.2H13.4V3C13.1 3 12.3 2.9 11.4 2.9C9.5 2.9 8.2 4.1 8.2 6V7.6H6V10H8.2V16H11Z" fill="currentColor"/></svg></a>
             <a href="#" aria-label="Twitter"><svg viewBox="0 0 18 18" fill="none"><path d="M3 3L8 9L3 15M15 3L10 9L15 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
@@ -597,15 +548,15 @@
           </div>
         </div>
         <div class="team-card-meta">
-          <h3>Joseph Nguyen</h3>
-          <span class="team-role">Revit Content Developer</span>
-          <p class="team-blurb">Builds the parametric Revit families our projects run on.</p>
+          <h3>Aarti Panchal</h3>
+          <span class="team-role">BIM Engineer</span>
+          <p class="team-blurb">Develops detailed BIM models and documentation ready for site.</p>
         </div>
       </article>
 
       <article class="team-card" data-animate="fade-up" data-delay="720">
         <div class="team-card-image">
-          <img src="https://framerusercontent.com/images/JrUpp0P1gsKndC5AIVCKMLeFEZY.jpg?scale-down-to=512" alt="Ryan Patel">
+          <img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1773853880/WhatsApp_Image_2026-03-18_at_9.16.21_PM_pl5nfw.jpg" alt="Devansh Kasera">
           <div class="team-socials">
             <a href="#" aria-label="Facebook"><svg viewBox="0 0 18 18" fill="none"><path d="M11 16V10H13L13.4 7.6H11V6.2C11 5.6 11.2 5.2 12 5.2H13.4V3C13.1 3 12.3 2.9 11.4 2.9C9.5 2.9 8.2 4.1 8.2 6V7.6H6V10H8.2V16H11Z" fill="currentColor"/></svg></a>
             <a href="#" aria-label="Twitter"><svg viewBox="0 0 18 18" fill="none"><path d="M3 3L8 9L3 15M15 3L10 9L15 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
@@ -614,12 +565,105 @@
           </div>
         </div>
         <div class="team-card-meta">
-          <h3>Ryan Patel</h3>
-          <span class="team-role">CAD &amp; Drafting Lead</span>
-          <p class="team-blurb">Delivers fast, standards-compliant CAD drawings and documentation.</p>
+          <h3>Devansh Kasera</h3>
+          <span class="team-role">BIM Architect</span>
+          <p class="team-blurb">Translates architectural design intent into buildable BIM models.</p>
         </div>
       </article>
 
+      <article class="team-card" data-animate="fade-up" data-delay="800">
+        <div class="team-card-image">
+          <img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1773853881/WhatsApp_Image_2026-03-18_at_9.19.14_PM_hnpru9.jpg" alt="Parth Kasera">
+          <div class="team-socials">
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 18 18" fill="none"><path d="M11 16V10H13L13.4 7.6H11V6.2C11 5.6 11.2 5.2 12 5.2H13.4V3C13.1 3 12.3 2.9 11.4 2.9C9.5 2.9 8.2 4.1 8.2 6V7.6H6V10H8.2V16H11Z" fill="currentColor"/></svg></a>
+            <a href="#" aria-label="Twitter"><svg viewBox="0 0 18 18" fill="none"><path d="M3 3L8 9L3 15M15 3L10 9L15 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M6 8V13M6 6V6M10 13V10C10 9 11 8.5 11.7 9.2C12 9.6 12 10.2 12 10.7V13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="3" stroke="currentColor" stroke-width="1.3"/><circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="1.3"/><circle cx="13" cy="5" r="0.6" fill="currentColor"/></svg></a>
+          </div>
+        </div>
+        <div class="team-card-meta">
+          <h3>Parth Kasera</h3>
+          <span class="team-role">BIM Architect</span>
+          <p class="team-blurb">Models architecture in Revit with accuracy and design sensitivity.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9b. FAQ ============ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="section-header">
+      <div class="section-header-row">
+        <div class="section-header-left" data-animate="fade-up">
+          <span class="eyebrow">FAQ</span>
+          <h2>Questions, answered</h2>
+        </div>
+        <div class="section-header-right" data-animate="fade-up" data-delay="120">
+          <p class="supporting">The questions we hear most &mdash; covering pricing, process, security and how we plug into your team.</p>
+        </div>
+      </div>
+      <div class="divider"><div class="fill"></div></div>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What kinds of clients do you partner with?</summary>
+        <div class="faq-answer">We work with architects, contractors, developers, surveyors and design-build studios &mdash; anyone shaping the built environment. From new builds to renovations and as-builts, we plug in wherever you need us.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What&rsquo;s the typical turnaround on a BIM project?</summary>
+        <div class="faq-answer">Quick models usually land in 3&ndash;5 working days. LOD 300/350 coordination work runs 1&ndash;3 weeks. We confirm your timeline upfront before kickoff so there are no surprises.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What inputs do you need to begin?</summary>
+        <div class="faq-answer">PDFs, DWGs or scanned drawings work for most engagements. Scan-to-BIM jobs need an RCP or point-cloud file. The cleaner your inputs, the faster and more accurate the model.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How many revision rounds are included?</summary>
+        <div class="faq-answer">Subscription plans include unlimited revisions &mdash; iterate as much as the project demands. Project-based packages include one revision round per milestone (schematic, DD, CD); additional rounds are quoted separately.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can you tailor the pricing to my project?</summary>
+        <div class="faq-answer">Yes. We offer area-based, hourly and monthly pricing, and we&rsquo;ll build a hybrid or phased package around your specific scope when that fits better.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can you follow our in-house standards?</summary>
+        <div class="faq-answer">Absolutely. We adopt your title blocks, naming conventions, view templates, layering systems and any internal guidelines so the deliverables feel native to your team.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How do I get started?</summary>
+        <div class="faq-answer">Fill out the Get a Quote form on the Contact page. We&rsquo;ll review your brief, schedule a quick call if needed, and send back a proposal with pricing, timelines and the proposed workflow.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can I pause my subscription?</summary>
+        <div class="faq-answer">Yes. Subscriptions don&rsquo;t expire &mdash; pause whenever you need, and the remaining days stay on your balance until you pick back up.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Which file formats do you deliver?</summary>
+        <div class="faq-answer">RVT, DWG, IFC and PDF by default. If you need anything else (NWD, custom exports, vendor-specific formats), just tell us and we&rsquo;ll match the requirement.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How do we stay in sync during the project?</summary>
+        <div class="faq-answer">We collaborate over Microsoft Teams with shared boards on Notion or OneDrive for files, updates and progress tracking &mdash; clear visibility from day one.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How do you keep the quality bar high?</summary>
+        <div class="faq-answer">Every model passes through a structured QA/QC process with multiple checkpoints &mdash; geometry checks, clash detection and standards review &mdash; so deliverables ship coordinated and site-ready.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Do you cover residential, commercial and infrastructure work?</summary>
+        <div class="faq-answer">Yes &mdash; all three. Our workflows scale from single-home residential through to commercial complexes and infrastructure portfolios.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How quickly will you respond?</summary>
+        <div class="faq-answer">Most inquiries get an answer within 12&ndash;24 hours on business days. Once a project is active you get a dedicated channel for faster turnaround.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Is my project data secure?</summary>
+        <div class="faq-answer">Confidentiality is built in. We sign NDAs on request and keep all project files in encrypted cloud storage with strict, role-based access.</div>
+      </details>
     </div>
   </div>
 </section>
@@ -797,7 +841,7 @@
             <svg viewBox="0 0 17 18" fill="none"><path d="M3 4C3 3 4 2 5 2H6.5C7 2 7.5 2.5 7.5 3L8 5C8 5.3 7.8 5.6 7.5 5.8L6.5 6.5C7 8 9 10 10.5 10.5L11.2 9.5C11.4 9.2 11.7 9 12 9L14 9.5C14.5 9.5 15 10 15 10.5V12C15 13 14 14 13 14C7.5 14 3 9.5 3 4Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
             <span>Phone</span>
           </div>
-          <p><a href="tel:2175550134">(217) 555-0134</a></p>
+          <p><strong>USA:</strong> <a href="tel:+15513476950">+1 551 347 6950</a><br><strong>India:</strong> <a href="tel:+918770093683">+91 8770093683</a></p>
         </div>
 
         <div class="contact-info-item" data-animate="fade-up" data-delay="80">
@@ -805,8 +849,8 @@
             <svg viewBox="0 0 17 18" fill="none"><path d="M8.5 16C12 12 14 9 14 7C14 4 11.5 1.5 8.5 1.5C5.5 1.5 3 4 3 7C3 9 5 12 8.5 16Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="8.5" cy="7" r="2" stroke="currentColor" stroke-width="1.4"/></svg>
             <span>Visit Us</span>
           </div>
-          <p>The Zenith Visions Studio, 123 Main St, Springfield, IL 62701</p>
-          <a href="#" class="see-map">See on map <svg viewBox="0 0 11 14" width="11" height="14" fill="none"><path d="M2 2L8 7L2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <p><strong>USA:</strong> 1305 Paterson Plank Rd, North Bergen, NJ<br><strong>India:</strong> 1/2 Bhawanipur Colony, Indore</p>
+          <a href="https://maps.google.com/?q=1305+Paterson+Plank+Rd,+North+Bergen,+NJ" target="_blank" rel="noopener" class="see-map">See on Map <svg viewBox="0 0 11 14" width="11" height="14" fill="none"><path d="M2 2L8 7L2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
 
         <div class="contact-info-item" data-animate="fade-up" data-delay="160">
@@ -917,7 +961,7 @@
         </div>
         <div>
           <h4>Legal</h4>
-          <div class="links"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div>
+          <div class="links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms &amp; Conditions</a></div>
         </div>
       </div>
     </div>
@@ -955,7 +999,7 @@
 <script src="js/ui.js" defer></script>
 <script src="js/team-carousel.js" defer></script>
 <script src="js/scroll-parallax.js" defer></script>
-<!-- Story is now a simple horizontal scroll strip (pinned-scroll JS removed; it hijacked page scroll and left sections below it blank) -->
+<script src="js/story-horizontal.js" defer></script>
 <!-- Kept off (caused scroll issues / not in original template flow): -->
 <!-- <script src="js/smooth-scroll.js" defer></script> -->
 <!-- <script src="js/video-section.js" defer></script> -->
