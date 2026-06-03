@@ -7309,3 +7309,71 @@ body.page-about {
   .faq-item summary { padding: 18px 22px; font-size: 15px; gap: 12px; }
   .faq-answer { padding: 0 22px 18px; font-size: 14px; }
 }
+
+/* ============================================================
+   Footer software-logo ticker — replaces the old text ticker
+   on every page; greyscale + low-opacity by default, hover the
+   strip to pause the marquee and restore full colour.
+   ============================================================ */
+.footer-ticker--logos { gap: 80px; }
+.footer-ticker--logos .footer-ticker-item {
+  gap: 80px;
+  padding-right: 80px;
+  font-size: 0;            /* drop inherited 120px text size */
+  letter-spacing: 0;
+  text-transform: none;
+}
+.footer-ticker--logos .footer-ticker-item img {
+  height: 84px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  filter: grayscale(1) brightness(1.25);
+  opacity: 0.55;
+  transition: filter 0.45s var(--ease-out), opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out);
+}
+.footer-ticker-wrap:hover .footer-ticker--logos { animation-play-state: paused; }
+.footer-ticker-wrap:hover .footer-ticker--logos .footer-ticker-item img {
+  filter: grayscale(0) brightness(1);
+  opacity: 1;
+}
+.footer-ticker--logos .footer-ticker-item img:hover { transform: translateY(-4px); }
+@media (max-width: 809.98px) {
+  .footer-ticker--logos { gap: 50px; }
+  .footer-ticker--logos .footer-ticker-item { gap: 50px; padding-right: 50px; }
+  .footer-ticker--logos .footer-ticker-item img { height: 56px; max-width: 160px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer-ticker--logos { animation: none; }
+  .footer-ticker--logos .footer-ticker-item img { filter: grayscale(0); opacity: 1; }
+}
+
+/* ============================================================
+   About-page "Tools we work with" ticker — image variant.
+   Same hover-to-pause + colourize treatment on a light background.
+   ============================================================ */
+.software-track .software-logo-item {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  filter: grayscale(1);
+  opacity: 0.55;
+  transition: filter 0.45s var(--ease-out), opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out);
+}
+.software-track-wrap:hover .software-logo-item {
+  filter: grayscale(0);
+  opacity: 1;
+}
+.software-track-wrap:hover .software-logo-item:hover { transform: translateY(-3px); }
+.software-logo-item img {
+  height: 72px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  display: block;
+}
+@media (max-width: 809.98px) {
+  .software-logo-item img { height: 48px; max-width: 160px; }
+}
