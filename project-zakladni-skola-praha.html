@@ -3,14 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects, The Zenith Visions</title>
-<meta name="description" content="Our projects portfolio, selected works in hospitality, residential, private residence, commercial, and historic restoration from The Zenith Visions studio.">
+<title>Z&aacute;kladn&iacute; &scaron;kola, Praha 2, The Zenith Visions</title>
+<meta name="description" content="Scan to BIM digital reconstruction of an institutional building in Prague, Czech Republic, a detailed Revit model with full sheet documentation by The Zenith Visions.">
 <link rel="icon" href="https://framerusercontent.com/images/wPRDM7Nvophq3hABcrAHjVhyZtw.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://framerusercontent.com" crossorigin>
 <link rel="stylesheet" href="css/styles.css">
+<style>
+  /* Project detail (icon meta-table layout) */
+  .pd2-hero { width: 100%; }
+  .pd2-hero img { width: 100%; height: 74vh; min-height: 420px; object-fit: cover; display: block; }
+  .pd2-head { max-width: 1100px; margin: 0 auto; padding: 50px 24px 0; }
+  .pd2-crumb { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; color: var(--color-text-muted); font-size: 14px; margin-bottom: 16px; }
+  .pd2-crumb a { color: var(--color-text-muted); text-decoration: none; }
+  .pd2-crumb a:hover { color: var(--color-dark); }
+  .pd2-title { font-family: var(--font-display); font-weight: 500; font-size: clamp(28px, 4vw, 52px); letter-spacing: -0.03em; color: var(--color-dark); line-height: 1.05; }
+  .pd2-body { max-width: 1000px; margin: 0 auto; padding: 46px 24px 110px; }
+  .pd2-meta { margin-bottom: 64px; }
+  .pd2-row { display: grid; grid-template-columns: 30px 1fr auto; align-items: center; gap: 18px; padding: 17px 2px; border-bottom: 1px solid rgba(20,20,20,0.12); }
+  .pd2-row:first-child { border-top: 1px solid rgba(20,20,20,0.12); }
+  .pd2-ico { width: 22px; height: 22px; color: var(--color-dark); opacity: 0.85; }
+  .pd2-ico svg { width: 100%; height: 100%; display: block; }
+  .pd2-k { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.015em; font-size: clamp(15px, 1.6vw, 20px); color: var(--color-dark); }
+  .pd2-v { text-align: right; color: var(--color-text-muted); font-size: clamp(14px, 1.4vw, 18px); }
+  .pd2-overview h2 { font-family: var(--font-display); font-weight: 500; text-transform: uppercase; letter-spacing: -0.01em; font-size: clamp(22px, 2.4vw, 30px); color: var(--color-dark); margin-bottom: 18px; }
+  .pd2-overview p { color: var(--color-text-muted); line-height: 1.78; max-width: 840px; font-size: clamp(16px, 1.6vw, 19px); }
+  .pd2-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 70px; }
+  .pd2-gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block; }
+  .pd2-gallery .span2 { grid-column: 1 / -1; }
+  /* Feature image + asymmetrical gallery on dark, like the reference */
+  .pd2-feature { background: var(--color-dark); padding: 90px 50px; }
+  .pd2-feature .reveal-image { max-width: 820px; margin: 0 auto; border-radius: 6px; overflow: hidden; }
+  .pd2-feature img { width: 100%; display: block; }
+  .pd2-gal { background: var(--color-dark); padding: 0 50px 110px; }
+  @media (max-width: 700px) { .pd2-feature { padding: 50px 20px; } .pd2-gal { padding: 0 20px 70px; } }
+  @media (max-width: 700px) {
+    .pd2-hero img { height: 52vh; min-height: 300px; }
+    .pd2-gallery { grid-template-columns: 1fr; }
+    .pd2-row { grid-template-columns: 26px 1fr; }
+    .pd2-v { grid-column: 2; text-align: left; margin-top: 2px; }
+  }
+</style>
 </head>
-<body class="page-projects">
+<body class="page-project-detail">
 
 <!-- ============ Navigation ============ -->
 <nav class="nav" id="nav">
@@ -50,7 +85,7 @@
   </div>
   <div class="nav-cta">
     <a class="btn" href="contact.html">
-      <span class="btn-label">Get Template</span>
+      <span class="btn-label">Get in Touch</span>
       <span class="btn-arrow"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
   </div>
@@ -58,160 +93,78 @@
 
 <main>
 
-<!-- ============ Projects Hero (dark band) ============ -->
-<section class="projects-hero-dark">
-  <div class="projects-hero-bg" aria-hidden="true"></div>
-  <div class="projects-hero-dark-inner">
-    <h1 class="reveal-words reveal-mask">Our Projects Portfolio</h1>
-    <p class="projects-hero-dark-sub reveal reveal-delay-3">From early concept sketches to delivering outstanding completed buildings, we&rsquo;re a small, focused crew ready to turn your project dreams into reality, with rigor, restraint, and a quiet love for the craft.</p>
-  </div>
+<section class="pd2-hero reveal">
+  <img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1780460734/5_y0icln.png" alt="Z&aacute;kladn&iacute; &scaron;kola, Praha 2, Vratislavova 13">
 </section>
 
-<!-- ============ Filter (text-only with dot indicator) ============ -->
-<section class="projects-filter-section">
-  <div class="projects-filter-bar reveal reveal-stagger" id="projectFilters" role="tablist" aria-label="Filter projects by service">
-    <button class="filter-link active" data-filter="all" role="tab" aria-selected="true">All</button>
-    <button class="filter-link" data-filter="architecture-bim" role="tab">Architecture BIM</button>
-    <button class="filter-link" data-filter="structural-bim" role="tab">Structural BIM</button>
-    <button class="filter-link" data-filter="mep-bim" role="tab">MEP BIM</button>
-    <button class="filter-link" data-filter="drafting" role="tab">Drafting</button>
-    <button class="filter-link" data-filter="interior-documentation" role="tab">Interior Documentation</button>
-    <button class="filter-link" data-filter="scan-to-bim" role="tab">Scan to BIM</button>
-    <button class="filter-link" data-filter="3d-visualization" role="tab">3D Visualization</button>
-    <button class="filter-link" data-filter="3d-modeling" role="tab">3D Modeling</button>
-    <button class="filter-link" data-filter="revit-families" role="tab">Revit Families</button>
+<div class="pd2-head">
+  <div class="pd2-crumb">
+    <a href="projects.html">Projects</a>
+    <span aria-hidden="true">/</span>
+    <a href="service-scan-to-bim.html">Scan to BIM</a>
+    <span aria-hidden="true">/</span>
+    <span>Z&aacute;kladn&iacute; &scaron;kola, Praha 2</span>
   </div>
-</section>
+  <h1 class="pd2-title">3. Z&aacute;kladn&iacute; &scaron;kola, Praha 2, Vratislavova 13</h1>
+</div>
 
-<!-- ============ Projects List (image-left / content-right rows) ============ -->
-<section class="projects-list-section">
-  <div class="projects-list" id="projectsGrid">
-    <!-- ============================================================
-         ADD A PROJECT: copy one <article> block below and edit it.
-         Set data-category to ONE of these service slugs:
-           architecture-bim | structural-bim | mep-bim | drafting |
-           interior-documentation | scan-to-bim | 3d-visualization |
-           3d-modeling | revit-families
-    ============================================================ -->
+<div class="pd2-body">
 
-    <article class="project-row reveal" data-category="scan-to-bim">
-      <a class="project-row-image" href="project-zakladni-skola-praha.html">
-        <img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1780460734/5_y0icln.png" alt="3. Z&aacute;kladn&iacute; &scaron;kola, Praha 2">
-        <span class="project-row-overlay-title">3. Z&aacute;kladn&iacute; &scaron;kola, Praha 2</span>
-      </a>
-      <div class="project-row-content reveal-stagger">
-        <div class="project-row-tags">
-          <span class="tag">Scan to BIM</span>
-          <span class="tag">Sheet Documentation</span>
-        </div>
-        <p class="project-row-desc">Scan to BIM digital reconstruction of an institutional building in Prague from point cloud data, a detailed Revit model with comprehensive floor plans, elevations, sections, schedules and a complex truss roof.</p>
-        <div class="project-row-meta">
-          <div class="meta-col"><span class="meta-label">Year</span><span class="meta-value">2025</span></div>
-          <div class="meta-col"><span class="meta-label">Location</span><span class="meta-value">Prague, Czech Republic</span></div>
-        </div>
-      </div>
-    </article>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-  <!-- Empty state -->
-  <div class="project-empty" id="projectsEmpty" hidden>
-    <span class="empty-icon">
-      <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1.6"/><path d="M16 28C18 31 21 32 24 32C27 32 30 31 32 28" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="18" cy="19" r="1.6" fill="currentColor"/><circle cx="30" cy="19" r="1.6" fill="currentColor"/></svg>
-    </span>
-    <h3>No projects in this category yet</h3>
-    <p>We&rsquo;re always adding new work. Check back soon, or browse another typology.</p>
-  </div>
-</section>
-
-<!-- ============ Get a Free Quote (contact CTA) ============ -->
-<section class="projects-quote-section">
-  <div class="footer-contact-row">
-    <div class="footer-contact-left">
-      <div class="footer-contact-item">
-        <div class="label-row">
-          <svg viewBox="0 0 17 18" fill="none"><path d="M3 4C3 3 4 2 5 2H6.5C7 2 7.5 2.5 7.5 3L8 5C8 5.3 7.8 5.6 7.5 5.8L6.5 6.5C7 8 9 10 10.5 10.5L11.2 9.5C11.4 9.2 11.7 9 12 9L14 9.5C14.5 9.5 15 10 15 10.5V12C15 13 14 14 13 14C7.5 14 3 9.5 3 4Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
-          <span>Phone</span>
-        </div>
-        <p><strong>USA:</strong> <a href="tel:+15513476950">+1 551 347 6950</a><br><strong>India:</strong> <a href="tel:+918770093683">+91 8770093683</a></p>
-      </div>
-      <div class="footer-contact-item">
-        <div class="label-row">
-          <svg viewBox="0 0 17 18" fill="none"><path d="M8.5 16C12 12 14 9 14 7C14 4 11.5 1.5 8.5 1.5C5.5 1.5 3 4 3 7C3 9 5 12 8.5 16Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="8.5" cy="7" r="2" stroke="currentColor" stroke-width="1.4"/></svg>
-          <span>Visit Us</span>
-        </div>
-        <p><strong>USA:</strong> 1305 Paterson Plank Rd, North Bergen, NJ<br><strong>India:</strong> 1/2 Bhawanipur Colony, Indore</p>
-        <a href="https://maps.google.com/?q=1305+Paterson+Plank+Rd,+North+Bergen,+NJ" target="_blank" rel="noopener" class="see-map">See on Map <svg viewBox="0 0 11 14" width="11" height="14" fill="none"><path d="M2 2L8 7L2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-      <div class="footer-contact-item">
-        <div class="label-row">
-          <svg viewBox="0 0 17 18" fill="none"><rect x="2" y="4" width="13" height="10" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M2 5L8.5 10L15 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-          <span>Email</span>
-        </div>
-        <p><a href="mailto:hello@thezenithvisions.com">hello@thezenithvisions.com</a></p>
-      </div>
+  <div class="pd2-meta">
+    <div class="pd2-row">
+      <span class="pd2-ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c0-3.3 3-5.5 7-5.5s7 2.2 7 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+      <span class="pd2-k">Client</span>
+      <span class="pd2-v">Visual Systems</span>
     </div>
-
-    <div class="footer-form-wrap">
-      <div class="footer-form-header">
-        <h3>Get a free quote</h3>
-        <p>We&rsquo;re excited to connect with you! Fill out the form below, and let&rsquo;s embark on the journey of turning your vision into a reality.</p>
-      </div>
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks! We\\'ll be in touch within one business day.');">
-        <div class="form-row">
-          <label>Name<input type="text" name="name" placeholder="Jane Smith" required></label>
-          <label>Phone<input type="tel" name="phone" placeholder="(123) 456-7890"></label>
-        </div>
-        <label>Email<input type="email" name="email" placeholder="jane@example.com" required></label>
-        <label>Project Type
-          <select name="type" required>
-            <option value="" disabled selected>Select&hellip;</option>
-            <option>Hospitality</option>
-            <option>Residential</option>
-            <option>Private Residence</option>
-            <option>Commercial</option>
-            <option>Historic / Restoration</option>
-            <option>Other</option>
-          </select>
-        </label>
-        <div class="form-row">
-          <label>Location<input type="text" name="location" placeholder="City, State"></label>
-          <label>Budget<input type="text" name="budget" placeholder="Enter your budget"></label>
-          <label>Project Size (SQFT)<input type="text" name="size" placeholder="e.g., 1500"></label>
-        </div>
-        <div class="form-row">
-          <label>Preferred Start Date<input type="date" name="start"></label>
-          <label>Desired Completion Date<input type="date" name="end"></label>
-        </div>
-        <label>Message<textarea name="message" placeholder="Write your message here"></textarea></label>
-        <button type="submit">Request Free Estimate</button>
-      </form>
+    <div class="pd2-row">
+      <span class="pd2-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22c5-5.5 7-9 7-12a7 7 0 1 0-14 0c0 3 2 6.5 7 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+      <span class="pd2-k">Location</span>
+      <span class="pd2-v">Prague, Czech Republic</span>
     </div>
+    <div class="pd2-row">
+      <span class="pd2-ico"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 9l-2 2 2 2M16 9l2 2-2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="pd2-k">Size</span>
+      <span class="pd2-v">3,721 sq ft (2,912 + 809)</span>
+    </div>
+    <div class="pd2-row">
+      <span class="pd2-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+      <span class="pd2-k">Category</span>
+      <span class="pd2-v">Architecture</span>
+    </div>
+    <div class="pd2-row">
+      <span class="pd2-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 21V8l6-3 6 3v13M4 21h16M9 21v-4h2v4M14 11h2M14 15h2M8 11h2M8 15h2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="pd2-k">Services</span>
+      <span class="pd2-v">Scan to BIM, Sheet Documentation</span>
+    </div>
+    <div class="pd2-row">
+      <span class="pd2-ico"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 9h16M9 3v4M15 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+      <span class="pd2-k">Year</span>
+      <span class="pd2-v">2025</span>
+    </div>
+    <div class="pd2-row">
+      <span class="pd2-ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="pd2-k">Status</span>
+      <span class="pd2-v">Complete</span>
+    </div>
+  </div>
+
+  <div class="pd2-overview">
+    <h2>Project Overview</h2>
+    <p>Located in the Czech Republic, this Scan to BIM project involved the accurate digital reconstruction of an institutional building from point cloud data. Our team developed a detailed Revit model, producing comprehensive floor plans, elevations, sections, roof plans, door and window schedules, and room area calculations. A key challenge of the project was modeling the complex truss roof structure, which required precise alignment with the scan data to ensure accuracy. This project highlights our expertise in delivering high-quality BIM solutions for complex existing structures.</p>
+  </div>
+
+</div>
+
+<section class="project-detail-feature-image pd2-feature">
+  <div class="reveal-image"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1780460737/1._sft4e7.png" alt="3. Z&aacute;kladn&iacute; &scaron;kola, Praha 2" loading="lazy"></div>
+</section>
+
+<section class="project-detail-gallery pd2-gal">
+  <div class="project-detail-gallery-grid reveal-stagger">
+    <div class="project-gallery-item project-gallery-item--wide reveal-image"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1780460736/2._irrezx.png" alt="" loading="lazy"></div>
+    <div class="project-gallery-item reveal-image"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1780460736/3._npferr.png" alt="" loading="lazy"></div>
+    <div class="project-gallery-item reveal-image"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1780460737/4._qktc8n.png" alt="" loading="lazy"></div>
+    <div class="project-gallery-item project-gallery-item--wide reveal-image"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1780460734/6_dmq5mg.png" alt="" loading="lazy"></div>
   </div>
 </section>
 
@@ -241,7 +194,7 @@
         <div class="links">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
-          <a href="index.html">Services</a>
+          <a href="services.html">Services</a>
           <a href="projects.html">Projects</a>
           <a href="gallery.html">Gallery</a>
           <a href="blogs.html">Blog</a>
@@ -249,24 +202,26 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>Typology</h4>
+        <h4>Services</h4>
         <div class="links">
-          <a href="projects.html">All projects</a>
-          <a href="projects.html">Hospitality</a>
-          <a href="projects.html">Residential</a>
-          <a href="projects.html">Private Residence</a>
-          <a href="projects.html">Commercial</a>
-          <a href="projects.html">Historic</a>
+          <a href="service-architecture-bim.html">Architecture BIM Service</a>
+          <a href="service-structural-bim.html">Structural BIM Service</a>
+          <a href="service-mep-bim.html">MEP BIM Service</a>
+          <a href="service-drafting.html">Drafting Services</a>
+          <a href="service-interior-documentation.html">Interior Documentation</a>
+          <a href="service-scan-to-bim.html">Scan to BIM Services</a>
+          <a href="service-3d-visualization.html">3D Visualization</a>
+          <a href="service-3d-modeling.html">3D Modeling</a>
+          <a href="service-revit-families.html">Revit Families</a>
         </div>
       </div>
       <div class="footer-col">
         <h4>Topics</h4>
         <div class="links">
           <a href="blogs.html">All articles</a>
-          <a href="blogs.html">Design Insight</a>
-          <a href="blogs.html">Sustainability</a>
-          <a href="blogs.html">Interior</a>
-          <a href="blogs.html">Heritage</a>
+          <a href="blogs.html">BIM</a>
+          <a href="blogs.html">Coordination</a>
+          <a href="blogs.html">Scan to BIM</a>
           <a href="blogs.html">Process</a>
         </div>
       </div>
@@ -304,7 +259,7 @@
   </div>
 
   <div class="footer-bottom">
-    <a href="index.html">&copy; Template by RealMehedi</a>
+    <a href="index.html">&copy; The Zenith Visions</a>
     <a href="projects.html">Selected works</a>
   </div>
 </footer>

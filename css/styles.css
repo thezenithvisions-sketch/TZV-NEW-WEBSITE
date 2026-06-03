@@ -7340,6 +7340,12 @@ body.page-about {
   opacity: 1;
 }
 .footer-ticker--logos .footer-ticker-item img:hover { transform: translateY(-4px); }
+/* Blend fix: the logo PNGs have a near-white (#fdfefe) background baked in, so the strip uses that
+   same near-white. The logo backgrounds then disappear into the strip (no boxes); logos sit in grey
+   and show true colours on hover. */
+.footer-ticker-wrap:has(.footer-ticker--logos) { background: #fdfdfd; height: 132px; }
+.footer-ticker--logos .footer-ticker-item img { filter: grayscale(1); opacity: 0.78; }
+.footer-ticker-wrap:hover .footer-ticker--logos .footer-ticker-item img { filter: grayscale(0); opacity: 1; }
 @media (max-width: 809.98px) {
   .footer-ticker--logos { gap: 50px; }
   .footer-ticker--logos .footer-ticker-item { gap: 50px; padding-right: 50px; }
@@ -7377,3 +7383,28 @@ body.page-about {
 @media (max-width: 809.98px) {
   .software-logo-item img { height: 48px; max-width: 160px; }
 }
+
+
+/* ============================================================
+   Site tweaks: bigger marquee logos, full-width white logo strip,
+   and a light (cream) Achievements & Milestones section.
+   ============================================================ */
+.footer-ticker--logos .footer-ticker-item img { height: 100px; max-width: 240px; }
+.footer { padding-top: 0; }
+.footer-ticker-wrap:has(.footer-ticker--logos) { max-width: none; width: 100%; background: #fdfdfd; height: 160px; }
+.achievements-section { background: var(--color-cream); color: var(--color-dark); }
+.achievements-section h2 { color: var(--color-dark); }
+.achievements-section .num, .achievements-section .label { color: var(--color-dark); }
+
+
+/* Force light Achievements section + flush white logo strip (override merged dark rules) */
+#achievements.achievements-section { background: var(--color-cream) !important; color: var(--color-dark) !important; }
+#achievements h2, #achievements .num, #achievements .label, #achievements .eyebrow { color: var(--color-dark) !important; }
+#achievements .divider .fill { background: var(--color-dark) !important; }
+.footer { padding-top: 0 !important; }
+
+/* Pure-white logo strip (footer + about contact band) */
+.footer-ticker-wrap:has(.footer-ticker--logos) { background: #ffffff !important; height: 170px; }
+
+/* Taller white logo strip: more white space around/above the logos */
+.footer-ticker-wrap:has(.footer-ticker--logos) { height: 200px; }
