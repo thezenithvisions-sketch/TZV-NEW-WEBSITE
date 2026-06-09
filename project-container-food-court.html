@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Container Food Court, The Zenith Visions</title>
+<meta name="description" content="Container-based exterior and interior renderings developed in three unique design options. Highly realistic materials, lighting, and textures were used …">
+<link rel="icon" href="https://framerusercontent.com/images/wPRDM7Nvophq3hABcrAHjVhyZtw.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://framerusercontent.com" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  /* Project detail (icon meta-table layout) */
+  .pd2-hero { width: 100%; }
+  .pd2-hero img { width: 100%; height: 74vh; min-height: 420px; object-fit: cover; display: block; }
+  .pd2-head { max-width: 1100px; margin: 0 auto; padding: 50px 24px 0; }
+  .pd2-crumb { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; color: var(--color-text-muted); font-size: 14px; margin-bottom: 16px; }
+  .pd2-crumb a { color: var(--color-text-muted); text-decoration: none; }
+  .pd2-crumb a:hover { color: var(--color-dark); }
+  .pd2-title { font-family: var(--font-display); font-weight: 500; font-size: clamp(28px, 4vw, 52px); letter-spacing: -0.03em; color: var(--color-dark); line-height: 1.05; }
+  .pd2-body { max-width: 1000px; margin: 0 auto; padding: 46px 24px 110px; }
+  .pd2-meta { margin-bottom: 64px; }
+  .pd2-row { display: grid; grid-template-columns: 30px 1fr auto; align-items: center; gap: 18px; padding: 17px 2px; border-bottom: 1px solid rgba(20,20,20,0.12); }
+  .pd2-row:first-child { border-top: 1px solid rgba(20,20,20,0.12); }
+  .pd2-ico { width: 22px; height: 22px; color: var(--color-dark); opacity: 0.85; }
+  .pd2-ico svg { width: 100%; height: 100%; display: block; }
+  .pd2-k { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.015em; font-size: clamp(15px, 1.6vw, 20px); color: var(--color-dark); }
+  .pd2-v { text-align: right; color: var(--color-text-muted); font-size: clamp(14px, 1.4vw, 18px); }
+  .pd2-overview h2 { font-family: var(--font-display); font-weight: 500; text-transform: uppercase; letter-spacing: -0.01em; font-size: clamp(22px, 2.4vw, 30px); color: var(--color-dark); margin-bottom: 18px; }
+  .pd2-overview p { color: var(--color-text-muted); line-height: 1.78; max-width: 840px; font-size: clamp(16px, 1.6vw, 19px); }
+  .pd2-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 70px; }
+  .pd2-gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block; }
+  .pd2-gallery .span2 { grid-column: 1 / -1; }
+  /* Feature image + asymmetrical gallery on dark, like the reference */
+  .pd2-feature { background: var(--color-dark); padding: 90px 50px; }
+  .pd2-feature .reveal-image { max-width: 820px; margin: 0 auto; border-radius: 6px; overflow: hidden; }
+  .pd2-feature img { width: 100%; display: block; }
+  .pd2-gal { background: var(--color-dark); padding: 0 50px 110px; }
+  @media (max-width: 700px) { .pd2-feature { padding: 50px 20px; } .pd2-gal { padding: 0 20px 70px; } }
+  @media (max-width: 700px) {
+    .pd2-hero img { height: 52vh; min-height: 300px; }
+    .pd2-gallery { grid-template-columns: 1fr; }
+    .pd2-row { grid-template-columns: 26px 1fr; }
+    .pd2-v { grid-column: 2; text-align: left; margin-top: 2px; }
+  }
+</style>
+</head>
+<body class="page-project-detail">
+
+<nav class="nav" id="nav">
+  <div class="nav-bar">
+    <a href="index.html" class="nav-logo" aria-label="The Zenith Visions home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 26 26" fill="none"><path d="M4 21V11L13 4L22 11V21H16V15H10V21H4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="logo-text">The Zenith Visions</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <div class="nav-dropdown">
+      <a href="services.html">Services <span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></a>
+      <div class="nav-dropdown-menu" role="menu">
+        <a href="services.html" class="menu-all"><span class="menu-num">&#9679;</span>View all services</a>
+        <a href="service-architecture-bim.html"><span class="menu-num">01</span>Architecture BIM Service</a>
+        <a href="service-structural-bim.html"><span class="menu-num">02</span>Structural BIM Service</a>
+        <a href="service-mep-bim.html"><span class="menu-num">03</span>MEP BIM Service</a>
+        <a href="service-drafting.html"><span class="menu-num">04</span>Drafting Services</a>
+        <a href="service-interior-documentation.html"><span class="menu-num">05</span>Interior Documentation</a>
+        <a href="service-scan-to-bim.html"><span class="menu-num">06</span>Scan to BIM Services</a>
+        <a href="service-3d-visualization.html"><span class="menu-num">07</span>3D Visualization</a>
+        <a href="service-3d-modeling.html"><span class="menu-num">08</span>3D Modeling</a>
+        <a href="service-revit-families.html"><span class="menu-num">09</span>Revit Families</a>
+      </div>
+    </div>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="blogs.html">Blogs</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-cta">
+    <a class="btn" href="contact.html">
+      <span class="btn-label">Get in Touch</span>
+      <span class="btn-arrow"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+  </div>
+</nav>
+
+<main>
+
+<section class="pd2-hero reveal">
+  <img src="https://res.cloudinary.com/dx0nrghqt/image/upload/f_auto,q_auto,w_1600,c_fill,ar_16:9/v1765401286/REVIT_MODELLING_qozltr.png" alt="Container Food Court">
+</section>
+
+<div class="pd2-head">
+  <div class="pd2-crumb">
+    <a href="projects.html">Projects</a>
+    <span aria-hidden="true">/</span>
+    <a href="service-3d-visualization.html">3D Visualization</a>
+    <span aria-hidden="true">/</span>
+    <span>Container Food Court</span>
+  </div>
+  <h1 class="pd2-title">Container Food Court</h1>
+</div>
+
+<div class="pd2-body">
+
+  <div class="pd2-meta">
+    <div class="pd2-row">
+      <span class="pd2-ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c0-3.3 3-5.5 7-5.5s7 2.2 7 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+      <span class="pd2-k">Client</span>
+      <span class="pd2-v">&mdash;</span>
+    </div>
+    <div class="pd2-row">
+      <span class="pd2-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22c5-5.5 7-9 7-12a7 7 0 1 0-14 0c0 3 2 6.5 7 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+      <span class="pd2-k">Location</span>
+      <span class="pd2-v">&mdash;</span>
+    </div>
+    <div class="pd2-row">
+      <span class="pd2-ico"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 9l-2 2 2 2M16 9l2 2-2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="pd2-k">Size</span>
+      <span class="pd2-v">&mdash;</span>
+    </div>
+    <div class="pd2-row">
+      <span class="pd2-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+      <span class="pd2-k">Category</span>
+      <span class="pd2-v">3D Visualization</span>
+    </div>
+    <div class="pd2-row">
+      <span class="pd2-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 21V8l6-3 6 3v13M4 21h16M9 21v-4h2v4M14 11h2M14 15h2M8 11h2M8 15h2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="pd2-k">Services</span>
+      <span class="pd2-v">3D Visualization</span>
+    </div>
+    <div class="pd2-row">
+      <span class="pd2-ico"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 9h16M9 3v4M15 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+      <span class="pd2-k">Year</span>
+      <span class="pd2-v">&mdash;</span>
+    </div>
+    <div class="pd2-row">
+      <span class="pd2-ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="pd2-k">Status</span>
+      <span class="pd2-v">&mdash;</span>
+    </div>
+  </div>
+
+  <div class="pd2-overview">
+    <h2>Project Overview</h2>
+    <p>Container-based exterior and interior renderings developed in three unique design options. Highly realistic materials, lighting, and textures were used to capture a refined aesthetic.</p>
+  </div>
+
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-bg">
+    <img src="https://framerusercontent.com/images/3MXzXUyPwMnOfqv8vvWLea0.png" alt="">
+  </div>
+
+  <div class="footer-ticker-wrap">
+    <div class="footer-ticker footer-ticker--logos">
+      <div class="footer-ticker-item"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_43_21_PM_g1vg7t.png" alt="Revit"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028727/ChatGPT_Image_Sep_18_2025_08_45_58_PM_sd4hj9.png" alt="SketchUp"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028732/ChatGPT_Image_Sep_18_2025_07_45_30_PM_yn1c77.png" alt="AutoCAD"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028732/ChatGPT_Image_Sep_18_2025_07_46_34_PM_p8zsam.png" alt="ArchiCAD"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_07_47_33_PM_ttqxkv.png" alt="Vectorworks"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_06_37_PM_zrwasl.png" alt="Lumion"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_09_40_PM_tmimfr.png" alt="Navisworks"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028727/ChatGPT_Image_Sep_18_2025_08_10_32_PM_d1wmyi.png" alt="Enscape"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028732/ChatGPT_Image_Sep_18_2025_08_03_24_PM_lpt0qb.png" alt="ReCap"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_06_59_PM_erc0cd.png" alt="Leica"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028727/ChatGPT_Image_Sep_18_2025_08_11_26_PM_qie3ab.png" alt="Matterport"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028727/ChatGPT_Image_Sep_18_2025_08_32_23_PM_wmtbhk.png" alt="Cloud Compare"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_34_01_PM_zuohh8.png" alt="Faro"></div>
+      <div class="footer-ticker-item" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_43_21_PM_g1vg7t.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028727/ChatGPT_Image_Sep_18_2025_08_45_58_PM_sd4hj9.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028732/ChatGPT_Image_Sep_18_2025_07_45_30_PM_yn1c77.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028732/ChatGPT_Image_Sep_18_2025_07_46_34_PM_p8zsam.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_07_47_33_PM_ttqxkv.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_06_37_PM_zrwasl.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_09_40_PM_tmimfr.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028727/ChatGPT_Image_Sep_18_2025_08_10_32_PM_d1wmyi.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028732/ChatGPT_Image_Sep_18_2025_08_03_24_PM_lpt0qb.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_06_59_PM_erc0cd.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028727/ChatGPT_Image_Sep_18_2025_08_11_26_PM_qie3ab.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028727/ChatGPT_Image_Sep_18_2025_08_32_23_PM_wmtbhk.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_34_01_PM_zuohh8.png" alt="" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div class="footer-contact">
+    <div class="footer-divider-wrap">
+      <div class="footer-divider"><div class="fill"></div></div>
+    </div>
+
+    <div class="footer-columns reveal-stagger">
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <div class="links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blogs.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <div class="links">
+          <a href="service-architecture-bim.html">Architecture BIM Service</a>
+          <a href="service-structural-bim.html">Structural BIM Service</a>
+          <a href="service-mep-bim.html">MEP BIM Service</a>
+          <a href="service-drafting.html">Drafting Services</a>
+          <a href="service-interior-documentation.html">Interior Documentation</a>
+          <a href="service-scan-to-bim.html">Scan to BIM Services</a>
+          <a href="service-3d-visualization.html">3D Visualization</a>
+          <a href="service-3d-modeling.html">3D Modeling</a>
+          <a href="service-revit-families.html">Revit Families</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Topics</h4>
+        <div class="links">
+          <a href="blogs.html">All articles</a>
+          <a href="blogs.html">BIM</a>
+          <a href="blogs.html">Coordination</a>
+          <a href="blogs.html">Scan to BIM</a>
+          <a href="blogs.html">Process</a>
+        </div>
+      </div>
+      <div class="footer-col template-legal">
+        <div>
+          <h4>Template</h4>
+          <div class="links"><a href="index.html">Styleguide</a><a href="index.html">404</a></div>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <div class="links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms &amp; Conditions</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-newsletter">
+      <h4>Subscribe to our newsletter</h4>
+      <form onsubmit="event.preventDefault(); alert('Subscribed!');">
+        <input type="email" placeholder="name@email.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-social-block">
+    <h3>Follow us on:</h3>
+    <div class="social-icons">
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><path d="M14 21V13H16.5L17 10H14V8C14 7.5 14.5 7 15 7H17V4H15C13 4 11 5.5 11 8V10H9V13H11V21H14Z" fill="currentColor"/></svg></span><span>Facebook</span></a>
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><rect x="6" y="6" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.6"/><circle cx="13" cy="13" r="3.5" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="9" r="0.8" fill="currentColor"/></svg></span><span>Instagram</span></a>
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><rect x="6" y="6" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M10 11V17M10 9V9M14 17V13C14 11.5 15.5 11 16.5 12C17 12.5 17 13.5 17 14V17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span>Linkedin</span></a>
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><rect x="5" y="8" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M11 11L15 13L11 15V11Z" fill="currentColor"/></svg></span><span>Youtube</span></a>
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><path d="M6 6L20 20M20 6L6 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>X (Twitter)</span></a>
+      <a href="#" class="social-link"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><path d="M13 6V17C13 18.5 11.5 20 10 20C8.5 20 7 18.5 7 17C7 15.5 8.5 14 10 14M13 6V11C15 11 17 9.5 17 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Tiktok</span></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <a href="index.html">&copy; The Zenith Visions</a>
+    <a href="projects.html">Selected works</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -38,7 +38,7 @@ html, body { margin: 0; padding: 0; }
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; background: var(--color-dark); }
 body {
   font-family: var(--font-body);
   font-size: 17px;
@@ -1714,7 +1714,7 @@ p { font-family: var(--font-body); font-weight: 400; line-height: 1.4em; letter-
   gap: 44px;
   width: 100%;
   max-width: var(--max-content);
-  padding: 0 50px;
+  padding: 28px 50px 0;
 }
 .footer-bottom a { color: var(--color-cream); font-size: 17px; font-family: var(--font-display); }
 .footer-bottom a:hover { opacity: 0.6; }
@@ -3061,8 +3061,7 @@ a.contact-info-card:hover {
   max-width: var(--max-wide);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-auto-rows: 260px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -3070,11 +3069,12 @@ a.contact-info-card:hover {
   position: relative;
   display: block;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;
   padding: 0;
   border: 0;
   background: var(--color-cream);
-  cursor: zoom-in;
+  cursor: pointer;
+  text-decoration: none;
   overflow: hidden;
   font: inherit;
   color: inherit;
@@ -3343,7 +3343,6 @@ body.lightbox-open { overflow: hidden; }
 @media (max-width: 1199.98px) {
   .gallery-page-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-auto-rows: 240px;
   }
 }
 
@@ -3355,7 +3354,6 @@ body.lightbox-open { overflow: hidden; }
   .gallery-grid-section { padding: 30px 20px 60px; }
   .gallery-page-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: 200px;
     gap: 10px;
   }
   .gallery-page-item[data-span="wide"] { grid-column: span 2; }
@@ -6674,7 +6672,7 @@ body.page-about {
 .principle p { font-size: 15px; line-height: 1.55; color: rgba(255,248,235,0.75); }
 
 /* ---------- 8. Story / Timeline ---------- */
-.story-section { padding: clamp(80px, 10vh, 140px) 0; background: var(--color-page); }
+.story-section { padding: clamp(80px, 10vh, 140px) 0; background: var(--color-white); }
 .story-timeline { display: flex; flex-direction: column; margin-top: 60px; position: relative; }
 .timeline-entry { display: grid; grid-template-columns: 160px 1fr; gap: 40px; padding: 40px 0; border-top: 1px solid var(--color-border); align-items: start; position: relative; }
 .timeline-entry:last-child { border-bottom: 1px solid var(--color-border); }
@@ -7206,10 +7204,10 @@ body.page-about {
   gap: 64px;
   width: max-content;
   align-items: center;
-  animation: software-marquee 55s linear infinite;
+  animation: software-marquee 30s linear infinite;
   will-change: transform;
 }
-.software-track-wrap:hover .software-track { animation-play-state: paused; }
+/* Marquee scrolls continuously like the footer ticker (no pause-on-hover). */
 .software-item {
   display: inline-flex;
   align-items: center;
@@ -7392,13 +7390,13 @@ body.page-about {
 .footer-ticker--logos .footer-ticker-item img { height: 100px; max-width: 240px; }
 .footer { padding-top: 0; }
 .footer-ticker-wrap:has(.footer-ticker--logos) { max-width: none; width: 100%; background: #fdfdfd; height: 160px; }
-.achievements-section { background: var(--color-cream); color: var(--color-dark); }
+.achievements-section { background: var(--color-white); color: var(--color-dark); }
 .achievements-section h2 { color: var(--color-dark); }
 .achievements-section .num, .achievements-section .label { color: var(--color-dark); }
 
 
 /* Force light Achievements section + flush white logo strip (override merged dark rules) */
-#achievements.achievements-section { background: var(--color-cream) !important; color: var(--color-dark) !important; }
+#achievements.achievements-section { background: var(--color-white) !important; color: var(--color-dark) !important; }
 #achievements h2, #achievements .num, #achievements .label, #achievements .eyebrow { color: var(--color-dark) !important; }
 #achievements .divider .fill { background: var(--color-dark) !important; }
 .footer { padding-top: 0 !important; }
@@ -7408,3 +7406,14 @@ body.page-about {
 
 /* Taller white logo strip: more white space around/above the logos */
 .footer-ticker-wrap:has(.footer-ticker--logos) { height: 200px; }
+
+/* === Achievements & Milestones — light (white) theme override === */
+.achievements-section { background: #ffffff; color: var(--color-dark); }
+.achievements-section h2,
+.achievements-section .section-header h2 { color: var(--color-dark); }
+.achievements-section .eyebrow { color: var(--color-dark); }
+.achievements-section .divider { background: rgba(20,20,20,0.12); }
+.achievements-section .divider .fill { background: var(--color-dark); }
+.achievements-stats .stat-card { border-top-color: rgba(20,20,20,0.14); }
+.achievements-stats .stat-card .num { color: var(--color-dark); }
+.achievements-stats .stat-card .label { color: var(--color-text-muted); }

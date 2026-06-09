@@ -743,14 +743,7 @@
       const nextLb = () => openAt(currentIndex + 1);
       const prevLb = () => openAt(currentIndex - 1);
 
-      galleryItems.forEach((item) => {
-        item.addEventListener('click', (e) => {
-          e.preventDefault();
-          const list = visibleItems();
-          const idx = list.indexOf(item);
-          if (idx >= 0) openAt(idx);
-        });
-      });
+      // Gallery images link directly to their project page (no lightbox).
 
       if (lbClose) lbClose.addEventListener('click', closeLb);
       if (lbNext) lbNext.addEventListener('click', nextLb);
