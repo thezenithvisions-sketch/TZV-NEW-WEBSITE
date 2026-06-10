@@ -1,4 +1,4 @@
-/* Verdant — cinematic image mask reveal + subtle parallax
+/* Zenith — cinematic image mask reveal + subtle parallax
  *
  * Two effects:
  *   1. Mask reveal — on viewport intersect, parent wrapper sweeps open via
@@ -16,8 +16,8 @@
 (function () {
   'use strict';
 
-  if (window.__verdantImageRevealInit) return;
-  window.__verdantImageRevealInit = true;
+  if (window.__zenithImageRevealInit) return;
+  window.__zenithImageRevealInit = true;
 
   // Selectors scoped per spec; team cards are intentionally excluded
   // (they have their own grayscale-driven entrance).

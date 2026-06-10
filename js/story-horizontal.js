@@ -6,8 +6,8 @@
 (function () {
   'use strict';
 
-  if (window.__verdantStoryInit) return;
-  window.__verdantStoryInit = true;
+  if (window.__zenithStoryInit) return;
+  window.__zenithStoryInit = true;
 
   function clamp(v, min, max) {
     return Math.max(min, Math.min(max, v));

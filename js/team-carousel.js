@@ -11,8 +11,8 @@
 (function () {
   'use strict';
 
-  if (window.__verdantTeamInit) return;
-  window.__verdantTeamInit = true;
+  if (window.__zenithTeamInit) return;
+  window.__zenithTeamInit = true;
 
   var MAX_TILT_DEG = 4;
   var DESKTOP_MIN = 1200;

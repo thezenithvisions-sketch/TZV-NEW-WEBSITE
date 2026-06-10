@@ -7,8 +7,8 @@
 (function () {
   'use strict';
 
-  if (window.__verdantScrollFxInit) return;
-  window.__verdantScrollFxInit = true;
+  if (window.__zenithScrollFxInit) return;
+  window.__zenithScrollFxInit = true;
 
   function init() {
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;

@@ -1,4 +1,4 @@
-/* Verdant — automatic split-text mask reveal for major headings
+/* Zenith — automatic split-text mask reveal for major headings
  * Standalone module: scans h1/h2/h3 in main content regions and upgrades
  * them with per-word mask wrappers, then reveals them on scroll.
  *
@@ -9,8 +9,8 @@
 (function () {
   'use strict';
 
-  if (window.__verdantTextRevealInit) return;
-  window.__verdantTextRevealInit = true;
+  if (window.__zenithTextRevealInit) return;
+  window.__zenithTextRevealInit = true;
 
   var CONTAINER_SELECTOR = 'main, header.about-hero, section, footer';
   var HEADING_SELECTOR = 'h1, h2, h3';

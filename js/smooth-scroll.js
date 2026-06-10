@@ -1,4 +1,4 @@
-/* smooth-scroll.js - tiny Lenis-style wheel/touch smooth scroll for Verdant
+/* smooth-scroll.js - tiny Lenis-style wheel/touch smooth scroll for Zenith
  * Intercepts wheel deltas, lerps a target into window.scrollTo on rAF.
  * Native touch / keyboard / scrollbar resync currentY to actual scrollY.
  * No frameworks, no external libs. Wrapped in IIFE, inits on DOMContentLoaded.
@@ -6,8 +6,8 @@
 (function () {
   'use strict';
 
-  if (window.__verdantSmoothInit) return;
-  window.__verdantSmoothInit = true;
+  if (window.__zenithSmoothInit) return;
+  window.__zenithSmoothInit = true;
 
   const prefersReducedMotion = () =>
     window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -140,7 +140,7 @@
     attach();
   }
 
-  window.VerdantSmooth = { enable: enable, disable: disable };
+  window.ZenithSmooth = { enable: enable, disable: disable };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);

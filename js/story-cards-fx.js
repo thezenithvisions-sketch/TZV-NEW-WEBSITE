@@ -1,4 +1,4 @@
-/* Verdant — Story horizontal per-card entrance/exit FX
+/* Zenith — Story horizontal per-card entrance/exit FX
  *
  * As each .story-card crosses the visible horizontal viewport (driven by
  * the pinned vertical-to-horizontal scroll in story-horizontal.js), this
@@ -12,8 +12,8 @@
 (function () {
   'use strict';
 
-  if (window.__verdantStoryCardsInit) return;
-  window.__verdantStoryCardsInit = true;
+  if (window.__zenithStoryCardsInit) return;
+  window.__zenithStoryCardsInit = true;
 
   function clamp(v, mn, mx) { return Math.max(mn, Math.min(mx, v)); }
 

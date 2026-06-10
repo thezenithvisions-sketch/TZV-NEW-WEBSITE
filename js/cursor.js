@@ -1,12 +1,12 @@
-/* cursor.js - custom cursor + magnetic hover for Verdant
+/* cursor.js - custom cursor + magnetic hover for Zenith
  * Dot follows pointer; ring lerps; magnetic pull on .btn and .video-play-btn.
  * No frameworks, no external libs. Wrapped in IIFE, inits on DOMContentLoaded.
  */
 (function () {
   'use strict';
 
-  if (window.__verdantCursorInit) return;
-  window.__verdantCursorInit = true;
+  if (window.__zenithCursorInit) return;
+  window.__zenithCursorInit = true;
 
   const HOVER_SELECTOR = '.btn, .nav-links a, .accordion-trigger, .social-link, .footer-col a, .brand-cell, .award-row, .see-map, .video-play-btn';
   const MAGNETIC_SELECTOR = '.btn, .video-play-btn';

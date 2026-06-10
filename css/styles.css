@@ -1,5 +1,5 @@
 /* ============================================================
-   Fonts — load Google Fonts that match the original Framer site
+   Fonts — Google Fonts used across The Zenith Visions site
    ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Nunito+Sans:wght@900&family=Homemade+Apple&family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -5141,7 +5141,7 @@ body.page-about {
    ========== ABOUT PAGE ==========
    ============================================================ */
 
-/* ---------- Animation engine contract — matched to Framer Motion signature ---------- */
+/* ---------- Animation engine contract ---------- */
 [data-animate] { opacity: 0; transition: opacity var(--anim-dur,800ms) var(--ease-out), transform var(--anim-dur,800ms) var(--ease-out), filter var(--anim-dur,800ms) var(--ease-out); will-change: transform, opacity; }
 [data-animate="fade-up"] { transform: perspective(1200px) translateY(60px); }
 [data-animate="blur-in"] { filter: blur(12px); transform: perspective(1200px) translateY(40px); }
@@ -7417,3 +7417,20 @@ body.page-about {
 .achievements-stats .stat-card { border-top-color: rgba(20,20,20,0.14); }
 .achievements-stats .stat-card .num { color: var(--color-dark); }
 .achievements-stats .stat-card .label { color: var(--color-text-muted); }
+
+/* === Footer: socials relocated under Terms & Conditions === */
+.footer-legal-socials { display: flex; gap: 10px; margin-top: 4px; }
+.footer-legal-socials .social-link { padding: 0; gap: 0; }
+
+
+/* === Testimonials: quote + star rating (sourced from legacy site, no photos/names) === */
+.testimonial-carousel-wrap { height: 320px; }
+.testimonial-card { width: 380px; justify-content: center; gap: 20px; padding: 34px 32px; border: 1px solid var(--color-border); }
+.testimonial-stars { display: inline-flex; gap: 5px; color: #e0a02a; }
+.testimonial-stars svg { width: 19px; height: 19px; }
+.testimonial-quote { font-size: 17px; line-height: 1.62; color: var(--color-dark); margin: 0; }
+@media (max-width: 809.98px) {
+  .testimonial-carousel-wrap { height: 360px; }
+  .testimonial-card { width: 290px; padding: 28px 24px; }
+  .testimonial-quote { font-size: 15.5px; }
+}

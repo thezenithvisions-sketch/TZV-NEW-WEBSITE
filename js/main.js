@@ -1,5 +1,5 @@
 /* ============================================================
-   Verdant — interactive behaviors
+   Zenith — interactive behaviors
    ============================================================ */
 (function () {
   'use strict';

@@ -1,4 +1,4 @@
-/* Verdant — scroll-reveal animation engine
+/* Zenith — scroll-reveal animation engine
  * Single IntersectionObserver, one-shot triggers, vanilla ES2020.
  *
  * Supported data-animate values:
@@ -11,14 +11,14 @@
  *   data-stagger  (ms) -> word-stagger: CSS var --word-stagger
  *
  * Respects prefers-reduced-motion: reduce by snapping to final state.
- * Public API: window.VerdantAnim.refresh() — re-scan for new [data-animate] nodes.
+ * Public API: window.ZenithAnim.refresh() — re-scan for new [data-animate] nodes.
  */
 (function () {
   'use strict';
 
   // Guard against double-init across multiple script tags.
-  if (window.__verdantAnimInit) return;
-  window.__verdantAnimInit = true;
+  if (window.__zenithAnimInit) return;
+  window.__zenithAnimInit = true;
 
   var SELECTOR = '[data-animate]';
   var COUNT_MODE = 'count-up';
@@ -170,7 +170,7 @@
 
   // ---------- public API ----------
 
-  window.VerdantAnim = {
+  window.ZenithAnim = {
     refresh: function () { scan(); }
   };
 

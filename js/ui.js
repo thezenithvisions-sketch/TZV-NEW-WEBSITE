@@ -1,4 +1,4 @@
-/* ui.js - vanilla UI interactions for Verdant
+/* ui.js - vanilla UI interactions for Zenith
  * Marquee tickers, sticky nav, mobile nav, accordion, smooth scroll, button touch state.
  * No frameworks, no external libs. Wrapped in IIFE, inits on DOMContentLoaded.
  */
@@ -284,8 +284,8 @@
 
   // ---------- boot ----------
   function init() {
-    if (window.__verdantUIInit) return;
-    window.__verdantUIInit = true;
+    if (window.__zenithUIInit) return;
+    window.__zenithUIInit = true;
     initTickers();
     initStickyNav();
     initMobileNav();

@@ -1,5 +1,5 @@
 /* =========================================================
-   Verdant — About page video showreel controller
+   Zenith — About page video showreel controller
    - Click play/pause toggle on the dedicated button
    - Click on the video itself pauses playback
    - IntersectionObserver pauses when offscreen to save power
@@ -7,8 +7,8 @@
 (function () {
   'use strict';
 
-  if (window.__verdantVideoInit) return;
-  window.__verdantVideoInit = true;
+  if (window.__zenithVideoInit) return;
+  window.__zenithVideoInit = true;
 
   function boot() {
     var video = document.getElementById('aboutShowreel');
