@@ -7434,3 +7434,7 @@ body.page-about {
   .testimonial-card { width: 290px; padding: 28px 24px; }
   .testimonial-quote { font-size: 15.5px; }
 }
+
+/* Email link under the Call CTA (contact + career) */
+.contact-side-mail { display: inline-block; margin-top: 14px; font-family: var(--font-display); font-size: 15px; color: var(--color-dark); text-decoration: underline; text-underline-offset: 3px; }
+.contact-side-mail:hover { opacity: 0.6; }

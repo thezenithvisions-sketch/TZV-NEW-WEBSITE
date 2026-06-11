@@ -228,10 +228,15 @@
           <span class="btn-label">Call +91 8770093683</span>
           <span class="btn-arrow"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
+        <a class="contact-side-mail" href="mailto:career@thezenithvisions.com">career@thezenithvisions.com</a>
       </div>
     </aside>
 
-    <form class="contact-page-form reveal reveal-delay-2" id="contactPageForm" novalidate>
+    <form class="contact-page-form reveal reveal-delay-2" id="contactPageForm" data-form-endpoint="https://formsubmit.co/ajax/career@thezenithvisions.com" novalidate>
+      <input type="hidden" name="_subject" value="New career application - The Zenith Visions website">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <div class="form-row-2">
         <label>First name
           <input type="text" name="firstName" placeholder="Jane" required>

@@ -445,7 +445,28 @@
           firstInvalid.focus();
           return;
         }
-        showSuccess();
+        // Send to the form's email endpoint; only show success on a real send.
+        const endpoint = contactForm.getAttribute('data-form-endpoint');
+        if (!endpoint) { showSuccess(); return; }
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
+        const fallbackEmail = endpoint.split('/').pop();
+        const failed = function () {
+          window.alert('Sorry, we could not send your message right now. Please email us directly at ' + fallbackEmail + '.');
+        };
+        fetch(endpoint, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { Accept: 'application/json' },
+        })
+          .then(function (r) {
+            return r.json().catch(function () { return {}; }).then(function (d) {
+              return r.ok && (d.success === true || d.success === 'true' || d.ok === true);
+            });
+          })
+          .then(function (sent) { if (sent) { showSuccess(); } else { failed(); } })
+          .catch(failed)
+          .finally(function () { if (submitBtn) submitBtn.disabled = false; });
       });
 
       if (contactReset) contactReset.addEventListener('click', resetForm);
