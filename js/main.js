@@ -817,5 +817,115 @@
         window.scrollTo({ top, behavior: 'smooth' });
       });
     });
+
+    /* ----------------------------------------------------------
+       Sticky Quote Button
+       ---------------------------------------------------------- */
+    (function() {
+      var btn = document.createElement('a');
+      btn.href = 'request-a-quote.html';
+      btn.className = 'sticky-quote-btn';
+      btn.setAttribute('aria-label', 'Get a free quote');
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get a Free Quote</span>';
+      document.body.appendChild(btn);
+      window.addEventListener('scroll', function() {
+        btn.classList.toggle('visible', window.scrollY > 300);
+      }, { passive: true });
+    })();
+
+    /* ----------------------------------------------------------
+       Exit-Intent Popup
+       ---------------------------------------------------------- */
+    (function() {
+      if (sessionStorage.getItem('exitPopupShown')) return;
+      if (window.location.pathname.indexOf('request-a-quote') > -1) return;
+      if (window.location.pathname.indexOf('capability-brochure') > -1) return;
+
+      var overlay = document.createElement('div');
+      overlay.className = 'exit-popup-overlay';
+      overlay.setAttribute('role', 'dialog');
+      overlay.setAttribute('aria-modal', 'true');
+      overlay.innerHTML =
+        '<div class="exit-popup">' +
+          '<button class="exit-popup-close" aria-label="Close">&times;</button>' +
+          '<div class="exit-popup-eyebrow">Free Download</div>' +
+          '<h3 class="exit-popup-title">Get our BIM Capability Brochure</h3>' +
+          '<p class="exit-popup-text">Before you leave — download our free overview of services, project examples and how we work with AEC teams worldwide.</p>' +
+          '<form class="exit-popup-form" id="exitPopupForm">' +
+            '<input type="email" name="email" placeholder="Your work email" required>' +
+            '<button type="submit" class="btn"><span class="btn-label">Send me the brochure</span></button>' +
+          '</form>' +
+          '<p class="exit-popup-note">No spam. Unsubscribe any time.</p>' +
+        '</div>';
+      document.body.appendChild(overlay);
+
+      var closePopup = function() {
+        overlay.classList.remove('active');
+        sessionStorage.setItem('exitPopupShown', '1');
+      };
+      overlay.querySelector('.exit-popup-close').addEventListener('click', closePopup);
+      overlay.addEventListener('click', function(e) { if (e.target === overlay) closePopup(); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePopup(); });
+
+      var popupForm = overlay.querySelector('#exitPopupForm');
+      popupForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var emailVal = popupForm.querySelector('input[type="email"]').value;
+        var submitBtn = popupForm.querySelector('button');
+        submitBtn.disabled = true;
+        submitBtn.querySelector('.btn-label').textContent = 'Sending…';
+        fetch('https://formsubmit.co/ajax/info@thezenithvisions.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ email: emailVal, _subject: 'Brochure Request (Exit Popup)', _captcha: 'false' })
+        }).then(function(r) { return r.json(); }).then(function(data) {
+          if (data.success === 'true' || data.success === true) {
+            popupForm.innerHTML = '<p style="color:#22c55e;font-weight:600;margin:0;font-size:16px;">&#10003; Sent! We will be in touch within 24 hours.</p>';
+          } else { submitBtn.disabled = false; submitBtn.querySelector('.btn-label').textContent = 'Try again'; }
+          setTimeout(closePopup, 4000);
+        }).catch(function() { submitBtn.disabled = false; submitBtn.querySelector('.btn-label').textContent = 'Try again'; });
+      });
+
+      var triggered = false;
+      document.addEventListener('mouseleave', function(e) {
+        if (triggered || e.clientY > 10) return;
+        triggered = true;
+        setTimeout(function() { overlay.classList.add('active'); }, 400);
+      });
+    })();
+
+    /* ----------------------------------------------------------
+       Quote / Brochure form AJAX submit
+       ---------------------------------------------------------- */
+    ['quoteForm', 'brochureForm'].forEach(function(id) {
+      var form = document.getElementById(id);
+      if (!form) return;
+      var successId = id === 'quoteForm' ? 'quoteSuccess' : 'brochureSuccess';
+      var successEl = document.getElementById(successId);
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var submitBtn = form.querySelector('button[type="submit"]');
+        var label = submitBtn.querySelector('.btn-label');
+        submitBtn.disabled = true;
+        label.textContent = 'Sending…';
+        var payload = {};
+        new FormData(form).forEach(function(v, k) { if (!k.startsWith('_')) payload[k] = v; });
+        var subjectEl = form.querySelector('[name="_subject"]');
+        payload._subject = subjectEl ? subjectEl.value : 'Form Submission';
+        payload._captcha = 'false';
+        var endpoint = form.dataset.formEndpoint || 'https://formsubmit.co/ajax/info@thezenithvisions.com';
+        fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function(r) { return r.json(); }).then(function(data) {
+          if (data.success === 'true' || data.success === true) {
+            form.querySelectorAll('.form-group, .form-row--2, .form-submit-btn, .form-note').forEach(function(el) { el.style.display = 'none'; });
+            if (successEl) { successEl.hidden = false; }
+          } else { submitBtn.disabled = false; label.textContent = 'Try again'; }
+        }).catch(function() { submitBtn.disabled = false; label.textContent = 'Try again'; });
+      });
+    });
+
   });
 })();
