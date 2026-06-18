@@ -7792,3 +7792,45 @@ body.page-about {
 @media (max-width: 600px) {
   .quote-hero .contact-form-wrap { padding: 26px 20px; }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   SCAN TO BIM — LOCATION PAGES
+   ═══════════════════════════════════════════════════════════ */
+.loc-why-section { padding: 80px 50px; background: var(--color-page, #fff); }
+.loc-why-inner { max-width: var(--max-content, 1280px); margin: 0 auto; }
+.loc-why-header { margin-bottom: 36px; max-width: 640px; }
+.loc-why-header h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.15; margin-top: 8px; }
+.loc-why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.loc-why-card { border: 1px solid var(--color-border, #e5e5e5); border-radius: 12px; padding: 28px 26px; }
+.loc-why-card h3 { font-size: 1.15rem; margin-bottom: 10px; }
+.loc-why-card p { color: var(--color-text-muted, #666); line-height: 1.65; font-size: 15.5px; }
+
+.loc-faq-section { padding: 20px 50px 80px; }
+.loc-faq-inner { max-width: 860px; margin: 0 auto; }
+.loc-faq-header { margin-bottom: 28px; }
+.loc-faq-header h2 { font-size: clamp(1.4rem, 2.6vw, 2rem); margin-top: 8px; }
+.loc-faq { display: flex; flex-direction: column; gap: 10px; }
+.loc-faq-item { border: 1px solid var(--color-border, #e5e5e5); border-radius: 10px; padding: 0 20px; }
+.loc-faq-item summary { cursor: pointer; padding: 18px 0; font-family: var(--font-display, inherit); font-weight: 600; font-size: 16px; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.loc-faq-item summary::-webkit-details-marker { display: none; }
+.loc-faq-item summary::after { content: '+'; font-size: 22px; font-weight: 400; flex-shrink: 0; transition: transform .2s; }
+.loc-faq-item[open] summary::after { transform: rotate(45deg); }
+.loc-faq-a { padding: 0 0 18px; }
+.loc-faq-a p { font-size: 15px; line-height: 1.7; color: var(--color-text-muted, #666); margin: 0; }
+
+/* Geo links block — monochrome, blends with site content sections */
+.geo-links-section { background: var(--color-white); padding: 80px 50px; border-top: 1px solid var(--color-border); }
+.geo-links-section.geo-links-states { border-top: 1px solid var(--color-border); }
+.geo-links-inner { max-width: var(--max-content); margin: 0 auto; text-align: center; }
+.geo-links-inner h2 { color: var(--color-dark); font-size: clamp(1.3rem, 2.4vw, 1.9rem); margin-bottom: 30px; }
+.geo-links-list { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 0; max-width: 100%; margin: 0 auto; }
+.geo-links-list a { color: var(--color-text); text-decoration: none; font-size: 16px; padding: 3px 16px; white-space: nowrap; transition: color .2s; }
+.geo-links-list a:hover { color: var(--color-dark); text-decoration: underline; text-underline-offset: 3px; }
+.geo-links-list .sep { color: var(--color-text-50); margin: 0; font-size: 13px; }
+.geo-links-list .current { color: var(--color-dark); font-weight: 700; font-size: 16px; padding: 3px 16px; white-space: nowrap; }
+@media (max-width: 640px) {
+  .loc-why-section, .loc-faq-section, .geo-links-section { padding-left: 22px; padding-right: 22px; }
+  .loc-why-grid { grid-template-columns: 1fr; }
+  .geo-links-list a, .geo-links-list .current { font-size: 14px; padding: 3px 11px; }
+}
