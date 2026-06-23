@@ -834,10 +834,9 @@
     })();
 
     /* ----------------------------------------------------------
-       Exit-Intent Popup
+       Brochure Popup — reappears every 2 minutes
        ---------------------------------------------------------- */
     (function() {
-      if (sessionStorage.getItem('exitPopupShown')) return;
       if (window.location.pathname.indexOf('request-a-quote') > -1) return;
       if (window.location.pathname.indexOf('capability-brochure') > -1) return;
 
@@ -850,7 +849,7 @@
           '<button class="exit-popup-close" aria-label="Close">&times;</button>' +
           '<div class="exit-popup-eyebrow">Free Download</div>' +
           '<h3 class="exit-popup-title">Get our BIM Capability Brochure</h3>' +
-          '<p class="exit-popup-text">Before you leave — download our free overview of services, project examples and how we work with AEC teams worldwide.</p>' +
+          '<p class="exit-popup-text">Download our free overview of services, project examples and how we work with AEC teams worldwide.</p>' +
           '<form class="exit-popup-form" id="exitPopupForm">' +
             '<input type="email" name="email" placeholder="Your work email" required>' +
             '<button type="submit" class="btn"><span class="btn-label">Send me the brochure</span></button>' +
@@ -859,10 +858,16 @@
         '</div>';
       document.body.appendChild(overlay);
 
-      var closePopup = function() {
-        overlay.classList.remove('active');
-        sessionStorage.setItem('exitPopupShown', '1');
+      var converted = false;
+      var timer = null;
+      var closePopup = function() { overlay.classList.remove('active'); };
+      var showPopup = function() {
+        if (converted) return;
+        if (overlay.classList.contains('active')) return;
+        if (document.hidden) return; // don't pop while tab is in background
+        overlay.classList.add('active');
       };
+
       overlay.querySelector('.exit-popup-close').addEventListener('click', closePopup);
       overlay.addEventListener('click', function(e) { if (e.target === overlay) closePopup(); });
       document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePopup(); });
@@ -877,21 +882,19 @@
         fetch('https://formsubmit.co/ajax/info@thezenithvisions.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ email: emailVal, _subject: 'Brochure Request (Exit Popup)', _captcha: 'false' })
+          body: JSON.stringify({ email: emailVal, _subject: 'Brochure Request (Popup)', _captcha: 'false' })
         }).then(function(r) { return r.json(); }).then(function(data) {
           if (data.success === 'true' || data.success === true) {
+            converted = true;
+            if (timer) clearInterval(timer); // stop nagging after they convert
             popupForm.innerHTML = '<p style="color:#22c55e;font-weight:600;margin:0;font-size:16px;">&#10003; Sent! We will be in touch within 24 hours.</p>';
           } else { submitBtn.disabled = false; submitBtn.querySelector('.btn-label').textContent = 'Try again'; }
           setTimeout(closePopup, 4000);
         }).catch(function() { submitBtn.disabled = false; submitBtn.querySelector('.btn-label').textContent = 'Try again'; });
       });
 
-      var triggered = false;
-      document.addEventListener('mouseleave', function(e) {
-        if (triggered || e.clientY > 10) return;
-        triggered = true;
-        setTimeout(function() { overlay.classList.add('active'); }, 400);
-      });
+      // Show the popup every 2 minutes (first appearance after 2 minutes).
+      timer = setInterval(showPopup, 120000);
     })();
 
     /* ----------------------------------------------------------

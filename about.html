@@ -25,7 +25,7 @@
 <meta name="twitter:image" content="https://res.cloudinary.com/dx0nrghqt/image/upload/w_1200,h_630,c_fill/v1765387605/FARMHOUSE_BIM_MODEL_uuvlfs.jpg">
 <!-- seo:end -->
 <link rel="icon" href="favicon.ico">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="css/styles.css">
 <style id="about-fixes">
 /* About-page reliability & performance fixes (self-contained, this page only).
@@ -243,8 +243,8 @@
   </div>
 </section>
 
-<!-- ============ 8. Our Story (Horizontal pin scroll) ============ -->
-<section class="story-section story-pinned" id="story">
+<!-- ============ 8. Our Story (animated timeline) ============ -->
+<section class="story-section" id="story">
   <div class="story-inner">
     <div class="section-header">
       <div class="section-header-row">
@@ -252,7 +252,7 @@
           <span class="eyebrow">Company History</span>
           <h2>Our Story</h2>
         </div>
-        <div class="section-header-right" data-animate="fade-up" data-delay="120">
+        <div class="section-header-right" data-animate="fade-up">
           <p class="supporting">Milestones marking our growth into a global BIM partner trusted across the AEC industry.</p>
         </div>
       </div>
@@ -260,64 +260,57 @@
     </div>
   </div>
 
-  <!-- Horizontal-pin scroll runway -->
-  <div class="story-pin-outer">
-    <div class="story-pin-inner">
-      <div class="story-pin-content">
-        <div class="story-track" id="storyTrack">
+  <div class="story-timeline">
+    <div class="story-timeline-line"><div class="story-timeline-fill"></div></div>
 
-          <article class="story-card">
-            <div class="story-card-year">2019</div>
-            <div class="story-card-body">
-              <h3>Getting Our Start</h3>
-              <p>The Zenith Visions opens with a small team of BIM specialists and one promise: accurate, on-time models that AEC firms can build from.</p>
-            </div>
-          </article>
-
-          <article class="story-card">
-            <div class="story-card-year">2020</div>
-            <div class="story-card-body">
-              <h3>First Global Clients</h3>
-              <p>Architects and contractors across three countries start outsourcing their architectural BIM and drafting to our growing team.</p>
-            </div>
-          </article>
-
-          <article class="story-card">
-            <div class="story-card-year">2021</div>
-            <div class="story-card-body">
-              <h3>Scan to BIM &amp; As-Builts</h3>
-              <p>We add high-detail scan-to-BIM and as-built modelling, taking on retrofit and heritage work up to LOD 500.</p>
-            </div>
-          </article>
-
-          <article class="story-card">
-            <div class="story-card-year">2022</div>
-            <div class="story-card-body">
-              <h3>Full MEP Coordination</h3>
-              <p>Navisworks clash detection and full mechanical, electrical and plumbing coordination become core services, with dedicated discipline teams.</p>
-            </div>
-          </article>
-
-          <article class="story-card">
-            <div class="story-card-year">2024</div>
-            <div class="story-card-body">
-              <h3>1,000+ Projects Delivered</h3>
-              <p>We pass a thousand completed projects across nine service lines, from Revit families and drafting to full 3D visualization.</p>
-            </div>
-          </article>
-
-          <article class="story-card">
-            <div class="story-card-year">2025</div>
-            <div class="story-card-body">
-              <h3>A Global BIM Partner</h3>
-              <p>Now serving 200+ clients across 10+ countries, trusted as a true extension of their in-house teams.</p>
-            </div>
-          </article>
-
-        </div>
-        <div class="story-progress"><div class="story-progress-fill" id="storyProgress"></div></div>
+    <article class="story-tl-item" data-animate="fade-up">
+      <div class="story-tl-marker"><span class="story-tl-dot"></span></div>
+      <div class="story-tl-card">
+        <div class="story-tl-year">2019</div>
+        <h3>Getting Our Start</h3>
+        <p>The Zenith Visions opens with a small team of BIM specialists and one promise: accurate, on-time models that AEC firms can build from.</p>
       </div>
-    </div>
+    </article>
+    <article class="story-tl-item" data-animate="fade-up">
+      <div class="story-tl-marker"><span class="story-tl-dot"></span></div>
+      <div class="story-tl-card">
+        <div class="story-tl-year">2020</div>
+        <h3>First Global Clients</h3>
+        <p>Architects and contractors across three countries start outsourcing their architectural BIM and drafting to our growing team.</p>
+      </div>
+    </article>
+    <article class="story-tl-item" data-animate="fade-up">
+      <div class="story-tl-marker"><span class="story-tl-dot"></span></div>
+      <div class="story-tl-card">
+        <div class="story-tl-year">2021</div>
+        <h3>Scan to BIM &amp; As-Builts</h3>
+        <p>We add high-detail scan-to-BIM and as-built modelling, taking on retrofit and heritage work up to LOD 500.</p>
+      </div>
+    </article>
+    <article class="story-tl-item" data-animate="fade-up">
+      <div class="story-tl-marker"><span class="story-tl-dot"></span></div>
+      <div class="story-tl-card">
+        <div class="story-tl-year">2022</div>
+        <h3>Full MEP Coordination</h3>
+        <p>Navisworks clash detection and full mechanical, electrical and plumbing coordination become core services, with dedicated discipline teams.</p>
+      </div>
+    </article>
+    <article class="story-tl-item" data-animate="fade-up">
+      <div class="story-tl-marker"><span class="story-tl-dot"></span></div>
+      <div class="story-tl-card">
+        <div class="story-tl-year">2024</div>
+        <h3>1,000+ Projects Delivered</h3>
+        <p>We pass a thousand completed projects across nine service lines, from Revit families and drafting to full 3D visualization.</p>
+      </div>
+    </article>
+    <article class="story-tl-item" data-animate="fade-up">
+      <div class="story-tl-marker"><span class="story-tl-dot"></span></div>
+      <div class="story-tl-card">
+        <div class="story-tl-year">2025</div>
+        <h3>A Global BIM Partner</h3>
+        <p>Now serving 200+ clients across 10+ countries, trusted as a true extension of their in-house teams.</p>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -560,13 +553,6 @@
 
 <!-- ============ 12. Contact ============ -->
 <section class="contact-section section--dark" id="contact">
-
-  <div class="footer-ticker-wrap">
-    <div class="footer-ticker footer-ticker--logos">
-      <div class="footer-ticker-item"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_43_21_PM_g1vg7t.png" alt="Revit"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028727/ChatGPT_Image_Sep_18_2025_08_45_58_PM_sd4hj9.png" alt="SketchUp"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028732/ChatGPT_Image_Sep_18_2025_07_45_30_PM_yn1c77.png" alt="AutoCAD"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028732/ChatGPT_Image_Sep_18_2025_07_46_34_PM_p8zsam.png" alt="ArchiCAD"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_07_47_33_PM_ttqxkv.png" alt="Vectorworks"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_06_37_PM_zrwasl.png" alt="Lumion"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_09_40_PM_tmimfr.png" alt="Navisworks"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028727/ChatGPT_Image_Sep_18_2025_08_10_32_PM_d1wmyi.png" alt="Enscape"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028732/ChatGPT_Image_Sep_18_2025_08_03_24_PM_lpt0qb.png" alt="ReCap"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_06_59_PM_erc0cd.png" alt="Leica"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028727/ChatGPT_Image_Sep_18_2025_08_11_26_PM_qie3ab.png" alt="Matterport"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028727/ChatGPT_Image_Sep_18_2025_08_32_23_PM_wmtbhk.png" alt="Cloud Compare"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_34_01_PM_zuohh8.png" alt="Faro"></div>
-      <div class="footer-ticker-item" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_43_21_PM_g1vg7t.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028727/ChatGPT_Image_Sep_18_2025_08_45_58_PM_sd4hj9.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028732/ChatGPT_Image_Sep_18_2025_07_45_30_PM_yn1c77.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028732/ChatGPT_Image_Sep_18_2025_07_46_34_PM_p8zsam.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_07_47_33_PM_ttqxkv.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_06_37_PM_zrwasl.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_09_40_PM_tmimfr.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028727/ChatGPT_Image_Sep_18_2025_08_10_32_PM_d1wmyi.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028732/ChatGPT_Image_Sep_18_2025_08_03_24_PM_lpt0qb.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_06_59_PM_erc0cd.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028727/ChatGPT_Image_Sep_18_2025_08_11_26_PM_qie3ab.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028727/ChatGPT_Image_Sep_18_2025_08_32_23_PM_wmtbhk.png" alt="" aria-hidden="true"><img src="https://res.cloudinary.com/dx0nrghqt/image/upload/v1765028728/ChatGPT_Image_Sep_18_2025_08_34_01_PM_zuohh8.png" alt="" aria-hidden="true"></div>
-    </div>
-  </div>
 
   <div class="contact-inner">
     <div class="contact-row">

@@ -7377,6 +7377,7 @@ body.page-about {
   max-width: 220px;
   object-fit: contain;
   display: block;
+  mix-blend-mode: multiply;
 }
 @media (max-width: 809.98px) {
   .software-logo-item img { height: 48px; max-width: 160px; }
@@ -7833,4 +7834,43 @@ body.page-about {
   .loc-why-section, .loc-faq-section, .geo-links-section { padding-left: 22px; padding-right: 22px; }
   .loc-why-grid { grid-template-columns: 1fr; }
   .geo-links-list a, .geo-links-list .current { font-size: 14px; padding: 3px 11px; }
+}
+
+/* ============================================================
+   Our Story — animated vertical timeline (about page)
+   ============================================================ */
+.story-timeline { position: relative; max-width: 940px; margin: 56px auto 0; padding: 0 50px; }
+.story-timeline-line { position: absolute; top: 6px; bottom: 44px; left: 50%; width: 2px; transform: translateX(-50%); background: var(--color-border); overflow: hidden; border-radius: 2px; }
+.story-timeline-fill { position: absolute; inset: 0; background: var(--color-dark); transform: scaleY(1); transform-origin: top center; animation: storyLineGrow 1.6s var(--ease-out, ease); }
+@keyframes storyLineGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+.story-tl-item { position: relative; width: 50%; box-sizing: border-box; padding-bottom: 44px; }
+.story-tl-item:last-of-type { padding-bottom: 0; }
+.story-tl-item:nth-of-type(odd) { margin-left: 0; padding-right: 46px; text-align: right; }
+.story-tl-item:nth-of-type(even) { margin-left: 50%; padding-left: 46px; text-align: left; }
+
+.story-tl-marker { position: absolute; top: 8px; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; z-index: 2; }
+.story-tl-item:nth-of-type(odd) .story-tl-marker { right: -10px; }
+.story-tl-item:nth-of-type(even) .story-tl-marker { left: -10px; }
+.story-tl-dot { width: 16px; height: 16px; border-radius: 50%; background: var(--color-dark); border: 2px solid var(--color-dark); box-shadow: 0 0 0 4px var(--color-page); }
+
+.story-tl-card { display: inline-block; text-align: left; background: var(--color-white); border: 1px solid var(--color-border); border-radius: 14px; padding: 24px 26px; max-width: 380px; transition: box-shadow .3s var(--ease-out, ease), transform .3s var(--ease-out, ease); }
+.story-tl-card:hover { box-shadow: 0 14px 44px rgba(20,20,20,.09); transform: translateY(-4px); }
+.story-tl-year { font-family: var(--font-display); font-weight: 700; font-size: 2rem; line-height: 1; margin-bottom: 10px; letter-spacing: -.02em; }
+.story-tl-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.story-tl-card p { color: var(--color-text-muted); font-size: 14.5px; line-height: 1.62; margin: 0; }
+
+.story-tl-card { animation: aboutFade .7s var(--ease-out, ease); }
+
+@media (max-width: 760px) {
+  .story-timeline { padding: 0 20px; margin-top: 36px; }
+  .story-timeline-line { left: 10px; }
+  .story-tl-item,
+  .story-tl-item:nth-of-type(odd),
+  .story-tl-item:nth-of-type(even) { width: 100%; margin-left: 0; padding-left: 36px; padding-right: 0; text-align: left; }
+  .story-tl-item:nth-of-type(odd) .story-tl-marker,
+  .story-tl-item:nth-of-type(even) .story-tl-marker { left: 1px; right: auto; }
+  .story-tl-item:nth-of-type(odd).reveal,
+  .story-tl-item:nth-of-type(even).reveal { transform: translateY(24px); }
+  .story-tl-card { max-width: none; display: block; }
 }
