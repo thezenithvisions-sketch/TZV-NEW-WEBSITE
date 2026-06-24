@@ -7874,3 +7874,30 @@ body.page-about {
   .story-tl-item:nth-of-type(even).reveal { transform: translateY(24px); }
   .story-tl-card { max-width: none; display: block; }
 }
+
+/* ============================================================
+   About-page footer fix — match the home footer.
+   body.page-about applies a nested CSS block that re-styles the
+   shared .contact-form (cream text for the old dark section) and
+   .footer-ticker (footerTicker keyframes that don't resolve here).
+   These higher-specificity rules restore the home/base styling.
+   ============================================================ */
+@keyframes tzvFooterMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.page-about .footer .footer-ticker { animation: tzvFooterMarquee 30s linear infinite; }
+
+.page-about .footer .contact-form label { color: var(--color-text); }
+.page-about .footer .contact-form input,
+.page-about .footer .contact-form select,
+.page-about .footer .contact-form textarea {
+  background: rgba(20,20,20,0.05);
+  border: 1px solid rgba(20,20,20,0.2);
+  padding: 12px;
+  color: #1f3630;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+.page-about .footer .contact-form input::placeholder,
+.page-about .footer .contact-form textarea::placeholder { color: rgba(20,20,20,0.4); }
+.page-about .footer .contact-form select { color: #1f3630; }
+.page-about .footer .contact-form select option { color: var(--color-dark); background: #fff; }
+.page-about .footer .contact-form button[type="submit"] { background: var(--color-dark); color: var(--color-cream); }
