@@ -879,7 +879,7 @@
         var submitBtn = popupForm.querySelector('button');
         submitBtn.disabled = true;
         submitBtn.querySelector('.btn-label').textContent = 'Sending…';
-        fetch('https://formsubmit.co/ajax/info@thezenithvisions.com', {
+        fetch('https://formsubmit.co/ajax/hello@thezenithvisions.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({ email: emailVal, _subject: 'Brochure Request (Popup)', _captcha: 'false' })
@@ -916,7 +916,7 @@
         var subjectEl = form.querySelector('[name="_subject"]');
         payload._subject = subjectEl ? subjectEl.value : 'Form Submission';
         payload._captcha = 'false';
-        var endpoint = form.dataset.formEndpoint || 'https://formsubmit.co/ajax/info@thezenithvisions.com';
+        var endpoint = form.dataset.formEndpoint || 'https://formsubmit.co/ajax/hello@thezenithvisions.com';
         fetch(endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
