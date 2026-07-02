@@ -7901,3 +7901,18 @@ body.page-about {
 .page-about .footer .contact-form select { color: #1f3630; }
 .page-about .footer .contact-form select option { color: var(--color-dark); background: #fff; }
 .page-about .footer .contact-form button[type="submit"] { background: var(--color-dark); color: var(--color-cream); }
+
+/* ═══════════════════════════════════════════════════════════
+   PROJECTS PAGINATION (6 per page)
+   ═══════════════════════════════════════════════════════════ */
+.projects-pager { display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; padding: 30px 50px 90px; }
+.projects-page-btn { min-width: 42px; height: 42px; padding: 0 13px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); background: transparent; color: var(--color-dark); font-family: var(--font-display); font-size: 15px; line-height: 1; cursor: pointer; border-radius: 6px; transition: background .2s, color .2s, border-color .2s; }
+.projects-page-btn:hover:not(:disabled):not(.active) { border-color: var(--color-dark); }
+.projects-page-btn.active { background: var(--color-dark); color: var(--color-white, #fff); border-color: var(--color-dark); cursor: default; }
+.projects-page-btn:disabled { opacity: .35; cursor: default; }
+.projects-page-btn.pager-arrow { font-size: 20px; }
+.projects-page-ellipsis { min-width: 24px; text-align: center; color: var(--color-text-muted); user-select: none; }
+@media (max-width: 640px) {
+  .projects-pager { padding: 20px 20px 70px; gap: 6px; }
+  .projects-page-btn { min-width: 38px; height: 38px; font-size: 14px; }
+}

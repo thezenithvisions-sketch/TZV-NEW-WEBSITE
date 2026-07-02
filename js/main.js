@@ -512,7 +512,98 @@
     };
 
     initFilter('blogFilters', 'blogsGrid', 'blogEmpty', '.blog-card');
-    initFilter('projectFilters', 'projectsGrid', 'projectsEmpty', '.project-row', '.filter-link');
+    /* ----------------------------------------------------------
+       Projects: category filter + pagination (6 per page)
+       Replaces the generic initFilter so filtering and paging
+       stay in sync. Paginates the filtered subset.
+       ---------------------------------------------------------- */
+    (function initProjectsPaginated() {
+      const filters = document.getElementById('projectFilters');
+      const grid = document.getElementById('projectsGrid');
+      if (!filters || !grid) return;
+      const items = $$('.project-row', grid);
+      const btns = $$('.filter-link', filters);
+      const empty = document.getElementById('projectsEmpty');
+      const perPage = 6;
+      let activeFilter = 'all';
+      let page = 1;
+
+      const pager = document.createElement('nav');
+      pager.className = 'projects-pager';
+      pager.setAttribute('aria-label', 'Projects pagination');
+      grid.insertAdjacentElement('afterend', pager);
+
+      const matched = () =>
+        items.filter((it) => activeFilter === 'all' || it.dataset.category === activeFilter);
+
+      const pageBtn = (label, target, opts) => {
+        opts = opts || {};
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'projects-page-btn' + (opts.active ? ' active' : '') + (opts.nav ? ' pager-arrow' : '');
+        b.innerHTML = label;
+        if (opts.disabled) b.disabled = true;
+        else b.addEventListener('click', () => { page = target; render(true); });
+        return b;
+      };
+
+      const renderPager = (pages) => {
+        pager.innerHTML = '';
+        if (pages <= 1) return;
+        pager.appendChild(pageBtn('&lsaquo;', page - 1, { nav: true, disabled: page === 1 }));
+        const win = [];
+        for (let p = 1; p <= pages; p++) {
+          if (p === 1 || p === pages || (p >= page - 1 && p <= page + 1)) win.push(p);
+          else if (win[win.length - 1] !== '…') win.push('…');
+        }
+        win.forEach((p) => {
+          if (p === '…') {
+            const s = document.createElement('span');
+            s.className = 'projects-page-ellipsis';
+            s.textContent = '…';
+            pager.appendChild(s);
+          } else {
+            pager.appendChild(pageBtn(String(p), p, { active: p === page }));
+          }
+        });
+        pager.appendChild(pageBtn('&rsaquo;', page + 1, { nav: true, disabled: page === pages }));
+      };
+
+      const render = (scroll) => {
+        const m = matched();
+        const pages = Math.max(1, Math.ceil(m.length / perPage));
+        if (page > pages) page = pages;
+        if (page < 1) page = 1;
+        const start = (page - 1) * perPage, end = start + perPage;
+        items.forEach((it) => it.classList.add('is-hidden'));
+        m.forEach((it, i) => {
+          if (i >= start && i < end) {
+            it.classList.remove('is-hidden');
+            it.classList.add('in-view'); // ensure reveal-animated rows show
+          }
+        });
+        if (empty) empty.hidden = m.length > 0;
+        renderPager(pages);
+        if (window.__updateProjectZoom) window.__updateProjectZoom();
+        if (scroll) {
+          const top = grid.getBoundingClientRect().top + window.scrollY - 110;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      };
+
+      btns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          btns.forEach((b) => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+          activeFilter = btn.dataset.filter || 'all';
+          page = 1;
+          render(false);
+        });
+      });
+
+      render(false);
+    })();
 
     /* ----------------------------------------------------------
        Project image zoom-out on scroll
