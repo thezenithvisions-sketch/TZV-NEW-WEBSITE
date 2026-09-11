@@ -23,6 +23,13 @@
       $$('.nav-links a').forEach((a) =>
         a.addEventListener('click', () => nav.classList.remove('open'))
       );
+      // Switching to the desktop layout (rotating a tablet, widening the
+      // window) hides the hamburger; close the menu so it doesn't pop back
+      // open over the page when the screen narrows again.
+      const desktopMQ = window.matchMedia('(min-width: 1100px)'); // = CSS nav breakpoint
+      const onLayoutChange = (e) => { if (e.matches) nav.classList.remove('open'); };
+      if (desktopMQ.addEventListener) desktopMQ.addEventListener('change', onLayoutChange);
+      else if (desktopMQ.addListener) desktopMQ.addListener(onLayoutChange);
     }
 
     /* ----------------------------------------------------------
@@ -74,24 +81,41 @@
             }
           });
         },
-        { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
+        // threshold 0 -> fire as soon as any pixel intersects. A higher
+        // threshold meant elements taller than the viewport, or ones
+        // skipped during a fast scroll, could never trigger.
+        { rootMargin: '0px 0px -8% 0px', threshold: 0 }
       );
       const observed = $$(revealSelector);
       observed.forEach((el) => io.observe(el));
-      // Safety net: if any tracked element is in the viewport after a
-      // short delay but still missing .in-view (e.g. IO callbacks haven't
-      // fired in a buggy embed/preview), force-trigger by viewport check.
-      setTimeout(() => {
+
+      // Safety net: nothing the reader has scrolled to may stay invisible.
+      // IntersectionObserver samples per frame, so a fast scroll (or a
+      // jump via anchor/scroll-restoration) can skip an element entirely
+      // and leave it stuck at opacity:0 forever. Reveal anything at or
+      // above the bottom of the viewport.
+      const revealPassed = () => {
         const vh = window.innerHeight;
         observed.forEach((el) => {
           if (el.classList.contains('in-view')) return;
-          const r = el.getBoundingClientRect();
-          if (r.bottom > 0 && r.top < vh) {
+          if (el.getBoundingClientRect().top < vh) {
             el.classList.add('in-view');
             io.unobserve(el);
           }
         });
-      }, 600);
+      };
+      let revealTicking = false;
+      const onScrollReveal = () => {
+        if (revealTicking) return;
+        revealTicking = true;
+        requestAnimationFrame(() => {
+          revealPassed();
+          revealTicking = false;
+        });
+      };
+      window.addEventListener('scroll', onScrollReveal, { passive: true });
+      window.addEventListener('resize', onScrollReveal, { passive: true });
+      setTimeout(revealPassed, 600);
     } else {
       $$(revealSelector).forEach((el) => el.classList.add('in-view'));
     }
@@ -181,9 +205,14 @@
         return Math.min(0, wrap.offsetWidth - track.scrollWidth);
       };
 
+      // Position in cards (not pixels) so it survives a change of card
+      // width — cards are 365px on desktop and 290px on phones.
+      let cardPos = 0;
       const apply = (x) => {
         currentX = Math.max(minX(), Math.min(0, x));
         track.style.transform = `translate3d(${currentX}px, 0, 0)`;
+        const step = cardStep();
+        cardPos = step ? -currentX / step : 0;
       };
 
       const next = () => apply(currentX - cardStep());
@@ -245,7 +274,9 @@
         true
       );
 
-      window.addEventListener('resize', () => apply(currentX));
+      // Re-apply by card position: re-using the old pixel offset left a
+      // card sliced in half after rotating a tablet or resizing a window.
+      window.addEventListener('resize', () => apply(-cardPos * cardStep()));
     }
 
     /* ----------------------------------------------------------
@@ -547,27 +578,59 @@
         return b;
       };
 
+      // Page numbers to show: first, last and `span` either side of the
+      // current page. A gap of a single page shows that page, not "…".
+      const pagerWindow = (pages, span) => {
+        const show = [];
+        for (let p = 1; p <= pages; p++) {
+          if (p === 1 || p === pages || Math.abs(p - page) <= span) show.push(p);
+        }
+        const out = [];
+        show.forEach((p, i) => {
+          const prev = show[i - 1];
+          if (prev && p - prev === 2) out.push(prev + 1);
+          else if (prev && p - prev > 2) out.push('…');
+          out.push(p);
+        });
+        return out;
+      };
+
+      let pagerPages = 1;
       const renderPager = (pages) => {
+        pagerPages = pages;
         pager.innerHTML = '';
         if (pages <= 1) return;
-        pager.appendChild(pageBtn('&lsaquo;', page - 1, { nav: true, disabled: page === 1 }));
-        const win = [];
-        for (let p = 1; p <= pages; p++) {
-          if (p === 1 || p === pages || (p >= page - 1 && p <= page + 1)) win.push(p);
-          else if (win[win.length - 1] !== '…') win.push('…');
+        // Try one neighbour each side; if that wraps onto a second row
+        // (narrow phones), fall back to just the current page.
+        for (const span of [1, 0]) {
+          pager.innerHTML = '';
+          pager.appendChild(pageBtn('&lsaquo;', page - 1, { nav: true, disabled: page === 1 }));
+          pagerWindow(pages, span).forEach((p) => {
+            if (p === '…') {
+              const s = document.createElement('span');
+              s.className = 'projects-page-ellipsis';
+              s.textContent = '…';
+              pager.appendChild(s);
+            } else {
+              pager.appendChild(pageBtn(String(p), p, { active: p === page }));
+            }
+          });
+          pager.appendChild(pageBtn('&rsaquo;', page + 1, { nav: true, disabled: page === pages }));
+          if (pager.lastElementChild.offsetTop === pager.firstElementChild.offsetTop) break;
         }
-        win.forEach((p) => {
-          if (p === '…') {
-            const s = document.createElement('span');
-            s.className = 'projects-page-ellipsis';
-            s.textContent = '…';
-            pager.appendChild(s);
-          } else {
-            pager.appendChild(pageBtn(String(p), p, { active: p === page }));
-          }
-        });
-        pager.appendChild(pageBtn('&rsaquo;', page + 1, { nav: true, disabled: page === pages }));
       };
+
+      // Re-fit the pager when the screen is resized or rotated.
+      let pagerW = window.innerWidth;
+      let pagerTimer = 0;
+      window.addEventListener('resize', () => {
+        clearTimeout(pagerTimer);
+        pagerTimer = setTimeout(() => {
+          if (window.innerWidth === pagerW) return;
+          pagerW = window.innerWidth;
+          renderPager(pagerPages);
+        }, 150);
+      });
 
       const render = (scroll) => {
         const m = matched();
@@ -586,23 +649,37 @@
         renderPager(pages);
         if (window.__updateProjectZoom) window.__updateProjectZoom();
         if (scroll) {
-          const top = grid.getBoundingClientRect().top + window.scrollY - 110;
-          window.scrollTo({ top, behavior: 'smooth' });
+          // Bring the filter tabs to just under the sticky header. Its
+          // height varies (64px desktop, 174px phone), so a fixed offset
+          // left the first project hidden under it on phones. Layout
+          // position (offsetTop) ignores the tabs' reveal transform.
+          let top = 0;
+          for (let n = filters; n; n = n.offsetParent) top += n.offsetTop;
+          const navH = nav ? nav.offsetHeight : 0;
+          window.scrollTo({ top: Math.max(0, top - navH - 12), behavior: 'smooth' });
         }
       };
 
-      btns.forEach((btn) => {
-        btn.addEventListener('click', () => {
-          btns.forEach((b) => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
-          btn.classList.add('active');
-          btn.setAttribute('aria-selected', 'true');
-          activeFilter = btn.dataset.filter || 'all';
-          page = 1;
-          render(false);
-        });
-      });
+      const selectFilter = (btn, scroll) => {
+        btns.forEach((b) => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        activeFilter = btn.dataset.filter || 'all';
+        page = 1;
+        render(scroll);
+      };
+      btns.forEach((btn) => btn.addEventListener('click', () => selectFilter(btn, false)));
+
+      // Direct links to a category, e.g. the footer's projects.html#scan-to-bim.
+      const fromHash = (scroll) => {
+        const f = decodeURIComponent(window.location.hash.slice(1));
+        const btn = f && btns.find((b) => b.dataset.filter === f);
+        if (btn) selectFilter(btn, scroll);
+      };
+      window.addEventListener('hashchange', () => fromHash(true));
 
       render(false);
+      fromHash(true);
     })();
 
     /* ----------------------------------------------------------
@@ -942,7 +1019,7 @@
           '<h3 class="exit-popup-title">Get our BIM Capability Brochure</h3>' +
           '<p class="exit-popup-text">Download our free overview of services, project examples and how we work with AEC teams worldwide.</p>' +
           '<form class="exit-popup-form" id="exitPopupForm">' +
-            '<input type="email" name="email" placeholder="Your work email" required>' +
+            '<input type="email" name="email" placeholder="Your work email" required aria-label="Your work email">' +
             '<button type="submit" class="btn"><span class="btn-label">Send me the brochure</span></button>' +
           '</form>' +
           '<p class="exit-popup-note">No spam. Unsubscribe any time.</p>' +

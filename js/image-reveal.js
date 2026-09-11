@@ -38,7 +38,9 @@
     '.principle-panel-image': 'img'
   };
 
-  var PARALLAX_RANGE = 30; // max px of translateY at viewport edges
+  // Max px of translateY at viewport edges. The image is scaled up to
+  // cover this travel, so a larger range means a tighter crop.
+  var PARALLAX_RANGE = 16;
   var MIN_VIEWPORT = 810;  // skip parallax at 809px or smaller
 
   var reduced = (function () {
@@ -117,11 +119,18 @@
     rafPending = false;
     if (!parallaxItems.length) return;
 
+    // The window may have been narrowed after items were registered on
+    // desktop; parallax is desktop-only, so park the images.
+    var off = window.innerWidth <= MIN_VIEWPORT - 1;
     var vh = window.innerHeight;
     var center = vh / 2;
 
     for (var i = 0; i < parallaxItems.length; i++) {
       var item = parallaxItems[i];
+      if (off) {
+        item.inner.style.transform = 'translate3d(0, 0px, 0) scale(1)';
+        continue;
+      }
       var rect = item.wrapper.getBoundingClientRect();
 
       // Element fully off-screen — skip to save work.
@@ -135,8 +144,13 @@
 
       // Negative sign -> wrapper moves opposite scroll (classic parallax feel).
       var y = -norm * PARALLAX_RANGE;
+      // Scale up just enough to cover the travel: at scale(1) the image
+      // exactly filled its clipped frame, so any shift bared an empty strip.
+      // (offsetHeight: the wrapper's own reveal transform skews its rect.)
+      var h = item.wrapper.offsetHeight;
+      var s = h ? 1 + (2 * PARALLAX_RANGE) / h : 1;
       item.inner.style.transform =
-        'translate3d(0, ' + y.toFixed(2) + 'px, 0) scale(1)';
+        'translate3d(0, ' + y.toFixed(2) + 'px, 0) scale(' + s.toFixed(4) + ')';
     }
   }
 
@@ -147,17 +161,8 @@
   }
 
   function onScroll() { requestUpdate(); }
-  function onResize() {
-    // Below the threshold: stop parallax and reset transforms.
-    if (window.innerWidth <= MIN_VIEWPORT - 1) {
-      for (var i = 0; i < parallaxItems.length; i++) {
-        parallaxItems[i].inner.style.transform =
-          'translate3d(0, 0px, 0) scale(1)';
-      }
-      return;
-    }
-    requestUpdate();
-  }
+  // updateParallax() itself parks the images below the desktop width.
+  function onResize() { requestUpdate(); }
 
   // ---------- bootstrap ----------
 

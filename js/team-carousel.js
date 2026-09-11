@@ -76,9 +76,32 @@
         entry.target.classList.add('socials-in');
         io.unobserve(entry.target);
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0 });
 
     cards.forEach(function (card) { io.observe(card); });
+
+    // A fast scroll can skip a card between frames, leaving its icons
+    // hidden. Show them on any card that has already been scrolled to.
+    var ticking = false;
+    function revealPassed() {
+      ticking = false;
+      var vh = window.innerHeight;
+      cards.forEach(function (card) {
+        if (card.classList.contains('socials-in')) return;
+        if (card.getBoundingClientRect().top < vh) {
+          card.classList.add('socials-in');
+          io.unobserve(card);
+        }
+      });
+    }
+    function queue() {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(revealPassed);
+    }
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue, { passive: true });
+    window.setTimeout(revealPassed, 600);
   }
 
   // 3. Tilt-on-mousemove (desktop, pointer:fine only) -----------------------

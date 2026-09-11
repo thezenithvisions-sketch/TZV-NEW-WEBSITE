@@ -296,7 +296,10 @@ p { font-family: var(--font-body); font-weight: 400; line-height: 1.4em; letter-
   .nav-links { gap: 16px; }
   .nav-links a, .nav-dropdown-trigger { font-size: 14px; }
 }
-@media (max-width: 809.98px) {
+/* Hamburger nav up to 1100px: the full desktop row (logo + 8 links +
+   button) needs ~1046px, so on iPad portrait (820/834px) and small
+   windows it ran off-screen and scrolled every page sideways. */
+@media (max-width: 1099.98px) {
   .nav { flex-wrap: wrap; padding: 0; height: auto; }
   .nav-bar { display: flex; align-items: center; width: 100%; height: 64px; padding: 0 10px 0 20px; }
   .nav-toggle { display: flex; margin-left: auto; }
@@ -4304,7 +4307,7 @@ body.lightbox-open { overflow: hidden; }
 }
 .nav-dropdown-menu a.menu-all:hover .menu-num { color: var(--color-cream); }
 
-@media (max-width: 809.98px) {
+@media (max-width: 1099.98px) {
   /* Mobile nav: dropdown menu becomes inline list */
   .nav-dropdown { display: block; width: 100%; }
   .nav-dropdown > a {
@@ -7916,3 +7919,276 @@ body.page-about {
   .projects-pager { padding: 20px 20px 70px; gap: 6px; }
   .projects-page-btn { min-width: 38px; height: 38px; font-size: 14px; }
 }
+/* Small phones: the section already pads the sides, so drop the pager's
+   own side padding and tighten the buttons to keep a single row. */
+@media (max-width: 400px) {
+  .projects-pager { padding-left: 0; padding-right: 0; gap: 4px; }
+  .projects-page-btn { min-width: 34px; padding: 0 8px; }
+  .projects-page-ellipsis { min-width: 16px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE HARDENING — phone / tablet / laptop
+   Root-cause fixes for sideways scroll, cut-off content and
+   tap targets. No page-wide overflow guard (see 1): each source
+   of overflow is fixed where it starts.
+   ═══════════════════════════════════════════════════════════ */
+
+/* 1. NO overflow guard on html/body.
+      Tried and reverted: overflow-x:clip froze scrolling entirely (clip
+      creates no scroll container), and overflow-x:hidden turned <body>
+      into its own scroll container (y computed to auto), so window.scrollY
+      stopped working. Sideways scroll is instead fixed at the source
+      (carousel clipping, grid min-width, .band collapse) below. */
+
+/* 2. No image may exceed its container. */
+img { max-width: 100%; }
+
+/* 3. Testimonial drag-carousel: its track is a long flex row
+      (~3040px). Without clipping it scrolled the whole page. */
+.testimonial-carousel-wrap { overflow: hidden; }
+
+/* 4. Grid/flex children default to min-width:auto, which stops them
+      shrinking and forces the parent wider than the screen. */
+.band > *,
+.cs-index-card > *,
+.footer-columns > *,
+.project-row > *,
+.contact-row > *,
+.footer-contact-row > * { min-width: 0; }
+
+/* ---- Tablet and below ------------------------------------ */
+@media (max-width: 1199.98px) {
+  /* .band children were forced into column 1 but the grid itself
+     stayed 2-up, so content overflowed and was clipped. */
+  .band { grid-template-columns: 1fr; min-height: 0; }
+  .band-image,
+  .band-content { grid-column: 1 !important; width: auto; max-width: 100%; }
+}
+
+/* ---- Phone ----------------------------------------------- */
+@media (max-width: 640px) {
+  .section-testimonial { padding: 70px 20px 110px; }
+
+  /* Comfortable tap targets (Apple/Google guidance is ~44px;
+     these link lists were 20-24px tall). */
+  .footer-col .links a,
+  .site-footer-col .links a,
+  .footer-legal-socials a { min-height: 36px; display: flex; align-items: center; }
+  .nav-links a { min-height: 40px; display: flex; align-items: center; }
+
+  /* Long unbroken strings (emails, URLs) must not push the layout. */
+  a[href^="mailto:"], a[href^="tel:"] { word-break: break-word; }
+}
+
+/* ---- Mobile nav: menu must never exceed the screen ---------
+   The nav is position:sticky, so anything below the fold was
+   unreachable — "Contact" and "Career" could not be tapped.
+   Cap the open menu to the viewport and let it scroll.
+   (184px = the two-row phone header; the one-row header below
+   overrides it with 64px.) */
+@media (max-width: 1099.98px) {
+  .nav.open .nav-links {
+    max-height: calc(100vh - 184px);
+    max-height: calc(100dvh - 184px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 24px;
+  }
+  /* The menu is a flex column, so the height cap made its rows shrink
+     (56px links squashed to their text height) instead of scrolling. */
+  .nav.open .nav-links > * { flex-shrink: 0; }
+}
+
+/* ---- Forms on mobile --------------------------------------
+   iOS Safari auto-zooms the page when a focused control has a
+   font-size below 16px, which jerks the layout around. Bump all
+   controls to 16px on small screens (also just more legible). */
+@media (max-width: 809.98px) {
+  /* !important: component rules like .contact-form input are more
+     specific than a bare element selector and were still 14-15px. */
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea { font-size: 16px !important; }
+}
+
+/* The floating quote button must not sit on top of the open mobile menu. */
+@media (max-width: 1099.98px) {
+  body:has(.nav.open) .sticky-quote-btn { opacity: 0; pointer-events: none; }
+}
+
+/* ---- Mobile menu as an overlay panel -----------------------
+   Previously the open menu sat in normal flow, so it pushed ~724px
+   of content down; closing it threw the reader ~700px up the page.
+   Anchoring it to the nav keeps the page from reflowing at all. */
+@media (max-width: 1099.98px) {
+  .nav.open .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-page);
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 18px 40px rgba(20, 20, 20, 0.12);
+    z-index: 200;
+  }
+}
+
+/* ---- Industry-page FAQ ------------------------------------
+   .faq-section already pads 20px on phones; .faq-container added
+   another 50px each side, leaving the FAQ list only 220px of a
+   375px screen and clipping the question text. */
+@media (max-width: 809.98px) {
+  /* the 50px is an inline style on the element, so !important is required */
+  .faq-container { padding-left: 0 !important; padding-right: 0 !important; }
+}
+
+/* ---- Touch targets on tablets ------------------------------
+   iPad is a touch device too, but the tap-target sizing only ran
+   below 640px, leaving ~30 footer links ~20px tall at 768/1024.
+   (Nav links stay scoped to the hamburger breakpoint above.) */
+@media (max-width: 1024px) {
+  .footer-col .links a,
+  .site-footer-col .links a,
+  .footer .links a,
+  .footer-legal-socials a,
+  .see-map { min-height: 36px; display: flex; align-items: center; }
+}
+
+/* ---- Mobile services submenu: kill the desktop hover transform ----
+   `.nav-dropdown:hover .nav-dropdown-menu` (specificity 0,2,1) sets
+   transform: translateX(-50%) for the floating desktop dropdown, and
+   it out-ranks the mobile `.nav-dropdown-menu` reset (0,1,0). So on
+   touch/hover the inline submenu slid half its width off-screen and
+   looked blank. Re-neutralise it at the same specificity. */
+@media (max-width: 1099.98px) {
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+    min-width: 0;
+    box-shadow: none;
+    border: 0;
+  }
+}
+
+/* ---- Footer newsletter: Subscribe button ran off-screen -----
+   The email input is `flex:1` but keeps its default min-width:auto,
+   so it refuses to shrink and pushed the button ~61px past the right
+   edge on phones (clipped, partly untappable). Let it shrink, and
+   allow the button to wrap onto its own line if space is tight. */
+@media (max-width: 809.98px) {
+  .footer-newsletter form { flex-wrap: wrap; }
+  .footer-newsletter input { min-width: 0; flex: 1 1 150px; }
+  .footer-newsletter button { flex: 0 0 auto; padding: 15px 24px; white-space: nowrap; }
+}
+
+/* ---- Long CTA button labels on narrow screens ---------------
+   .btn is white-space:nowrap, so long labels (e.g. "Explore Interior
+   Documentation") stayed on one line and pushed ~17px past a 320px
+   column, scrolling the page sideways on blog/service pages. */
+@media (max-width: 809.98px) {
+  .btn { max-width: 100%; white-space: normal; }
+  .btn .btn-label { white-space: normal; }
+}
+
+/* ---- Brochure popup on short screens + a proper close target ----
+   On a landscape phone (375px tall) the 402px box overflowed the
+   viewport with no way to scroll to its bottom, and the close button
+   was 31x30px — the main way to dismiss it on a touchscreen. */
+.exit-popup-overlay { overflow-y: auto; }
+.exit-popup { max-height: calc(100vh - 40px); max-height: calc(100dvh - 40px); overflow-y: auto; }
+.exit-popup-close { top: 6px; right: 6px; min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; padding: 0; }
+@media (max-height: 500px) {
+  .exit-popup { padding: 22px 26px 18px; }
+  .exit-popup-eyebrow { margin-bottom: 6px; }
+  .exit-popup-title { font-size: 1.25rem; margin-bottom: 8px; }
+  .exit-popup-text { font-size: 14px; line-height: 1.5; margin-bottom: 14px; }
+  .exit-popup-note { margin-top: 8px; }
+}
+
+/* ---- Checklist progress bar --------------------------------
+   It sticks at top:84px, which suits the 64px desktop header, but
+   the phone header is ~173px (logo row + "Get a Quote" row), so the
+   bar slid underneath it and was never visible while scrolling.
+   Its background also used an undefined token and fell back to
+   white — a white box on the off-white page. */
+.chk-progress-bar { background: var(--color-page); }
+@media (max-width: 809.98px) {
+  .chk-progress-bar { top: 172px; padding: 12px 0 10px; }
+  .chk-progress-row { flex-wrap: wrap; gap: 8px 10px; margin-bottom: 8px; }
+  .chk-progress-label { white-space: nowrap; font-size: 13px; }
+  .chk-progress-label strong { font-size: 16px; }
+  .chk-action { padding: 7px 12px; font-size: 12px; white-space: nowrap; }
+}
+
+/* ---- One-row header for tablets and landscape phones -------
+   The two-row phone header (logo row + button row, 174px) is sticky:
+   on a landscape phone (~375px tall) it covered ~46% of the screen,
+   and on a tablet it wasted a whole row. From 520px up there is room
+   beside the logo, so the button moves into the top row (64px). */
+@media (min-width: 520px) and (max-width: 1099.98px) {
+  .nav-cta { position: absolute; top: 7px; right: 66px; margin: 0; }
+  .nav.open .nav-links { max-height: calc(100vh - 64px); max-height: calc(100dvh - 64px); }
+  .chk-progress-bar { top: 63px; }
+}
+
+/* ---- About page: header jumped when scrolling on phones -------
+   The About styles (nested under body.page-about) add 14px top and
+   bottom padding once the page scrolls. The desktop header has a
+   fixed height so nothing moves, but the mobile header is height:auto:
+   it grew 174px -> 202px and shoved the whole page down 28px mid-scroll.
+   Same selector weight as the nested rule so this one wins. */
+@media (max-width: 1099.98px) {
+  body.page-about .nav.nav--scrolled { padding-top: 0; padding-bottom: 0; }
+}
+
+/* ---- Touch targets: breadcrumbs, email/phone links, text CTAs ----
+   On phones these were 18-21px tall (under the 24px minimum), and the
+   breadcrumbs sit right under the sticky header, easy to mis-tap. */
+@media (max-width: 1024px) {
+  .breadcrumb a,
+  .pd2-crumb a,
+  .guide-crumb a { display: inline-block; padding: 4px 0; }
+  .blog-article-crumb { min-height: 28px; }
+  /* padding only (display untouched): plain inline links just gain hit
+     area; the icon links keep their inline-flex layout. */
+  a[href^="mailto:"]:not([class]),
+  a[href^="tel:"]:not([class]),
+  .contact-side-mail,
+  .visit-call,
+  .alt-cta,
+  .blog-featured-cta { padding-top: 4px; padding-bottom: 4px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SITE-WIDE FORMS (js/forms.js) — inline result messages
+   ═══════════════════════════════════════════════════════════ */
+/* Rows, labels and buttons in these forms set their own display,
+   which beats the hidden attribute forms.js uses on success. */
+.contact-form [hidden],
+.footer-newsletter [hidden],
+.blogs-newsletter-form [hidden] { display: none !important; }
+.form-status {
+  margin: 0;
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: left;
+}
+.form-status.is-success { color: var(--color-text); background: rgba(20, 20, 20, 0.04); border: 1px solid rgba(20, 20, 20, 0.15); }
+.form-status.is-error { color: #b3261e; background: rgba(179, 38, 30, 0.05); border: 1px solid rgba(179, 38, 30, 0.35); }
+/* Newsletters sit on dark bands; the message gets its own line. */
+.footer-newsletter form { flex-wrap: wrap; }
+.footer-newsletter .form-status,
+.blogs-newsletter-form .form-status { flex: 1 1 100%; }
+.footer-newsletter .form-status.is-success,
+.blogs-newsletter-form .form-status.is-success { color: var(--color-cream); background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.18); }
+.footer-newsletter .form-status.is-error,
+.blogs-newsletter-form .form-status.is-error { color: #ffb4ab; background: rgba(255, 180, 171, 0.08); border-color: rgba(255, 180, 171, 0.4); }

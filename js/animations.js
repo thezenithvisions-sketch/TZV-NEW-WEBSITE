@@ -125,21 +125,51 @@
 
   // ---------- observer ----------
 
+  function reveal(el) {
+    if (observer) observer.unobserve(el); // one-shot
+    if (el.classList.contains('is-in')) return;
+    el.classList.add('is-in');
+    if (getMode(el) === COUNT_MODE) {
+      runCountUp(el, parseCountTarget(el));
+    }
+  }
+
+  // threshold 0: a ratio threshold can never be met by an element much
+  // taller than the screen (the footer columns on a landscape phone are
+  // ~1800px), which left it shifted down for good.
   function ensureObserver() {
     if (observer) return observer;
-    observer = new IntersectionObserver(function (entries, obs) {
+    observer = new IntersectionObserver(function (entries) {
       for (var i = 0; i < entries.length; i++) {
-        var e = entries[i];
-        if (!e.isIntersecting) continue;
-        var el = e.target;
-        obs.unobserve(el); // one-shot
-        el.classList.add('is-in');
-        if (getMode(el) === COUNT_MODE) {
-          runCountUp(el, parseCountTarget(el));
-        }
+        if (entries[i].isIntersecting) reveal(entries[i].target);
       }
-    }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+    watchScrolledPast();
     return observer;
+  }
+
+  // Safety net: a fast scroll or a jump to an anchor can skip an element
+  // between frames. Reveal anything the reader has already scrolled to.
+  function watchScrolledPast() {
+    var ticking = false;
+    function check() {
+      ticking = false;
+      var vh = window.innerHeight;
+      var nodes = document.querySelectorAll(SELECTOR);
+      for (var i = 0; i < nodes.length; i++) {
+        var el = nodes[i];
+        if (!prepared.has(el) || el.classList.contains('is-in')) continue;
+        if (el.getBoundingClientRect().top < vh) reveal(el);
+      }
+    }
+    function queue() {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(check);
+    }
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue, { passive: true });
+    window.setTimeout(check, 600);
   }
 
   function prepare(el) {

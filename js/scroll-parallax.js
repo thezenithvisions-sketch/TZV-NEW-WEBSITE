@@ -94,11 +94,38 @@
         if (divider) divider.classList.add('in-view');
         io.unobserve(entry.target);
       });
-    }, { threshold: 0.3 });
+    }, { threshold: 0 });
 
     headers.forEach(function (h) {
       if (h.querySelector('.divider')) io.observe(h);
     });
+
+    // A fast scroll can skip a header between frames, so its divider never
+    // drew. Draw any divider whose header has already been scrolled to.
+    onScrollPassed(function () {
+      var vh = window.innerHeight;
+      headers.forEach(function (h) {
+        var d = h.querySelector('.divider');
+        if (!d || d.classList.contains('in-view')) return;
+        if (h.getBoundingClientRect().top < vh) {
+          d.classList.add('in-view');
+          io.unobserve(h);
+        }
+      });
+    });
+  }
+
+  /* rAF-throttled scroll/resize hook, also run once on load. */
+  function onScrollPassed(fn) {
+    var ticking = false;
+    var run = function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () { fn(); ticking = false; });
+    };
+    window.addEventListener('scroll', run, { passive: true });
+    window.addEventListener('resize', run, { passive: true });
+    setTimeout(fn, 600);
   }
 
   /* -------- Brand grid wave entrance -------- */
@@ -122,9 +149,18 @@
         grid.classList.add('is-in');
         io.unobserve(grid);
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0 });
 
     io.observe(grid);
+
+    // Same fast-scroll safety net as the dividers.
+    onScrollPassed(function () {
+      if (grid.classList.contains('is-in')) return;
+      if (grid.getBoundingClientRect().top < window.innerHeight) {
+        grid.classList.add('is-in');
+        io.unobserve(grid);
+      }
+    });
   }
 
   if (document.readyState === 'loading') {

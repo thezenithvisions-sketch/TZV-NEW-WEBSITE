@@ -1,0 +1,8 @@
+# Files in this repo that are not part of the website.
+# Cloudflare skips these when publishing, so they are not downloadable
+# from the live site (server.js is only the local preview server).
+.git
+.gitignore
+.assetsignore
+.claude
+server.js

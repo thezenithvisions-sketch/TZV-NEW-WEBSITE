@@ -63,7 +63,7 @@
   }
 </style>
 <!-- schema:start -->
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.thezenithvisions.com/#organization","name":"The Zenith Visions","url":"https://www.thezenithvisions.com/","logo":{"@type":"ImageObject","url":"https://www.thezenithvisions.com/TZV.png","width":512,"height":512},"image":"https://www.thezenithvisions.com/TZV.png","description":"The Zenith Visions is a global BIM services partner delivering Architecture, Structural and MEP BIM, Scan to BIM, drafting, 3D visualization and Revit content for AEC teams worldwide.","email":"hello@thezenithvisions.com","telephone":"+91-8770093683","sameAs":["https://www.linkedin.com/company/the-zenith-visions/"],"contactPoint":[{"@type":"ContactPoint","telephone":"+91-8770093683","email":"hello@thezenithvisions.com","contactType":"customer service","areaServed":"Worldwide","availableLanguage":["English"]}],"address":{"@type":"PostalAddress","streetAddress":"1/2 Bhawanipur Colony","addressLocality":"Indore","addressRegion":"Madhya Pradesh","addressCountry":"IN"}},{"@type":"WebSite","@id":"https://www.thezenithvisions.com/#website","url":"https://www.thezenithvisions.com/","name":"The Zenith Visions","publisher":{"@id":"https://www.thezenithvisions.com/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.thezenithvisions.com/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://www.thezenithvisions.com/projects.html"},{"@type":"ListItem","position":3,"name":"Joinery and Details","item":"https://www.thezenithvisions.com/project-joinery-and-details.html"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.thezenithvisions.com/#organization","name":"The Zenith Visions","url":"https://www.thezenithvisions.com/","logo":{"@type":"ImageObject","url":"https://www.thezenithvisions.com/TZV.png","width":512,"height":512},"image":"https://www.thezenithvisions.com/TZV.png","description":"The Zenith Visions is a global BIM services partner delivering Architecture, Structural and MEP BIM, Scan to BIM, drafting, 3D visualization and Revit content for AEC teams worldwide.","email":"hello@thezenithvisions.com","telephone":"+91-8770093683","sameAs":["https://www.linkedin.com/company/the-zenith-visions/","https://www.instagram.com/thezenithvisions/"],"contactPoint":[{"@type":"ContactPoint","telephone":"+91-8770093683","email":"hello@thezenithvisions.com","contactType":"customer service","areaServed":"Worldwide","availableLanguage":["English"]}],"address":{"@type":"PostalAddress","streetAddress":"1/2 Bhawanipur Colony","addressLocality":"Indore","addressRegion":"Madhya Pradesh","addressCountry":"IN"}},{"@type":"WebSite","@id":"https://www.thezenithvisions.com/#website","url":"https://www.thezenithvisions.com/","name":"The Zenith Visions","publisher":{"@id":"https://www.thezenithvisions.com/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.thezenithvisions.com/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://www.thezenithvisions.com/projects.html"},{"@type":"ListItem","position":3,"name":"Joinery and Details","item":"https://www.thezenithvisions.com/project-joinery-and-details.html"}]}]}</script>
 <meta name="theme-color" content="#141414">
 <link rel="apple-touch-icon" href="TZV.png">
 <!-- schema:end -->
@@ -199,8 +199,9 @@
 
     <div class="footer-newsletter">
       <h4>Subscribe to our newsletter</h4>
-      <form onsubmit="event.preventDefault(); alert('Subscribed!');">
-        <input type="email" placeholder="name@email.com" required>
+      <form action="https://formsubmit.co/hello@thezenithvisions.com" method="POST">
+        <input type="hidden" name="_subject" value="Newsletter Subscription">
+        <input type="email" name="email" placeholder="name@email.com" required aria-label="Email address">
         <button type="submit">Subscribe</button>
       </form>
     </div>
@@ -214,6 +215,8 @@
           <a href="services.html">Services</a>
           <a href="projects.html">Projects</a>
           <a href="gallery.html">Gallery</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="resources.html">Resources</a>
           <a href="blogs.html">Blog</a>
           <a href="contact.html">Contact</a>
         </div>
@@ -259,7 +262,7 @@
         <div>
           <h4>Follow Us</h4>
           <div class="footer-legal-socials">
-            <a href="#" class="social-link" aria-label="Instagram"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><rect x="6" y="6" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.6"/><circle cx="13" cy="13" r="3.5" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="9" r="0.8" fill="currentColor"/></svg></span></a>
+            <a href="https://www.instagram.com/thezenithvisions/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><rect x="6" y="6" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.6"/><circle cx="13" cy="13" r="3.5" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="9" r="0.8" fill="currentColor"/></svg></span></a>
             <a href="https://www.linkedin.com/company/the-zenith-visions/" target="_blank" rel="noopener" class="social-link" aria-label="Linkedin"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><rect x="6" y="6" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M10 11V17M10 9V9M14 17V13C14 11.5 15.5 11 16.5 12C17 12.5 17 13.5 17 14V17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></a>
           </div>
         </div>
@@ -271,5 +274,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/forms.js"></script>
 </body>
 </html>

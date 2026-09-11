@@ -210,6 +210,14 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' || e.key === 'Esc') closeMenu();
     });
+
+    // Rotating a tablet or widening the window switches to the desktop nav,
+    // which hides the hamburger. Without this the menu — and its body
+    // scroll-lock — stayed on, freezing the page with no way to close it.
+    const desktopMQ = window.matchMedia('(min-width: 1100px)'); // = CSS nav breakpoint
+    const onLayoutChange = (e) => { if (e.matches) closeMenu(); };
+    if (desktopMQ.addEventListener) desktopMQ.addEventListener('change', onLayoutChange);
+    else if (desktopMQ.addListener) desktopMQ.addListener(onLayoutChange);
   }
 
   // ---------- 4. Accordion ----------

@@ -215,8 +215,9 @@
 
     <div class="footer-newsletter">
       <h4>Subscribe to our newsletter</h4>
-      <form onsubmit="event.preventDefault(); alert('Subscribed!');">
-        <input type="email" placeholder="name@email.com" required>
+      <form action="https://formsubmit.co/hello@thezenithvisions.com" method="POST">
+        <input type="hidden" name="_subject" value="Newsletter Subscription">
+        <input type="email" name="email" placeholder="name@email.com" required aria-label="Email address">
         <button type="submit">Subscribe</button>
       </form>
     </div>
@@ -230,6 +231,8 @@
           <a href="services.html">Services</a>
           <a href="projects.html">Projects</a>
           <a href="gallery.html">Gallery</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="resources.html">Resources</a>
           <a href="blogs.html">Blog</a>
           <a href="contact.html">Contact</a>
         </div>
@@ -261,10 +264,9 @@
         <h4>Topics</h4>
         <div class="links">
           <a href="blogs.html">All articles</a>
-          <a href="blogs.html">Design Insight</a>
-          <a href="blogs.html">Sustainability</a>
-          <a href="blogs.html">Interior</a>
-          <a href="blogs.html">Heritage</a>
+          <a href="blogs.html">BIM</a>
+          <a href="blogs.html">Coordination</a>
+          <a href="blogs.html">Scan to BIM</a>
           <a href="blogs.html">Process</a>
         </div>
       </div>
@@ -276,7 +278,7 @@
         <div>
           <h4>Follow Us</h4>
           <div class="footer-legal-socials">
-            <a href="#" class="social-link" aria-label="Instagram"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><rect x="6" y="6" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.6"/><circle cx="13" cy="13" r="3.5" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="9" r="0.8" fill="currentColor"/></svg></span></a>
+            <a href="https://www.instagram.com/thezenithvisions/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><rect x="6" y="6" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.6"/><circle cx="13" cy="13" r="3.5" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="9" r="0.8" fill="currentColor"/></svg></span></a>
             <a href="https://www.linkedin.com/company/the-zenith-visions/" target="_blank" rel="noopener" class="social-link" aria-label="Linkedin"><span class="icon-circle"><svg viewBox="0 0 26 26" fill="none"><rect x="6" y="6" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M10 11V17M10 9V9M14 17V13C14 11.5 15.5 11 16.5 12C17 12.5 17 13.5 17 14V17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></a>
           </div>
         </div>
@@ -288,5 +290,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/forms.js"></script>
 </body>
 </html>
