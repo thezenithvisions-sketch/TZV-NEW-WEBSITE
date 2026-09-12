@@ -189,15 +189,6 @@
     }
 
     /* ----------------------------------------------------------
-       Brand testimonial vertical scroll — duplicate for seamless loop
-       (CSS already animates translateY 0 → -50%)
-       ---------------------------------------------------------- */
-    const brandList = $('#brandTestimonialList');
-    if (brandList) {
-      brandList.innerHTML += brandList.innerHTML;
-    }
-
-    /* ----------------------------------------------------------
        Testimonial carousel — buttons + drag/swipe
        ---------------------------------------------------------- */
     const track = $('#testimonialTrack');
