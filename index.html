@@ -102,7 +102,13 @@
 
     <div class="hero-image reveal-image">
       <div class="bg">
-        <img src="https://res.cloudinary.com/dx0nrghqt/image/upload/f_auto,q_auto,w_800,c_fill,ar_16:9/v1765896373/WOODEN_STRUCTURE_MODELING_AKQ7FZ.PNG" alt="Hero">
+        <!-- Scan to BIM transition. The 85 MB original is served compressed by
+             Cloudinary: 1440px at 2 Mbit/s (~4.7 MB) on laptops/desktops, 720px
+             (~1.7 MB) on phones, no audio track. Poster = the first frame. -->
+        <video autoplay muted loop playsinline preload="metadata" aria-hidden="true" poster="https://res.cloudinary.com/dx0nrghqt/video/upload/so_0,w_1440,c_limit,q_auto/v1789193310/SCAN_TO_BIM_TRANSITION_cbcrop.jpg">
+          <source media="(min-width: 810px)" src="https://res.cloudinary.com/dx0nrghqt/video/upload/vc_h264,br_2m,w_1440,c_limit,ac_none/v1789193310/SCAN_TO_BIM_TRANSITION_cbcrop.mp4" type="video/mp4">
+          <source src="https://res.cloudinary.com/dx0nrghqt/video/upload/vc_h264,q_auto:eco,w_720,c_limit,ac_none/v1789193310/SCAN_TO_BIM_TRANSITION_cbcrop.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="hero-stats reveal-stagger">
         <div class="stat-card">

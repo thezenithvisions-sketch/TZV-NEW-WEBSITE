@@ -443,7 +443,9 @@ p { font-family: var(--font-body); font-weight: 400; line-height: 1.4em; letter-
   inset: 0;
   z-index: 0;
 }
-.hero-image .bg img {
+.hero-image .bg img,
+.hero-image .bg video {
+  display: block;
   width: 100%; height: 100%;
   object-fit: cover;
 }
@@ -1811,7 +1813,8 @@ p { font-family: var(--font-body); font-weight: 400; line-height: 1.4em; letter-
 
 /* Image scale-in (hero background) */
 .reveal-image > img,
-.reveal-image .bg img {
+.reveal-image .bg img,
+.reveal-image .bg video {
   transform: scale(1.18);
   opacity: 0;
   transition:
@@ -1820,7 +1823,8 @@ p { font-family: var(--font-body); font-weight: 400; line-height: 1.4em; letter-
   will-change: transform, opacity;
 }
 .reveal-image.in-view > img,
-.reveal-image.in-view .bg img {
+.reveal-image.in-view .bg img,
+.reveal-image.in-view .bg video {
   transform: scale(1);
   opacity: 1;
 }
@@ -1830,7 +1834,8 @@ p { font-family: var(--font-body); font-weight: 400; line-height: 1.4em; letter-
   .reveal-stagger > *,
   .reveal-words .word,
   .reveal-image > img,
-  .reveal-image .bg img {
+  .reveal-image .bg img,
+  .reveal-image .bg video {
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;
@@ -8082,7 +8087,7 @@ img { max-width: 100%; }
    allow the button to wrap onto its own line if space is tight. */
 @media (max-width: 809.98px) {
   .footer-newsletter form { flex-wrap: wrap; }
-  .footer-newsletter input { min-width: 0; flex: 1 1 150px; }
+  .footer-newsletter input { min-width: 0; flex: 1 1 120px; }
   .footer-newsletter button { flex: 0 0 auto; padding: 15px 24px; white-space: nowrap; }
 }
 
@@ -8146,6 +8151,15 @@ img { max-width: 100%; }
   body.page-about .nav.nav--scrolled { padding-top: 0; padding-bottom: 0; }
 }
 
+/* ---- About page: empty space below the footer -----------------
+   cursor.js appends .v-cursor / .v-cursor-ring to the end of <body>
+   and moves them with the mouse every frame, but nothing styled them.
+   As full-width blocks in the page flow, their transform stretched the
+   page by the pointer's height: up to a screen of blank space below
+   the footer. Take them out of the flow (still invisible, as before). */
+.v-cursor,
+.v-cursor-ring { position: fixed; top: 0; left: 0; width: 0; height: 0; pointer-events: none; }
+
 /* ---- Touch targets: breadcrumbs, email/phone links, text CTAs ----
    On phones these were 18-21px tall (under the 24px minimum), and the
    breadcrumbs sit right under the sticky header, easy to mis-tap. */
@@ -8184,8 +8198,11 @@ img { max-width: 100%; }
 }
 .form-status.is-success { color: var(--color-text); background: rgba(20, 20, 20, 0.04); border: 1px solid rgba(20, 20, 20, 0.15); }
 .form-status.is-error { color: #b3261e; background: rgba(179, 38, 30, 0.05); border: 1px solid rgba(179, 38, 30, 0.35); }
-/* Newsletters sit on dark bands; the message gets its own line. */
+/* Newsletters sit on dark bands; the message gets its own line.
+   min-width:0 lets the email field shrink, otherwise its built-in
+   width wrapped the Subscribe button onto a second row. */
 .footer-newsletter form { flex-wrap: wrap; }
+.footer-newsletter input { min-width: 0; }
 .footer-newsletter .form-status,
 .blogs-newsletter-form .form-status { flex: 1 1 100%; }
 .footer-newsletter .form-status.is-success,

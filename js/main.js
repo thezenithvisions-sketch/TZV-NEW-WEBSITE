@@ -121,6 +121,24 @@
     }
 
     /* ----------------------------------------------------------
+       Hero background video (home): pause while it is scrolled
+       out of view, and show the still poster instead of playing
+       for visitors who ask for reduced motion.
+       ---------------------------------------------------------- */
+    const heroVideo = $('.hero-image video');
+    if (heroVideo) {
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        heroVideo.removeAttribute('autoplay');
+        heroVideo.pause();
+      } else if ('IntersectionObserver' in window) {
+        new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) heroVideo.play().catch(() => {});
+          else heroVideo.pause();
+        }).observe(heroVideo);
+      }
+    }
+
+    /* ----------------------------------------------------------
        Hero wordmark — continuous auto-marquee.
        CSS animates `.wordmark-track` from translateX 0 → -50%.
        For that to loop seamlessly the track must contain TWO
