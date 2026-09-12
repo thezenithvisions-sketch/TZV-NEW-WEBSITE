@@ -495,6 +495,40 @@ p { font-family: var(--font-body); font-weight: 400; line-height: 1.4em; letter-
   }
 }
 
+/* Home hero: the four stats sit in one slim glass strip so the video
+   stays visible (they were separate, 80%-opaque cream boxes covering
+   the bottom third of it). Scoped to the hero: About reuses .stat-card. */
+.hero-image { padding: 16px; }
+.hero-stats {
+  gap: 0;
+  background: rgba(20, 20, 20, 0.34);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  backdrop-filter: blur(12px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.hero-stats .stat-card {
+  gap: 4px;
+  padding: 14px 24px;
+  align-items: flex-start;
+  background: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.hero-stats .stat-card + .stat-card { border-left: 1px solid rgba(255, 255, 255, 0.16); }
+.hero-stats .stat-card .num { font-size: clamp(26px, 2.6vw, 40px); color: #fff; }
+.hero-stats .stat-card .label { text-align: left; font-size: 11px; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.8); }
+@media (max-width: 809.98px) {
+  .hero-image { padding: 10px; }
+  .hero-stats .stat-card { padding: 10px 14px; }
+  .hero-stats .stat-card + .stat-card { border-left: 0; }
+  .hero-stats .stat-card:nth-child(2n) { border-left: 1px solid rgba(255, 255, 255, 0.16); }
+  .hero-stats .stat-card:nth-child(n+3) { border-top: 1px solid rgba(255, 255, 255, 0.16); }
+  .hero-stats .stat-card .num { font-size: 26px; }
+  .hero-stats .stat-card .label { font-size: 10px; }
+}
+
 /* ============================================================
    Section base
    ============================================================ */
@@ -960,20 +994,6 @@ p { font-family: var(--font-body); font-weight: 400; line-height: 1.4em; letter-
   z-index: 0;
 }
 .value-quote-bg img { width: 100%; height: 100%; object-fit: cover; }
-.value-quote-sketch {
-  position: absolute;
-  width: 33%;
-  z-index: 1;
-}
-.value-quote-sketch img { width: 100%; height: auto; }
-.value-quote-sketch.left {
-  top: 23%; left: -7%;
-  transform: rotate(-6deg) translateY(-20px);
-}
-.value-quote-sketch.right {
-  top: 72%; left: 84%;
-  transform: rotate(5deg) translate(-50%, -50%) translateY(70px);
-}
 .value-quote-content {
   position: relative;
   z-index: 2;
@@ -990,14 +1010,8 @@ p { font-family: var(--font-body); font-weight: 400; line-height: 1.4em; letter-
   text-transform: uppercase;
   color: var(--color-cream);
 }
-@media (max-width: 1199.98px) {
-  .value-quote-sketch.left { width: 40%; top: 53px; left: -49px; transform: rotate(-6deg); }
-  .value-quote-sketch.right { width: 40%; bottom: 44px; right: -51px; left: auto; top: auto; transform: rotate(5deg); }
-}
 @media (max-width: 809.98px) {
   .section-value-quote { padding: 50px 20px; }
-  .value-quote-sketch.left { width: 40%; top: 77px; left: -18px; transform: rotate(-6deg); }
-  .value-quote-sketch.right { width: 40%; bottom: 70px; right: -23px; transform: rotate(5deg); }
 }
 
 /* ============================================================
@@ -8209,3 +8223,25 @@ img { max-width: 100%; }
 .blogs-newsletter-form .form-status.is-success { color: var(--color-cream); background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.18); }
 .footer-newsletter .form-status.is-error,
 .blogs-newsletter-form .form-status.is-error { color: #ffb4ab; background: rgba(255, 180, 171, 0.08); border-color: rgba(255, 180, 171, 0.4); }
+
+/* ═══════════════════════════════════════════════════════════
+   PROJECT PAGES — full project write-up + longer info values
+   (the base .pd2-* styles live in each project page's <style>)
+   ═══════════════════════════════════════════════════════════ */
+.pd2-v { max-width: 560px; line-height: 1.45; }
+.pd2-overview p + p { margin-top: 16px; }
+.pd2-overview strong { color: var(--color-dark); font-weight: 600; }
+.pd2-overview h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  font-size: clamp(17px, 1.7vw, 21px);
+  color: var(--color-dark);
+  margin: 44px 0 18px;
+}
+.pd2-overview ul { list-style: none; margin: 0; padding: 0; max-width: 840px; display: grid; gap: 14px; }
+.pd2-overview li { position: relative; padding-left: 28px; color: var(--color-text-muted); line-height: 1.7; font-size: clamp(15px, 1.5vw, 18px); }
+.pd2-scope li::before { content: ''; position: absolute; left: 6px; top: 0.72em; width: 7px; height: 7px; border-radius: 50%; background: var(--color-dark); }
+.pd2-highlights li::before { content: ''; position: absolute; left: 6px; top: 0.4em; width: 6px; height: 12px; border: solid var(--color-dark); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.pd2-overview ul + p { margin-top: 36px; }
